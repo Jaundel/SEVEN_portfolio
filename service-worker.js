@@ -1,4 +1,4 @@
-const CACHE_NAME = "seven-web-console-v12";
+const CACHE_NAME = "seven-web-console-v14";
 const APP_ASSETS = ["./", "./index.html", "./style.css", "./src/app.js", "./manifest.webmanifest"];
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_ASSETS)));

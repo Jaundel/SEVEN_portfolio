@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEVEN: Sustainable Energy via Efficient Neural-routing</title>
+  <title>SEVEN: Sustainable Energy via Efficient Neural Routing</title>
   <link rel="icon" href="data:," />
   <style>
     /* ── reset ── */
@@ -39,70 +39,72 @@
 
     /* ── shell ── */
     .page-shell {
-      width: min(960px, calc(100% - 32px));
+      width: min(1198px, calc(100% - 88px));
       margin: 0 auto;
-      padding: 28px 0 64px;
+      padding: 32px 0 72px;
     }
-
-    /* ── nav ── */
-    .site-nav {
-      display: flex;
-      gap: 18px;
-      justify-content: flex-end;
-      margin-bottom: 40px;
-      font-size: 13px;
-    }
-    .site-nav a { color: var(--muted); }
-    .site-nav a:hover { color: var(--ink); text-decoration: none; }
 
     /* ── hero ── */
     .hero {
-      text-align: center;
-      margin-bottom: 36px;
+      text-align: left;
+      margin-bottom: 34px;
     }
-    .eyebrow {
-      color: var(--muted);
-      font-size: 18px;
+    .hero h1 {
+      color: #333333;
+      font-family: var(--serif);
+      font-size: clamp(48px, 5.8vw, 76px);
       font-weight: 400;
-      margin-bottom: 4px;
-    }
-    h1 {
-      font-size: 32px;
-      font-weight: 500;
-      line-height: 1.18;
+      line-height: .96;
       letter-spacing: 0;
-      text-transform: lowercase;
-      margin-bottom: 14px;
+      margin: 0 0 28px;
+      max-width: 1180px;
     }
     .subtitle {
-      max-width: 640px;
-      margin: 0 auto 18px;
+      max-width: 920px;
+      margin: 0 0 20px;
       font-family: var(--serif);
-      font-size: 16px;
+      font-size: 19px;
       color: #333;
-      line-height: 1.65;
+      line-height: 1.62;
     }
-    .hero-meta {
+    .paper-meta {
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      padding-top: 16px;
+      color: #8a8a8a;
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .meta-item {
+      min-height: 44px;
+      padding: 0 18px;
+      border-left: 1px solid #e5e5e5;
+    }
+    .meta-item:first-child { border-left: 0; padding-left: 0; }
+    .meta-label {
+      display: block;
+      color: #777777;
       font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 22px;
+      text-transform: uppercase;
     }
-    .hero-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .hero-links a {
-      display: inline-block;
-      padding: 6px 14px;
-      border: 1px solid var(--line);
-      color: var(--ink);
-      font-size: 13px;
+    .meta-label.is-bold { font-weight: 600; }
+    .meta-value {
+      display: block;
+      color: #9a9a9a;
+      font-size: 14px;
     }
-    .hero-links a:hover { border-color: #999; text-decoration: none; }
+    .paper-meta a { color: #8a8a8a; }
+    .paper-meta a:hover { color: var(--ink); }
 
     /* ── demo (embedded, no scroll) ── */
     .demo-embed {
-      width: 100%;
+      width: min(960px, 100%);
       border: 1px solid var(--line);
       overflow: hidden;
-      margin-bottom: 10px;
+      margin: 24px 0 10px;
     }
     .demo-embed iframe {
       display: block;
@@ -114,30 +116,35 @@
     .demo-note {
       font-size: 12px;
       color: var(--muted);
-      text-align: center;
-      margin-bottom: 40px;
+      text-align: left;
+      margin-bottom: 44px;
+      width: min(960px, 100%);
     }
 
     /* ── article body ── */
-    article { max-width: 960px; }
+    article {
+      max-width: 960px;
+    }
 
     section { margin-bottom: 42px; }
 
     h2 {
-      font-size: 22px;
-      font-weight: 500;
-      text-transform: lowercase;
-      margin-bottom: 14px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--line);
+      color: #222222;
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.08;
+      margin: 0 0 18px;
+      padding-bottom: 0;
+      border-bottom: 0;
     }
 
     p {
       font-family: var(--serif);
-      font-size: 16px;
-      line-height: 1.7;
+      font-size: 19px;
+      line-height: 1.62;
       color: #333;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
     p:last-child { margin-bottom: 0; }
 
@@ -334,43 +341,84 @@
       font-size: 12px;
       color: var(--muted);
     }
+    footer p {
+      font-family: var(--sans);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(100% - 28px, 960px);
+        padding-top: 22px;
+      }
+      .hero h1 {
+        font-size: clamp(40px, 13vw, 58px);
+        line-height: 1;
+      }
+      .paper-meta {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .meta-item {
+        min-height: 0;
+        padding: 0;
+        border-left: 0;
+      }
+      p {
+        font-size: 17px;
+      }
+      h2 {
+        font-size: 30px;
+      }
+    }
   </style>
 </head>
 <body>
 <div class="page-shell">
 
-  <!-- nav -->
-  <nav class="site-nav">
-    <a href="https://jaundel.github.io/projects.html">portfolio</a>
-    <a href="#demo">demo</a>
-    <a href="#insight">insight</a>
-    <a href="#architecture">architecture</a>
-    <a href="#numbers">numbers</a>
-    <a href="#scale">scale</a>
-    <a href="#references">references</a>
-    <a href="https://github.com/Jaundel/SEVEN">code</a>
-  </nav>
-
   <!-- hero -->
   <header class="hero">
-    <p class="eyebrow">seven</p>
-    <h1>sustainable energy via efficient neural-routing</h1>
-    <p class="subtitle">
-      Every AI query, whether "What is 2+2?" or "Write a business plan", pays the same 0.34 Wh
-      cloud toll. SEVEN intercepts queries before inference, classifies them in under 1 ms at
-      zero cost, and routes each one to the smallest compute path that can answer correctly.
-    </p>
-    <p class="hero-meta">Jaundel Simon, Samin, Yusuf, Hamanpreet, Aadil &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; UN SDG 7</p>
-    <div class="hero-links">
-      <a href="https://github.com/Jaundel/SEVEN">code</a>
-      <a href="#demo">live demo</a>
+    <h1>SEVEN: Sustainable Energy via Efficient Neural Routing</h1>
+    <div class="paper-meta" aria-label="project metadata">
+      <div class="meta-item">
+        <span class="meta-label">Jaundel Simon</span>
+        <span class="meta-value">Portfolio</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label is-bold">Collaborators</span>
+        <span class="meta-value">Samin, Yusuf, Hamanpreet, Aadil</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">2025</span>
+        <span class="meta-value">UN SDG 7</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Demo:</span>
+        <span class="meta-value">embedded console</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Code:</span>
+        <span class="meta-value"><a href="https://github.com/Jaundel/SEVEN">repo</a></span>
+      </div>
     </div>
   </header>
+
+  <article>
+
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p class="subtitle">
+        Every AI query, whether "What is 2+2?" or "Write a business plan", pays the same 0.34 Wh
+        cloud toll. SEVEN intercepts queries before inference, classifies them in under 1 ms at
+        zero cost, and routes each one to the smallest compute path that can answer correctly.
+      </p>
+    </section>
 
   <!-- demo embedded directly, no scroll -->
   <div id="demo" class="demo-embed">
     <iframe
-      src="demo/index.html"
+      src="demo/index.html?v=6"
       title="SEVEN live demo"
       scrolling="no"
       loading="lazy"
@@ -382,11 +430,9 @@
     add an OpenRouter key in the sidebar to enable live routing.
   </p>
 
-  <article>
-
     <!-- invisible energy tax -->
     <section id="insight">
-      <h2>the invisible energy tax</h2>
+      <h2>The Invisible Energy Tax</h2>
       <p>
         When Sam Altman disclosed in early 2025 that the average ChatGPT query consumes
         <strong>0.34 watt-hours</strong> ("about what an oven uses in a little over one second"),
@@ -435,7 +481,7 @@
 
     <!-- insight -->
     <section>
-      <h2>classify before you compute</h2>
+      <h2>Classify Before You Compute</h2>
       <p>
         Academic routing systems like <strong>RouteLLM</strong> (Berkeley Sky Lab, 2024) proved that
         up to <strong>85% of queries can be handled by smaller models</strong> while retaining 95% of
@@ -458,7 +504,7 @@
 
     <!-- three tiers -->
     <section id="architecture">
-      <h2>three tiers, one decision</h2>
+      <h2>Three Tiers, One Decision</h2>
       <p>Every prompt passes through a single <code>route_prompt()</code> call. The heuristic classifier assigns it to one of three execution tiers before any model is touched:</p>
 
       <div class="tier-grid">
@@ -533,7 +579,7 @@
       </div>
 
       <!-- classifier code -->
-      <h2>the zero-cost classifier</h2>
+      <h2>The Zero-Cost Classifier</h2>
       <p>The classifier in <code>heuristics.py</code> makes its decision through four ordered checks, each cheaper than inference by several orders of magnitude:</p>
       <pre><span class="kw">def</span> <span class="fn">classify_query_type</span>(prompt: str) -&gt; dict:
     lowered = prompt.lower()
@@ -568,7 +614,7 @@
 
     <!-- numbers -->
     <section id="numbers">
-      <h2>the numbers</h2>
+      <h2>The Numbers</h2>
       <p>SEVEN's energy module maintains calibrated profiles anchored to peer-reviewed measurements. These are not theoretical figures.</p>
 
       <table class="data-table">
@@ -596,7 +642,7 @@
       <p class="fig-caption"><b>figure 3.</b> hardware efficiency ladder. sources: MIT "from words to watts" arXiv:2310.03003 (A100); LLM-Tracker H100 benchmarks; AMD arXiv:2504.03083 (NPU).</p>
 
       <!-- benchmark stats -->
-      <h2>benchmark results</h2>
+      <h2>Benchmark Results</h2>
       <div class="stat-row">
         <div class="stat-card"><span class="big">87%</span><span class="label">routing accuracy<br>target was &gt;85%</span></div>
         <div class="stat-card"><span class="big" style="color:var(--green);">412 ms</span><span class="label">avg local latency<br>5.1x faster than cloud</span></div>
@@ -607,7 +653,7 @@
 
     <!-- comparison -->
     <section>
-      <h2>why not just compress the model?</h2>
+      <h2>Why Not Just Compress the Model?</h2>
       <p>Other approaches attack the same problem from the execution side, optimising what happens <em>inside</em> the inference call. SEVEN attacks the decision that comes <em>before</em> inference.</p>
       <table class="data-table">
         <thead><tr><th>approach</th><th>energy saving</th><th>limitation</th></tr></thead>
@@ -623,7 +669,7 @@
 
     <!-- scale -->
     <section id="scale">
-      <h2>what this looks like at scale</h2>
+      <h2>What This Looks Like at Scale</h2>
       <p>
         ChatGPT serves approximately <strong>2.5 billion queries per day</strong> at an average of 0.34 Wh each,
         roughly 850 MWh consumed daily, or <strong>310 GWh per year for inference alone</strong>.
@@ -656,7 +702,7 @@
 
     <!-- closing -->
     <section>
-      <h2>efficiency does not have to wait for better hardware</h2>
+      <h2>Efficiency Does Not Have to Wait for Better Hardware</h2>
       <p>
         The narrative around AI and energy tends toward inevitability: more users, more compute, more carbon,
         waiting for renewables to catch up. SEVEN argues for a different path. The hardware to run a
@@ -671,7 +717,7 @@
 
     <!-- references -->
     <section id="references">
-      <h2>references</h2>
+      <h2>References</h2>
       <ol class="references">
         <li>Sam Altman, "The Gentle Singularity," blog.samaltman.com, 2025. 0.34 Wh per ChatGPT query.</li>
         <li>Google DeepMind, "Measuring the environmental impact of delivering AI at Google Scale," arXiv:2508.15734, Aug 2025. 0.24 Wh per Gemini text prompt.</li>

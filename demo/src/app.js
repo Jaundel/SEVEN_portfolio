@@ -314,7 +314,8 @@ function wireForm(form, textarea) {
     submitPrompt(prompt);
   });
   textarea.addEventListener("keydown", (event) => {
-    if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+    const submitShortcut = event.key === "Enter" && !event.shiftKey;
+    if (submitShortcut) {
       event.preventDefault();
       form.requestSubmit();
     }
