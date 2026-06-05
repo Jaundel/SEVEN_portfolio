@@ -4,48 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="SEVEN browser demo: an energy-aware AI router inspired by the Elia terminal interface." />
-  <meta name="theme-color" content="#f7f9fc" />
+  <meta name="theme-color" content="#ffffff" />
   <title>SEVEN Web Console</title>
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="style.css?v=12" />
 </head>
 <body>
-  <div class="app-shell" data-view="home">
-    <header class="top-bar">
-      <div class="top-brand">PROJECT SEVEN</div>
+  <div class="page-shell">
+    <nav class="site-nav" aria-label="Page navigation">
+      <a href="#demo">demo</a>
+      <a href="#article">article</a>
+    </nav>
+
+    <header class="hero">
+      <p class="eyebrow">project seven</p>
+      <h1>sustainable energy via efficient neural-routing</h1>
+      <p class="subtitle">
+        A browser-native SEVEN demo that keeps the routing question visible: should this prompt stay
+        on a small local-class path, take a direct data route, or escalate to cloud-class reasoning?
+      </p>
     </header>
 
-    <main class="console-grid">
-      <aside class="sidebar" aria-label="Chat navigation">
-        <div class="sidebar-head">
-          <button class="text-button active" id="home-button" type="button">Home</button>
-          <button class="text-button" id="new-chat-button" type="button">New Chat</button>
-        </div>
+    <section id="demo" class="demo-section" aria-label="SEVEN browser demo">
+      <div class="app-shell" data-view="home">
+        <header class="top-bar">
+          <div class="top-brand">seven_web_console :: PROJECT SEVEN</div>
+        </header>
 
-        <details class="config-panel" aria-label="Runtime configuration">
-          <summary>Live models</summary>
-          <label class="toggle-row"><input id="live-toggle" type="checkbox" /><span>Use OpenRouter</span></label>
-          <label class="key-field"><span>Key</span><input id="api-key-input" type="password" autocomplete="off" placeholder="sk-or-..." /></label>
-          <div class="config-actions">
-            <button id="save-key-button" type="button">Save</button>
-            <button id="clear-key-button" type="button">Clear</button>
-          </div>
-          <p class="fine-print">Stored for this browser session only.</p>
-        </details>
+        <main class="console-grid">
+          <aside class="sidebar" aria-label="Chat navigation">
+            <div class="sidebar-head">
+              <button class="text-button active" id="home-button" type="button">Home</button>
+              <button class="text-button" id="new-chat-button" type="button">New Chat</button>
+            </div>
 
-        <section class="chat-list-panel" aria-label="Saved chats">
-          <div class="panel-title-row">
-            <h2>Chats</h2>
-            <button class="mini-button" id="clear-chats-button" type="button">Clear</button>
-          </div>
-          <div class="chat-list" id="chat-list"></div>
-        </section>
-      </aside>
+            <details class="config-panel" aria-label="Runtime configuration">
+              <summary>Live models</summary>
+              <label class="toggle-row"><input id="live-toggle" type="checkbox" /><span>Use OpenRouter</span></label>
+              <label class="key-field"><span>Key</span><input id="api-key-input" type="password" autocomplete="off" placeholder="sk-or-..." /></label>
+              <div class="config-actions">
+                <button id="save-key-button" type="button">Save</button>
+                <button id="clear-key-button" type="button">Clear</button>
+              </div>
+              <p class="fine-print">Stored for this browser session only.</p>
+            </details>
 
-      <section class="main-console">
-        <section class="home-screen" id="home-screen" aria-label="SEVEN home">
-          <header class="app-header cli-hero">
-            <pre class="ascii-logo" aria-label="PROJECT SEVEN">
+            <section class="chat-list-panel" aria-label="Saved chats">
+              <div class="panel-title-row">
+                <h2>Chats</h2>
+                <button class="mini-button" id="clear-chats-button" type="button">Clear</button>
+              </div>
+              <div class="chat-list" id="chat-list"></div>
+            </section>
+          </aside>
+
+          <section class="main-console">
+            <section class="home-screen" id="home-screen" aria-label="SEVEN home">
+              <header class="app-header cli-hero">
+                <pre class="ascii-logo" aria-label="PROJECT SEVEN">
 '########::'########:::'#######::::::::'##:'########::'######::'########:
  ##.... ##: ##.... ##:'##.... ##::::::: ##: ##.....::'##... ##:... ##..::
  ##:::: ##: ##:::: ##: ##:::: ##::::::: ##: ##::::::: ##:::..::::: ##::::
@@ -62,118 +78,120 @@
 '##::: ##: ##::::::::. ## ##::: ##::::::: ##:. ###:
 . ######:: ########:::. ###:::: ########: ##::. ##:
 :......:::........:::::...:::::........::..::::..::
-            </pre>
-            <div class="cli-meta" aria-label="Router status">
-              <span>router online</span>
-              <strong>local -> api -> cloud</strong>
-            </div>
-          </header>
+                </pre>
+                <div class="cli-meta" aria-label="Router status">
+                  <span>router online</span>
+                  <strong>local -> api -> cloud</strong>
+                </div>
+              </header>
 
-          <div class="energy-strip cli-status" id="global-energy" data-title="EnergyStats">0.00 Wh used - 0.00 Wh saved - no routed prompts yet</div>
+              <div class="energy-strip cli-status" id="global-energy" data-title="EnergyStats">0.00 Wh used - 0.00 Wh saved - no routed prompts yet</div>
 
-          <article class="welcome-box cli-welcome" data-title="SEVEN - Intelligent Routing for Sustainable AI">
-            <h1>SEVEN</h1>
-            <p class="lead">Sustainable Energy Via Efficient Neural-routing</p>
-            <div class="terminal-lines">
-              <p><strong>THE QUESTION</strong><span>Does this prompt need a frontier model?</span></p>
-              <p><strong>THE ROUTER</strong><span>Classify first, then choose the smallest useful route.</span></p>
-              <p><strong>THE SIGNAL</strong><span>Show estimated Wh used and saved against cloud-only inference.</span></p>
-            </div>
-          </article>
+              <article class="welcome-box cli-welcome" data-title="SEVEN - Intelligent Routing for Sustainable AI">
+                <h1>SEVEN</h1>
+                <p class="lead">Sustainable Energy Via Efficient Neural-routing</p>
+                <div class="terminal-lines">
+                  <p><strong>THE QUESTION</strong><span>Does this prompt need a frontier model?</span></p>
+                  <p><strong>THE ROUTER</strong><span>Classify first, then choose the smallest useful route.</span></p>
+                  <p><strong>THE SIGNAL</strong><span>Show estimated Wh used and saved against cloud-only inference.</span></p>
+                </div>
+              </article>
 
-          <form class="prompt-box" id="home-prompt-form">
-            <label for="home-prompt">Message</label>
-            <textarea id="home-prompt" rows="3" placeholder="Ask SEVEN something simple or complex"></textarea>
-            <div class="prompt-actions"><span>Enter sends - Shift+Enter adds a line</span><button type="submit">Send</button></div>
-          </form>
-        </section>
+              <form class="prompt-box" id="home-prompt-form">
+                <label for="home-prompt">Message</label>
+                <textarea id="home-prompt" rows="3" placeholder="Ask SEVEN something simple or complex"></textarea>
+                <div class="prompt-actions"><span>Enter sends - Shift+Enter adds a line</span><button type="submit">Send</button></div>
+              </form>
+            </section>
 
-        <section class="chat-screen" id="chat-screen" aria-label="SEVEN chat" hidden>
-          <header class="chat-header">
-            <button class="text-button" id="close-chat-button" type="button">Home</button>
-            <div>
+            <section class="chat-screen" id="chat-screen" aria-label="SEVEN chat" hidden>
+              <header class="chat-header">
+                <button class="text-button" id="close-chat-button" type="button">Home</button>
+                <div>
                 <h1 id="chat-title">New chat</h1>
                 <p id="chat-model-static">Router ready</p>
-            </div>
-            <div class="chat-energy" id="chat-energy-static">0.00 Wh used - 0.00 Wh saved</div>
-          </header>
+                </div>
+                <div class="chat-energy" id="chat-energy-static">0.00 Wh used - 0.00 Wh saved</div>
+              </header>
 
-          <div class="status-line" id="status-line" hidden><span class="status-dot"></span><span id="status-text">routing</span></div>
-          <div class="chat-container" id="chat-container"></div>
+              <div class="status-line" id="status-line" hidden><span class="status-dot"></span><span id="status-text">routing</span></div>
+              <div class="chat-container" id="chat-container"></div>
 
-          <form class="prompt-box chat-prompt" id="chat-prompt-form">
-            <label for="chat-prompt">Enter your message...</label>
-            <textarea id="chat-prompt" rows="3" placeholder="Continue this SEVEN chat"></textarea>
+              <form class="prompt-box chat-prompt" id="chat-prompt-form">
+                <label for="chat-prompt">Enter your message...</label>
+                <textarea id="chat-prompt" rows="3" placeholder="Continue this SEVEN chat"></textarea>
                 <div class="prompt-actions"><span>Enter sends - Shift+Enter adds a line</span><button type="submit">Send</button></div>
-          </form>
-        </section>
+              </form>
+            </section>
+          </section>
+
+          <aside class="inspector" aria-label="Route details">
+            <section>
+              <h2>Route</h2>
+              <dl id="route-details">
+                <div><dt>Selected</dt><dd>none</dd></div>
+                <div><dt>Reason</dt><dd>waiting</dd></div>
+                <div><dt>Model</dt><dd>none</dd></div>
+              </dl>
+            </section>
+            <section>
+              <h2>Energy Profile</h2>
+              <dl id="energy-details">
+                <div><dt>Actual</dt><dd>0.00 Wh</dd></div>
+                <div><dt>Baseline</dt><dd>0.00 Wh</dd></div>
+                <div><dt>Savings</dt><dd>0.00 Wh</dd></div>
+              </dl>
+            </section>
+          </aside>
+        </main>
+      </div>
+    </section>
+
+    <article id="article" class="paper">
+      <section id="abstract">
+        <h2>abstract</h2>
+        <p>
+          SEVEN is an energy-aware routing experiment. Instead of sending every prompt to the same
+          large model, it classifies the prompt first and chooses a local-class, direct-data, or
+          cloud-class route.
+        </p>
       </section>
 
-      <aside class="inspector" aria-label="Route details">
-        <section>
-          <h2>Route</h2>
-          <dl id="route-details">
-            <div><dt>Selected</dt><dd>none</dd></div>
-            <div><dt>Reason</dt><dd>waiting</dd></div>
-            <div><dt>Model</dt><dd>none</dd></div>
-          </dl>
-        </section>
-        <section>
-          <h2>Energy Profile</h2>
-          <dl id="energy-details">
-            <div><dt>Actual</dt><dd>0.00 Wh</dd></div>
-            <div><dt>Baseline</dt><dd>0.00 Wh</dd></div>
-            <div><dt>Savings</dt><dd>0.00 Wh</dd></div>
-          </dl>
-        </section>
-      </aside>
-    </main>
+      <section id="system">
+        <h2>system</h2>
+        <p>
+          The full CLI can connect to Lemonade Server for local inference. This browser version keeps
+          the interface portfolio-safe by simulating the local path with a small hosted model and the
+          cloud path with a stronger hosted model.
+        </p>
+      </section>
+
+      <section id="routing">
+        <h2>routing</h2>
+        <p>
+          Short factual prompts start local. Current-data prompts are marked for direct data lookup.
+          Long, specialized, or complex prompts escalate to cloud-class reasoning.
+        </p>
+      </section>
+
+      <section id="energy">
+        <h2>energy</h2>
+        <p>
+          The watt-hour values are estimates, not hardware measurements. SEVEN compares the selected
+          route against a cloud-only baseline so the cost of routing decisions stays visible.
+        </p>
+      </section>
+
+      <section id="scope">
+        <h2>portfolio scope</h2>
+        <p>
+          This standalone page is separate from the shared SEVEN source, preserving collaborator work
+          while showing the project as an interactive portfolio article.
+        </p>
+      </section>
+    </article>
   </div>
 
-  <article id="article" class="paper">
-    <section id="abstract">
-      <h2>abstract</h2>
-      <p>
-        SEVEN is an energy-aware routing experiment. Instead of sending every prompt to the same
-        large model, it classifies the prompt first and chooses a local-class, direct-data, or
-        cloud-class route.
-      </p>
-    </section>
-
-    <section id="system">
-      <h2>system</h2>
-      <p>
-        The full CLI can connect to Lemonade Server for local inference. This browser version keeps
-        the interface portfolio-safe by simulating the local path with a small hosted model and the
-        cloud path with a stronger hosted model.
-      </p>
-    </section>
-
-    <section id="routing">
-      <h2>routing</h2>
-      <p>
-        Short factual prompts start local. Current-data prompts are marked for direct data lookup.
-        Long, specialized, or complex prompts escalate to cloud-class reasoning.
-      </p>
-    </section>
-
-    <section id="energy">
-      <h2>energy</h2>
-      <p>
-        The watt-hour values are estimates, not hardware measurements. SEVEN compares the selected
-        route against a cloud-only baseline so the cost of routing decisions stays visible.
-      </p>
-    </section>
-
-    <section id="scope">
-      <h2>portfolio scope</h2>
-      <p>
-        This standalone page is separate from the shared SEVEN source, preserving collaborator work
-        while showing the project as an interactive portfolio article.
-      </p>
-    </section>
-  </article>
-
-  <script type="module" src="src/app.js?v=11"></script>
+  <script type="module" src="src/app.js?v=12"></script>
 </body>
 </html>
