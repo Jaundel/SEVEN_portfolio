@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SEVEN browser demo: an energy-aware AI router inspired by the Elia terminal interface." />
+  <meta name="theme-color" content="#f7f9fc" />
+  <title>SEVEN Web Console</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="style.css?v=6" />
+</head>
+<body>
+  <div class="app-shell" data-view="home">
+    <header class="top-bar">
+      <a class="back-link" href="https://jaundel.github.io/projects.html">portfolio</a>
+      <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="runtime-pill" id="runtime-pill">demo mode</div>
+      <button class="icon-button" id="install-button" type="button" hidden title="Install SEVEN">
+        <span aria-hidden="true">+</span><span class="sr-only">Install SEVEN</span>
+      </button>
+    </header>
+
+    <main class="console-grid">
+      <aside class="sidebar" aria-label="Chat navigation">
+        <div class="sidebar-head">
+          <button class="text-button active" id="home-button" type="button">Home</button>
+          <button class="text-button" id="new-chat-button" type="button">New Chat</button>
+        </div>
+
+        <section class="config-panel" aria-label="Runtime configuration">
+          <h2>Runtime</h2>
+          <label class="toggle-row"><input id="live-toggle" type="checkbox" /><span>Use OpenRouter live models</span></label>
+          <label class="key-field"><span>OpenRouter key</span><input id="api-key-input" type="password" autocomplete="off" placeholder="sk-or-..." /></label>
+          <div class="config-actions">
+            <button id="save-key-button" type="button">Save session key</button>
+            <button id="clear-key-button" type="button">Clear</button>
+          </div>
+          <p class="fine-print">Free OpenRouter models still require an account key. Keys are held in this browser session only.</p>
+        </section>
+
+        <section class="chat-list-panel" aria-label="Saved chats">
+          <div class="panel-title-row">
+            <h2>Chats</h2>
+            <button class="mini-button" id="clear-chats-button" type="button">Clear</button>
+          </div>
+          <div class="chat-list" id="chat-list"></div>
+        </section>
+      </aside>
+
+      <section class="main-console">
+        <section class="home-screen" id="home-screen" aria-label="SEVEN home">
+          <header class="app-header">
+            <pre class="ascii-logo" aria-label="PROJECT SEVEN">PROJECT SEVEN</pre>
+            <p class="model-label" id="model-label">Router: Llama 3.2 3B -> Gemma 4 26B</p>
+          </header>
+
+          <div class="energy-strip" id="global-energy">0.00 Wh used - 0.00 Wh saved - no routed prompts yet</div>
+
+          <article class="welcome-box">
+            <h1>SEVEN</h1>
+            <p class="lead">Sustainable Energy Via Efficient Neural-routing</p>
+            <div class="welcome-grid">
+              <section>
+                <h2>The Problem</h2>
+                <p>Most AI products send every prompt to a large cloud model, even when the prompt is simple enough for a smaller model. SEVEN asks the routing question before inference.</p>
+              </section>
+              <section>
+                <h2>The Solution</h2>
+                <p>Classify the prompt, choose the smallest capable path, then report the estimated energy used and saved against a cloud-only baseline.</p>
+              </section>
+              <section>
+                <h2>Local-class Route</h2>
+                <p>Simple factual prompts go to a small free model: <code>meta-llama/llama-3.2-3b-instruct:free</code>.</p>
+              </section>
+              <section>
+                <h2>Cloud-class Route</h2>
+                <p>Complex prompts go to a newer free model: <code>google/gemma-4-26b-a4b-it:free</code>.</p>
+              </section>
+            </div>
+          </article>
+
+          <form class="prompt-box" id="home-prompt-form">
+            <label for="home-prompt">Enter your message...</label>
+            <textarea id="home-prompt" rows="3" placeholder="Ask SEVEN something simple or complex"></textarea>
+            <div class="prompt-actions"><span>Ctrl+Enter sends</span><button type="submit">Send message</button></div>
+          </form>
+        </section>
+
+        <section class="chat-screen" id="chat-screen" aria-label="SEVEN chat" hidden>
+          <header class="chat-header">
+            <button class="text-button" id="close-chat-button" type="button">Home</button>
+            <div>
+              <h1 id="chat-title">Empty chat</h1>
+              <p id="chat-model-static">Router: local-class first</p>
+            </div>
+            <div class="chat-energy" id="chat-energy-static">0.00 Wh used - 0.00 Wh saved</div>
+          </header>
+
+          <div class="status-line" id="status-line" hidden><span class="status-dot"></span><span id="status-text">routing</span></div>
+          <div class="chat-container" id="chat-container"></div>
+
+          <form class="prompt-box chat-prompt" id="chat-prompt-form">
+            <label for="chat-prompt">Enter your message...</label>
+            <textarea id="chat-prompt" rows="3" placeholder="Continue this SEVEN chat"></textarea>
+            <div class="prompt-actions"><span>Ctrl+Enter sends</span><button type="submit">Send message</button></div>
+          </form>
+        </section>
+      </section>
+
+      <aside class="inspector" aria-label="Route details">
+        <section>
+          <h2>Route</h2>
+          <dl id="route-details">
+            <div><dt>Selected</dt><dd>none</dd></div>
+            <div><dt>Reason</dt><dd>waiting</dd></div>
+            <div><dt>Model</dt><dd>none</dd></div>
+          </dl>
+        </section>
+        <section>
+          <h2>Energy Profile</h2>
+          <dl id="energy-details">
+            <div><dt>Actual</dt><dd>0.00 Wh</dd></div>
+            <div><dt>Baseline</dt><dd>0.00 Wh</dd></div>
+            <div><dt>Savings</dt><dd>0.00 Wh</dd></div>
+          </dl>
+        </section>
+        <section>
+          <h2>Routing Policy</h2>
+          <ul class="policy-list">
+            <li>Real-time language is flagged before model inference.</li>
+            <li>Specialized or long-form prompts escalate to cloud-class.</li>
+            <li>Short factual prompts start with local-class inference.</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <script type="module" src="src/app.js?v=6"></script>
+</body>
+</html>

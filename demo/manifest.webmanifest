@@ -1,0 +1,10 @@
+{
+  "name": "SEVEN Web Console",
+  "short_name": "SEVEN",
+  "description": "Browser demo for SEVEN, an energy-aware AI router.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#f7f9fc",
+  "icons": []
+}
