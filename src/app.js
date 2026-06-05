@@ -24,8 +24,8 @@ const REALTIME_KEYWORDS = ["current", "latest", "today", "now", "right now", "th
 const COMPLEX_MARKERS = ["write a detailed", "write an essay", "write a report", "write a paper", "write an article", "draft a", "comprehensive analysis", "detailed analysis", "in-depth analysis", "analyze in detail", "deep dive into", "compare and contrast", "compare all", "differences between", "similarities and differences", "step-by-step tutorial", "step by step", "walk me through", "guide me through", "explain step by step", "explain in depth", "explain thoroughly", "explain comprehensively", "provide a detailed explanation", "go into detail", "quantum", "derive the", "prove that", "proof of", "theorem", "algorithm analysis", "big o notation", "differential equation", "integral of", "list all", "enumerate all", "every single", "all possible", "write a story", "write a poem", "create a narrative", "research on", "literature review", "survey of"];
 const SPECIALIZED_DOMAINS = ["quantum chromodynamics", "string theory", "general relativity", "thermodynamics", "organic chemistry", "topology", "number theory", "abstract algebra", "differential geometry", "complex analysis", "blockchain consensus", "zero-knowledge proof", "compiler optimization", "kernel development"];
 const ENERGY = { localJPerToken: 0.85, cloudJPerToken: 3.10, apiWh: 0.001, joulesPerWh: 3600 };
-const statusLabels = { local_starting: "Routing to local-class model", api_fetching: "Checking current-data intent", cloud_processing: "Routing to cloud-class model", complete: "Response complete" };
-const reasonLabels = { empty_prompt: "Empty prompt", needs_realtime_data: "Needs current data", specialized_domain: "Specialized domain", too_complex_for_small_model: "Too complex for small model", prompt_too_long: "Prompt too long", default_energy_saving: "Default energy-saving route", waiting: "Waiting" };
+const statusLabels = { local_starting: "Routing locally", api_fetching: "Checking current data", cloud_processing: "Routing to cloud", complete: "Complete" };
+const reasonLabels = { empty_prompt: "Empty prompt", needs_realtime_data: "Current data", specialized_domain: "Specialized", too_complex_for_small_model: "Complex prompt", prompt_too_long: "Long prompt", default_energy_saving: "Simple prompt", waiting: "Waiting" };
 
 const els = {
   appShell: document.querySelector(".app-shell"),
@@ -79,9 +79,9 @@ function classifyQueryType(prompt) {
 }
 
 function resolveRoute(classification) {
-  if (classification.route === "LOCAL") return { route: "local", model: LOCAL_MODEL, label: "SEVEN - Local-class", profile: "Ryzen AI / XDNA 2 NPU projection" };
-  if (classification.route === "API_CHECK") return { route: "api", model: CLOUD_MODEL, label: "SEVEN - Current-data route", profile: "Direct API precheck + cloud-class summary projection" };
-  return { route: "cloud", model: CLOUD_MODEL, label: "SEVEN - Cloud-class", profile: "GPT-4o short prompt cloud baseline projection" };
+  if (classification.route === "LOCAL") return { route: "local", model: LOCAL_MODEL, label: "SEVEN Local", profile: "Ryzen AI / XDNA 2 NPU projection" };
+  if (classification.route === "API_CHECK") return { route: "api", model: CLOUD_MODEL, label: "SEVEN API", profile: "Direct API precheck + cloud-class summary projection" };
+  return { route: "cloud", model: CLOUD_MODEL, label: "SEVEN Cloud", profile: "GPT-4o short prompt cloud baseline projection" };
 }
 
 function estimateEnergy(route, tokens) {
@@ -119,7 +119,7 @@ function createChat(initialPrompt = "") {
 
 function render() {
   const chat = activeChat();
-  els.runtimePill.textContent = els.liveToggle.checked && sessionKey() ? "live OpenRouter mode" : "demo mode";
+  if (els.runtimePill) els.runtimePill.textContent = els.liveToggle.checked && sessionKey() ? "live OpenRouter mode" : "demo mode";
   els.homeScreen.hidden = Boolean(chat);
   els.chatScreen.hidden = !chat;
   els.appShell.dataset.view = chat ? "chat" : "home";
@@ -150,7 +150,7 @@ function renderChatList() {
 
 function renderChat(chat) {
   els.chatTitle.textContent = chat.title;
-  els.chatModelStatic.textContent = chat.lastRoute ? `${chat.lastRoute.label} - ${chat.lastRoute.model}` : "Router: local-class first";
+  els.chatModelStatic.textContent = chat.lastRoute ? `${chat.lastRoute.label} - ${chat.lastRoute.model}` : "Router ready";
   els.chatEnergyStatic.textContent = `${formatWh(chat.energy.usedWh)} used - ${formatWh(chat.energy.savedWh)} saved`;
   els.chatContainer.innerHTML = "";
   for (const message of chat.messages) els.chatContainer.append(renderMessage(message));
@@ -204,7 +204,7 @@ async function submitPrompt(prompt) {
   setPromptEnabled(false);
   try {
     const result = await routePrompt(chat, prompt);
-    chat.messages.push({ role: "assistant", content: result.text, timestamp: new Date().toISOString(), sourceLabel: `${result.label} - Used ${(result.energy.actualWh * 1000).toFixed(1)} mWh` });
+    chat.messages.push({ role: "assistant", content: result.text, timestamp: new Date().toISOString(), sourceLabel: `${result.label} - ${(result.energy.actualWh * 1000).toFixed(1)} mWh` });
     chat.energy.usedWh += result.energy.actualWh;
     chat.energy.savedWh += result.energy.savedWh;
     chat.lastRoute = result;
@@ -285,10 +285,10 @@ function shouldTryNextModel(status, body) {
 }
 
 function demoResponse(prompt, classification, target) {
-  if (target.route === "local") return ["Local-class response:", conciseAnswer(prompt), "", "SEVEN selected the small-model route because the prompt did not trip real-time, specialized-domain, long-form, or length heuristics."].join("\n");
+  if (target.route === "local") return conciseAnswer(prompt);
   const reason = reasonLabels[classification.reason] || classification.reason;
-  if (target.route === "api") return ["Current-data route response:", "This prompt asks for information that may change over time. In the full SEVEN system, this path performs a direct API check before composing the answer.", "", `Reason: ${reason}.`].join("\n");
-  return ["Cloud-class response:", "This request appears complex enough to justify a stronger model. SEVEN escalated rather than spending local-class inference on a likely insufficient answer.", "", `Reason: ${reason}. Prompt preview: "${prompt.slice(0, 140)}"`].join("\n");
+  if (target.route === "api") return `This may need current data, so SEVEN would check a direct-data path first. Reason: ${reason}.`;
+  return `This looks complex enough for the cloud-class route. Reason: ${reason}.`;
 }
 function conciseAnswer(prompt) {
   const lowered = prompt.toLowerCase();
@@ -314,7 +314,8 @@ function wireForm(form, textarea) {
     submitPrompt(prompt);
   });
   textarea.addEventListener("keydown", (event) => {
-    if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+    const submitShortcut = event.key === "Enter" && !event.shiftKey;
+    if (submitShortcut) {
       event.preventDefault();
       form.requestSubmit();
     }
@@ -350,9 +351,10 @@ wireForm(els.chatForm, els.chatPrompt);
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   deferredInstallPrompt = event;
+  if (!els.installButton) return;
   els.installButton.hidden = false;
 });
-els.installButton.addEventListener("click", async () => {
+els.installButton?.addEventListener("click", async () => {
   if (!deferredInstallPrompt) return;
   deferredInstallPrompt.prompt();
   await deferredInstallPrompt.userChoice;
