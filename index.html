@@ -21,87 +21,17 @@
       --green-s:  #e7f5ef;
       --orange:   #d95f02;
       --red:      #c0392b;
-      --sans: "Helvetica Neue", Arial, sans-serif;
-      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
+      --serif: "Charter", Georgia, "Times New Roman", serif;
       --mono: "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.6;
     }
 
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ── shell ── */
-    .page-shell {
-      width: min(1198px, calc(100% - 88px));
-      margin: 0 auto;
-      padding: 32px 0 72px;
-    }
-
-    /* ── hero ── */
-    .hero {
-      text-align: left;
-      margin-bottom: 34px;
-    }
-    .hero h1 {
-      color: #333333;
-      font-family: var(--serif);
-      font-size: clamp(48px, 5.8vw, 76px);
-      font-weight: 400;
-      line-height: .96;
-      letter-spacing: 0;
-      margin: 0 0 28px;
-      max-width: 1180px;
-    }
-    .subtitle {
-      max-width: 920px;
-      margin: 0 0 20px;
-      font-family: var(--serif);
-      font-size: 19px;
-      color: #333;
-      line-height: 1.62;
-    }
-    .paper-meta {
-      border-top: 1px solid var(--line);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      padding-top: 16px;
-      color: #8a8a8a;
-      font-family: var(--sans);
-      font-size: 14px;
-      line-height: 1.45;
-    }
-    .meta-item {
-      min-height: 44px;
-      padding: 0 18px;
-      border-left: 1px solid #e5e5e5;
-    }
-    .meta-item:first-child { border-left: 0; padding-left: 0; }
-    .meta-label {
-      display: block;
-      color: #777777;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-    .meta-label.is-bold { font-weight: 600; }
-    .meta-value {
-      display: block;
-      color: #9a9a9a;
-      font-size: 14px;
-    }
-    .paper-meta a { color: #8a8a8a; }
-    .paper-meta a:hover { color: var(--ink); }
-
     /* ── demo (embedded, no scroll) ── */
     .demo-embed {
-      width: min(960px, 100%);
+      width: 100%;
       border: 1px solid var(--line);
       overflow: hidden;
       margin: 24px 0 10px;
@@ -114,40 +44,23 @@
       overflow: hidden;
     }
     .demo-note {
+      font-family: var(--sans);
       font-size: 12px;
       color: var(--muted);
       text-align: left;
       margin-bottom: 44px;
-      width: min(960px, 100%);
     }
 
     /* ── article body ── */
-    article {
-      max-width: 960px;
-    }
-
     section { margin-bottom: 42px; }
-
-    h2 {
-      color: #222222;
-      font-family: var(--serif);
-      font-size: 34px;
-      font-weight: 400;
-      line-height: 1.08;
-      margin: 0 0 18px;
-      padding-bottom: 0;
-      border-bottom: 0;
+    /* Text runs in the shared reading column; demos and figures use the full width. */
+    article section > :is(h2, h3, p, ol, ul, blockquote, pre, .note) {
+      max-width: var(--article-column);
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    p {
-      font-family: var(--serif);
-      font-size: 19px;
-      line-height: 1.62;
-      color: #333;
-      margin-bottom: 18px;
-    }
-    p:last-child { margin-bottom: 0; }
-
+    article section > p { margin-bottom: 18px; }
+    article section > p:last-child { margin-bottom: 0; }
     /* ── pullquote ── */
     blockquote {
       border-left: 3px solid var(--ink);
@@ -333,87 +246,47 @@
     .references { font-size: 13px; font-family: var(--sans); }
     .references li { margin-bottom: 8px; color: #444; line-height: 1.5; }
 
-    /* ── footer ── */
-    footer {
-      margin-top: 48px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      font-size: 12px;
-      color: var(--muted);
-    }
-    footer p {
-      font-family: var(--sans);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-    @media (max-width: 760px) {
-      .page-shell {
-        width: min(100% - 28px, 960px);
-        padding-top: 22px;
-      }
-      .hero h1 {
-        font-size: clamp(40px, 13vw, 58px);
-        line-height: 1;
-      }
-      .paper-meta {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-      .meta-item {
-        min-height: 0;
-        padding: 0;
-        border-left: 0;
-      }
-      p {
-        font-size: 17px;
-      }
-      h2 {
-        font-size: 30px;
-      }
-    }
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" />
+  <link rel="stylesheet" href="/assets/fontawesome-free-7.2.0-web/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/stylesheets/site-nav.css?v=20260924" />
+  <link rel="stylesheet" href="/assets/stylesheets/article.css?v=20260924" />
 </head>
-<body>
-<div class="page-shell">
-
-  <!-- hero -->
-  <header class="hero">
-    <h1>SEVEN: Sustainable Energy via Efficient Neural Routing</h1>
-    <div class="paper-meta" aria-label="project metadata">
-      <div class="meta-item">
-        <span class="meta-label">Jaundel Simon</span>
-        <span class="meta-value">Portfolio</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label is-bold">Collaborators</span>
-        <span class="meta-value">Samin, Yusuf, Hamanpreet, Aadil</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">2025</span>
-        <span class="meta-value">UN SDG 7</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Demo:</span>
-        <span class="meta-value">embedded console</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Code:</span>
-        <span class="meta-value"><a href="https://github.com/Jaundel/SEVEN">repo</a></span>
-      </div>
+<body class="article-page" style="--article-tint: #e4eaf6; --article-tint-2: #f8fafd; --nav-dot: #3f6fd8;">
+    <div class="article-top">
+      <header class="site-shell site-nav">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="/">Home</a>
+          <a class="active" href="/projects.html">Projects</a>
+          <a href="/assets/Jaundel_Simon_Resume.pdf?v=20260917-resume">Resume</a>
+          <a href="/about.html">About</a>
+        </nav>
+        <nav class="social-links" aria-label="Social links">
+          <a href="https://www.instagram.com/tsampurado/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/Jaundel" aria-label="GitHub"><i class="fa-brands fa-github-alt"></i></a>
+          <a href="https://www.linkedin.com/in/jaundelsimon/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </nav>
+      </header>
+      <header class="site-shell article-hero">
+        <div class="article-intro">
+          <h1 class="article-title">SEVEN: Sustainable Energy via Efficient Neural Routing</h1>
+          <p class="article-byline">Jaundel Simon, with Samin, Yusuf, Hamanpreet and Aadil</p>
+          <p class="article-abstract">Every AI query, whether "What is 2+2?" or "Write a business plan", pays the same 0.34 Wh cloud toll. SEVEN intercepts queries before inference, classifies them in under 1 ms at zero cost, and routes each one to the smallest compute path that can answer correctly.</p>
+          <p class="article-links">
+            <a class="article-button" href="#demo">Demo <i class="fa-solid fa-play" aria-hidden="true"></i></a>
+            <a class="article-button" href="https://github.com/Jaundel/SEVEN">Code <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          </p>
+          <p class="article-venue">TMU Hack the World winner &middot; 2025</p>
+        </div>
+        <figure class="article-cover">
+          <img src="/assets/figures/seven-thumbnail.gif?v=right-fixed-natural" alt="SEVEN routing prompts between local, API and cloud paths" />
+        </figure>
+      </header>
     </div>
-  </header>
-
+  <main class="site-shell article-body">
   <article>
-
-    <section id="abstract">
-      <h2>Abstract</h2>
-      <p class="subtitle">
-        Every AI query, whether "What is 2+2?" or "Write a business plan", pays the same 0.34 Wh
-        cloud toll. SEVEN intercepts queries before inference, classifies them in under 1 ms at
-        zero cost, and routes each one to the smallest compute path that can answer correctly.
-      </p>
-    </section>
 
   <!-- demo embedded directly, no scroll -->
   <div id="demo" class="demo-embed">
@@ -732,11 +605,12 @@
 
   </article>
 
-  <footer>
-    <p>jaundel simon &nbsp;·&nbsp; <a href="https://jaundel.github.io/projects.html">portfolio</a> &nbsp;·&nbsp; <a href="https://github.com/Jaundel/SEVEN">github</a></p>
-  </footer>
+  </main>
 
-</div><!-- end page-shell -->
+    <footer class="site-shell article-footer">
+      <p>SEVEN &middot; Jaundel Simon &middot; 2025</p>
+      <p><a href="/projects.html">All projects</a></p>
+    </footer>
 
 <script>
   // animate bars on scroll into view
