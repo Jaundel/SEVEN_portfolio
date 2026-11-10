@@ -1,0 +1,19 @@
+{
+  "source_url": "https://github.com/Jaundel/SEVEN/blob/713203c0c59fe478a01c6c7ac9a24bb3d86e3bef/SEVEN/energy.py",
+  "source_sha256": "b4a121e5066f4058f3ea679997f95376ac93347482e2dc81542f05fa5295a414",
+  "interpretation": "Configured estimation coefficients, not independently validated measurements. Bounds are profile ranges, not statistical confidence intervals.",
+  "local": {
+    "key": "NPU_RYZEN_AI",
+    "plot_label": "Local profile (0.85 J/token)",
+    "joules_per_token": 0.85,
+    "coefficient_min": 0.4,
+    "coefficient_max": 1.3
+  },
+  "cloud": {
+    "key": "GPT4O_SHORT",
+    "plot_label": "Cloud profile (3.10 J/token)",
+    "joules_per_token": 3.1,
+    "coefficient_min": 2.5,
+    "coefficient_max": 3.5
+  }
+}
