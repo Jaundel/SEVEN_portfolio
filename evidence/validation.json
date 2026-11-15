@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checked_utc": "2026-11-15T19:17:40.805353+00:00",
+  "checked_utc": "2026-11-15T20:27:27.470812+00:00",
   "scope": "Local file/data integrity and complete video decode; browser checks recorded separately.",
   "relative_targets": 43,
   "publication_figures": 12,
@@ -11,7 +11,7 @@
   "decoded_frames": 1013,
   "decoded_duration_s": 67.533333,
   "article_sha256": {
-    "index.html": "82ff67ca49f92b22196b3919b2f0ed44763fc05926a6dfcfef89dc74721ea2f2",
+    "index.html": "9e6c875955219585fb4f09398383839511fbd2557cf7d85f195cac4118a9731c",
     "supplement.html": "0ad56e56d1f81461e9bc58c679ca5b339a92ca6fe0ea5225738d84000fb3a246",
     "article.css": "9606a0d8c2e030580112b302895a084b63e4a2efa62d8ccff2ede16b951ea211",
     "article-tokens.css": "932d807ca691bf6c5501e8f3e8b8611e4e56cdeb16039a452337ddf2a2d9115b",

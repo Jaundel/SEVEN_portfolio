@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checked_utc": "2026-11-15T19:17:41.362707+00:00",
+  "checked_utc": "2026-11-15T20:28:27.247048+00:00",
   "browser": {
     "passed": true,
     "scope": "Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, eight keyboard gallery selections and local HTTP links.",
@@ -279,49 +279,49 @@
       {
         "name": "home",
         "target": 2.8570000000065194,
-        "time": 2.8981,
+        "time": 2.8893,
         "keyboard": true
       },
       {
         "name": "profile-selection",
         "target": 6.903999999997905,
-        "time": 6.9337,
+        "time": 6.9185,
         "keyboard": true
       },
       {
         "name": "local-answer",
         "target": 14.746999999991385,
-        "time": 14.7686,
+        "time": 14.7634,
         "keyboard": true
       },
       {
         "name": "live-weather",
         "target": 33.48200000000652,
-        "time": 33.5133,
+        "time": 33.5128,
         "keyboard": true
       },
       {
         "name": "live-crypto",
         "target": 38.52899999999791,
-        "time": 38.5563,
+        "time": 38.5543,
         "keyboard": true
       },
       {
         "name": "live-news",
         "target": 44.90399999999791,
-        "time": 44.933,
+        "time": 44.9387,
         "keyboard": true
       },
       {
         "name": "cloud-answer",
         "target": 53.7,
-        "time": 53.7289,
+        "time": 53.7232,
         "keyboard": true
       },
       {
         "name": "reopened-history",
         "target": 61.76299999999465,
-        "time": 61.7874,
+        "time": 61.7912,
         "keyboard": true
       }
     ],
@@ -450,7 +450,7 @@
     "reducedMotionManualSelection": true
   },
   "source_sha256": {
-    "index.html": "82ff67ca49f92b22196b3919b2f0ed44763fc05926a6dfcfef89dc74721ea2f2",
+    "index.html": "9e6c875955219585fb4f09398383839511fbd2557cf7d85f195cac4118a9731c",
     "supplement.html": "0ad56e56d1f81461e9bc58c679ca5b339a92ca6fe0ea5225738d84000fb3a246",
     "article.css": "9606a0d8c2e030580112b302895a084b63e4a2efa62d8ccff2ede16b951ea211",
     "article-tokens.css": "932d807ca691bf6c5501e8f3e8b8611e4e56cdeb16039a452337ddf2a2d9115b",
@@ -479,21 +479,21 @@
     "evidence/check_preview_ranges.py": "c6dcd94d7236562290343c5b30bc1870ee9c2cc672866f3925cf4898984d8970"
   },
   "screenshots_sha256": {
-    "output/playwright/seven-finished-1440.png": "3ec36878c84e89befd64251c7f223579d9b25cdfc2a62ba5b14eb4378dcb25c8",
-    "output/playwright/seven-finished-390.png": "9917c2e7b5eed3c13246e036fdaa14576c10c2331e70935073bb1452268f4708",
-    "output/playwright/seven-finished-answers-1440.png": "d37a8262fae31148981a4de8cc45f93b1ccd4bbe1319319e03d5d4163755969e",
-    "output/playwright/seven-finished-answers-390.png": "8c460c9ab097c83bb7d1f877a5429f4d34c1ffefc28d6eda7cbeb42b83720ee3",
-    "output/playwright/seven-finished-demo-1440.png": "aee41438db3033d9f1c55c452f369cc59a961b44690346308427fbb99a36d9d0",
-    "output/playwright/seven-finished-demo-390.png": "cc6e3a60a52bf5b33bf79b3cbf206c9984c2cce8e6fbb17067a1747f562f9d40",
-    "output/playwright/seven-finished-energy-1440.png": "907250328472f64f68b5fed1d2f5e1bc221718e65d8286467b1397a6ed9564ef",
-    "output/playwright/seven-finished-energy-390.png": "20382e39317635f327f7f49ece732de6eacf731a79d936de98acf2413e4ef8ec",
-    "output/playwright/seven-finished-measurement-1440.png": "8a20fb7fc662544821fadd50e9776b833216dc21cfb02de803ca3f485fde93f3",
-    "output/playwright/seven-finished-measurement-390.png": "003a667f19918f7a892c192d56a0fe5b7642d825a91fbbb0285876711714ac65",
-    "output/playwright/seven-finished-routing-1440.png": "7651304239703e2829d60879d0c5ccbaa016c3a4e7140189541a58ae6626319f",
-    "output/playwright/seven-finished-routing-390.png": "66656b71fe752202de986f18f548fa9615dd1a0ab979248ca1a9d2a637a1dac0",
-    "output/playwright/seven-finished-system-1440.png": "cb914688005afcd8c21e63b1f21544ddda335f1b234a43e820079cc7bff5736c",
-    "output/playwright/seven-finished-system-390.png": "b020a4ad7e56202c6edbf28281128903a679356686d353b7cbcd7de081a8ed82",
-    "output/playwright/seven-finished-top-1440.png": "cb9c3b8047859412e8abcaed51ad9ecefb4bd820c8849af4992e593d500d1836",
-    "output/playwright/seven-finished-top-390.png": "988ece3c9161e9af2ad76e131bc6cb163d0b2ee40b8c8a3310c5464e12b5846b"
+    "output/playwright/seven-finished-1440.png": "50e879e62f496fa445f134cb7cab3ad51e4a6eb31af768feb045cc357db2ab85",
+    "output/playwright/seven-finished-390.png": "63d521474ebfa6b1f2c9eb7fad1df267eb4cc25bce9cc4f1d826bb6f5df423ef",
+    "output/playwright/seven-finished-answers-1440.png": "d1642888620225328fb504b5c1e72487a8452acae5a0156e58e94b140c75ee6b",
+    "output/playwright/seven-finished-answers-390.png": "a6b405eb384c974eb2cac057a37247d7ee29121a6457117895113b9282aab097",
+    "output/playwright/seven-finished-demo-1440.png": "d3201593234d982381ac2b0e0afb73d48478b299235d54a3fa44c59f83710cd2",
+    "output/playwright/seven-finished-demo-390.png": "154a85a272ada0d92fd4cfe69f409f76648f6ac076c1408688a0e67688fa0a96",
+    "output/playwright/seven-finished-energy-1440.png": "04ef177060a47892e320576fd3a1ec6723f2b4752e11d9f428479af14a9e9bfa",
+    "output/playwright/seven-finished-energy-390.png": "acc7e21c497ceab4c07745b8e4fc207fd292232980876c453a0943d9cf298ce7",
+    "output/playwright/seven-finished-measurement-1440.png": "22ac72684a7826a13b2b6a18444fffa5fb9efb91cc4fed29439c8af16ed19dbc",
+    "output/playwright/seven-finished-measurement-390.png": "6dce1b4d0e093c93138e1df6d296e0ee90e26894004fd3883d20496805432606",
+    "output/playwright/seven-finished-routing-1440.png": "59030dc65e77e9a7f2481dc1c7255b3780e7ce73ca122fbf1030a73e0d90bbb4",
+    "output/playwright/seven-finished-routing-390.png": "130665a23ba1b63b0b1fe2ade0c1fd748c038f837343cc6149edea2a1c4d005e",
+    "output/playwright/seven-finished-system-1440.png": "372a32026b9eed838b1e547de4dbd8111aeeebca0c589dc1a532a41851763009",
+    "output/playwright/seven-finished-system-390.png": "d41c6ef81ffe7a5f2e7913d8f19ea4980904fe79f66bf0c2118c58247bb77a9b",
+    "output/playwright/seven-finished-top-1440.png": "3d7051239a7f65871c29b45902e5f178bffdac8b87b5284dffd40e33a136ee0d",
+    "output/playwright/seven-finished-top-390.png": "bbb34ae98973d02c728f1542dac7cccd5dea855d3da8794616dcbf2bbe8baf80"
   }
 }
