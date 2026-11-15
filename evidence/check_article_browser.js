@@ -9,7 +9,7 @@ async page=>{
  const figureWindow=page.waitForEvent('popup');
  await page.locator('.system-figure>a').click();
  const enlarged=await figureWindow;await enlarged.waitForLoadState('domcontentloaded');
- assert(enlarged.url().endsWith('/assets/figures/system-architecture.svg'),'Figure does not open at full size');
+ assert(new URL(enlarged.url()).pathname.endsWith('/assets/figures/system-architecture.svg'),'Figure does not open at full size');
  assert(await enlarged.locator('svg').count()===1,'Vector figure not rendered');
  await enlarged.close();
  const manifest=await (await page.request.get(base+'evidence/demo/manifest.json')).json();

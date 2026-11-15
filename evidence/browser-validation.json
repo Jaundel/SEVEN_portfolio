@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checked_utc": "2026-11-15T18:08:16.796181+00:00",
+  "checked_utc": "2026-11-15T18:11:36.592049+00:00",
   "browser": {
     "passed": true,
     "scope": "Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.",
@@ -13,7 +13,7 @@
         "fontCharter": true,
         "pictures": [
           {
-            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg?v=fabe87002efc",
             "loaded": true,
             "width": 324,
             "height": 183
@@ -80,7 +80,7 @@
         "fontCharter": true,
         "pictures": [
           {
-            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg?v=fabe87002efc",
             "loaded": true,
             "width": 354,
             "height": 200
@@ -147,7 +147,7 @@
         "fontCharter": true,
         "pictures": [
           {
-            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg?v=fabe87002efc",
             "loaded": true,
             "width": 684,
             "height": 386
@@ -214,7 +214,7 @@
         "fontCharter": true,
         "pictures": [
           {
-            "url": "http://127.0.0.1:8765/assets/figures/system-architecture.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture.svg?v=fabe87002efc",
             "loaded": true,
             "width": 946,
             "height": 533
@@ -279,19 +279,19 @@
       {
         "name": "local-answer",
         "target": 14.746999999991385,
-        "time": 14.7717,
+        "time": 14.7784,
         "keyboard": true
       },
       {
         "name": "live-weather",
         "target": 33.48200000000652,
-        "time": 33.4983,
+        "time": 33.5085,
         "keyboard": true
       },
       {
         "name": "cloud-answer",
         "target": 53.7,
-        "time": 53.7224,
+        "time": 53.7303,
         "keyboard": true
       }
     ],
@@ -393,7 +393,7 @@
     "unavailableMedia": "The recording could not load. Reload the page to try again."
   },
   "source_sha256": {
-    "index.html": "f9435ae664db347c40ef9880fda2bcc1fe87ccf9aebf891383414582fe6b6161",
+    "index.html": "7acd4dcad6236ceaba021c773ae3fd5b22b2969e2786ba7a1986f7831eb99bd1",
     "supplement.html": "ece1fcfb01045da51c76fac8967c5c817a29c285c2a71e72ea93f117c43bb407",
     "article.css": "001217dd1a30d4f6f20dd082dd8ba9f4480101425a14bfb3b6a634a334fd9b09",
     "article-tokens.css": "688874f302b3d7a0bc6c5210a68f57f93e1f8cb8cb870865a56fe7c2e6ac052c",
@@ -413,7 +413,7 @@
     "data/system-trace.json": "a1673d7c285d30d9cca4e18ebbbf25dd681789dcb446bc4f1f0d2588a872a5ae",
     "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
     "evidence/publication-figures.json": "4c54e2405b9958ed4f5c4d519c0cdfc647813b6e67b4efb4adbdda7758ca1db2",
-    "evidence/check_article_browser.js": "207d90d5501744cbcaafff672a178ae017c1f7e3ce213332e0eaff117cd4b1f6",
+    "evidence/check_article_browser.js": "91432d9e1ed1119beb293d8e432be08dbb135de596ab5304de630c678f0e3daa",
     "evidence/check_video_loading.js": "bce6f7215f91b9af40b1caaca70133718ee3ab78f42bd3ef69ce052658b476d5",
     "evidence/check_video_resilience.js": "ab6de35d494e55d73bbb85a19e6c665c21c132adbe0f8fe1554a277031c0ac38",
     "evidence/serve_preview.py": "d6f1138b92491e8e7768e4c7be7ccae56f9f0028a1817955bf8e4ae7e979608f",
@@ -421,7 +421,7 @@
   },
   "screenshots_sha256": {
     "output/playwright/seven-finished-1440.png": "79d5ba884f13c4164304fb7703e47698b5763285771d11d6f17bc76a440e2836",
-    "output/playwright/seven-finished-390.png": "3eae36b14ad61ace50acd00f6461f11c24fca826b132f99e042925a8800e674e",
+    "output/playwright/seven-finished-390.png": "12bbd9c7cd58570eecb39a3a320c13ac950bcb256b430cb1b967a1412fde9c40",
     "output/playwright/seven-finished-answers-1440.png": "3879e0554e6baae33bbee5128e2a35b69634353fda2f839f451f78b6bae46584",
     "output/playwright/seven-finished-answers-390.png": "2c8b36efa57e425034510f45850fe12562e614f7452c7d438757a1c0884983c9",
     "output/playwright/seven-finished-energy-1440.png": "28c5b96ed67e5ed92c1ba1997172159166d41c2fcf943c919a7b4adc2d8a2a83",
@@ -432,7 +432,7 @@
     "output/playwright/seven-finished-routing-390.png": "f340ac07d25d58d238f95d3b711ffcf1cb219e1e7ee896ad4c6f8b75428631fb",
     "output/playwright/seven-finished-system-1440.png": "f9097a32f42775b153aec93abbe1ae31c93937588fa2713b3ccb0fafc1be12f6",
     "output/playwright/seven-finished-system-390.png": "94b16eb536859437766662d771c3641d96bca0112472d745c8aab0f1a0560c97",
-    "output/playwright/seven-finished-top-1440.png": "b3b75a3ecd71e81432156075850a1895629fffbb164529e780aa748fc8c99e24",
-    "output/playwright/seven-finished-top-390.png": "e41b6e0293da545f6f9dd1f1796707fa21eee76f0f66a0760a82d77ad5fef564"
+    "output/playwright/seven-finished-top-1440.png": "cb9c3b8047859412e8abcaed51ad9ecefb4bd820c8849af4992e593d500d1836",
+    "output/playwright/seven-finished-top-390.png": "d034f03345800f5478cf8ef4e8e63d045d136b695ad9c899d2c40f5b20c63293"
   }
 }
