@@ -1,0 +1,33 @@
+{
+  "sans": "Poppins",
+  "serif": "Charter",
+  "colors": {
+    "ink": "#161b22",
+    "text": "#353535",
+    "muted": "#646c74",
+    "line": "#d7dadd",
+    "wash": "#f6f6f6",
+    "tint": "#e6ecef",
+    "link": "#1d63b7",
+    "local": "#376c97",
+    "api": "#995d46",
+    "cloud": "#7b649b",
+    "match": "#7d9fc4",
+    "miss": "#e0e3e5"
+  },
+  "configurations": [
+    {"label": "Original / plaintext", "color": "#8b7f9f"},
+    {"label": "Template exposed", "color": "#85949e"},
+    {"label": "Revised local prompt", "color": "#4b7da8"}
+  ],
+  "font_faces": [
+    {"family": "Poppins", "file": "Poppins-Regular.ttf", "weight": 400, "style": "normal"},
+    {"family": "Poppins", "file": "Poppins-Medium.ttf", "weight": 500, "style": "normal"},
+    {"family": "Poppins", "file": "Poppins-SemiBold.ttf", "weight": 600, "style": "normal"},
+    {"family": "Poppins", "file": "Poppins-Italic.ttf", "weight": 400, "style": "italic"},
+    {"family": "Charter", "file": "charter_regular.woff2", "weight": 400, "style": "normal"},
+    {"family": "Charter", "file": "charter_italic.woff2", "weight": 400, "style": "italic"},
+    {"family": "Charter", "file": "charter_bold.woff2", "weight": 700, "style": "normal"},
+    {"family": "Charter", "file": "charter_bold_italic.woff2", "weight": 700, "style": "italic"}
+  ]
+}

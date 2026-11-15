@@ -1,0 +1,1588 @@
+{
+  "utc": "20261115T032313Z",
+  "capture_method": "Real Textual application and Pilot keyboard events; native renderer frames, no mocked providers or responses.",
+  "visible": true,
+  "git_head": "713203c0c59fe478a01c6c7ac9a24bb3d86e3bef",
+  "source_sha256": {
+    "SEVEN\\api_check.py": "2a3f1a11cff9ede627e3675bf1cddcfb673c1517d9ebc401bdb4aa620009b2e4",
+    "SEVEN\\api_tools.py": "f2799183251b308a440bdbb4c35e5adba581c30745952abaa330effa28c64155",
+    "SEVEN\\cloud_model.py": "499036ad378d1da90e9ad50bd2f07c5b039cccc8b87bc4af4597a3d2dd32cb91",
+    "SEVEN\\energy.py": "0d9730656ae80caf45157202499363542568beaca373b4d94ebe0619b2546ab6",
+    "SEVEN\\heuristics.py": "4f470cd24918b19ae66faf36f1fce24496c3058bd77663fd413ecd9e4af2f016",
+    "SEVEN\\local_model.py": "f4416cb29cd3429b903f84b16b79943e8e38e8a04b259719288fbec7c2f07db7",
+    "SEVEN\\main.py": "03f8eea160feff9140caec0f6c03750011c0b6c93124249114e308447c289c0e",
+    "SEVEN\\prompts.py": "260a171ba80d7489bd54b42609f5434234282cc71c468a230f3b85ce94eb3485",
+    "SEVEN\\public_tools.py": "56384b973ded40421057330197ba4f08b97e91f857e870d3e48cee75dbf893e5",
+    "SEVEN\\router.py": "ca4354967edc1c60ec50f4317dfd15251b70540f8c1bc628512f6f1deaad1365",
+    "SEVEN\\settings.py": "f83c2c6189c4889270c2a98b4d7db5f627e5f9f6617d4dde6421588001f666a1",
+    "SEVEN\\__init__.py": "fd0cc6e329ccda1e431a56b5e1fd8f895ae347228935be5dcbb9277fda1550af",
+    "SEVEN\\__main__.py": "130acafaef8483625c857235eb995dace14121a5ba10eec2c7464c9f045153a7",
+    "apps\\elia\\elia_chat\\app.py": "d9da2b873e9d82050b8e3272eaa3d964c4ca054ec9fa93f27114aca61c717401",
+    "apps\\elia\\elia_chat\\chats_manager.py": "71878a69a75dca2909daf397137667fb8937d999814aad78c4d9999ad11ca4f9",
+    "apps\\elia\\elia_chat\\config.py": "0077bd0693edab50410437f16d9ad7b75f0d844bca19c659d19f7a6ece988655",
+    "apps\\elia\\elia_chat\\constants.py": "a7f07a1ec3153f472b9be0ce73655ab02e566a8c712010f897c79e56f2aad249",
+    "apps\\elia\\elia_chat\\energy_equivalents.py": "49e14e947699315b2b42172eb1baa238689d7f4f9359e046d540478248598145",
+    "apps\\elia\\elia_chat\\launch_args.py": "3f6333a7518a3630b3c397431122f80ff418fdd2052f2872ff5522107f4a5e73",
+    "apps\\elia\\elia_chat\\locations.py": "3b9d55b2313d486994367002c90b31b1fe3708e12dc992f84388e3efb8d77d92",
+    "apps\\elia\\elia_chat\\models.py": "6c59793eebada53d7c23182bcbd79168ebbe325cf266ebf5affbac046a327a3f",
+    "apps\\elia\\elia_chat\\runtime_config.py": "59fcfd6712fff46613afd9c9788aa50f409ee47ae18a888025a964442ac8a589",
+    "apps\\elia\\elia_chat\\seven_adapter.py": "8dcc0d9f74f7406a1b9d577533a0bab066465f6033b4ba774e5a61706df192dd",
+    "apps\\elia\\elia_chat\\themes.py": "cd0b3391253a1ccd4326ee8fcc5bdd487b8c4539362a76958fc1b4fd3ff94401",
+    "apps\\elia\\elia_chat\\time_display.py": "c17c21b30dee5e494f7d19fd9f3c61481446faee18494deda114cb7d47f19672",
+    "apps\\elia\\elia_chat\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "apps\\elia\\elia_chat\\__main__.py": "90560693fd5b123986ca8caa8133bee9a0de3e60fda2b96563b356a6463fab5c",
+    "apps\\elia\\elia_chat\\database\\converters.py": "349f548573b4761664ff16378703dbbe6f346d06a67f2fed6f78321a67cc3ce9",
+    "apps\\elia\\elia_chat\\database\\database.py": "a2ea1c118b56f08f41574bdf22f8f2e53624812d50b42cc21c00ddbd070cbfa5",
+    "apps\\elia\\elia_chat\\database\\import_chatgpt.py": "adf7474a46f46a94686e1962727efa57a31245e15452bb79c864681428874807",
+    "apps\\elia\\elia_chat\\database\\models.py": "8b0b0c914f79691130f4dc07da2394b080a35b46da9f8ae5e0a60b6ebfb26b5c",
+    "apps\\elia\\elia_chat\\database\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "apps\\elia\\elia_chat\\screens\\chat_details.py": "6132f5cfb92dc91709ba2c4d478642caf9cb58ea850536082fcb402eee994a02",
+    "apps\\elia\\elia_chat\\screens\\chat_screen.py": "acb1617f6d66b4104539fa069c9d8788ebdf9031dd153b184e799b95c0ab74ce",
+    "apps\\elia\\elia_chat\\screens\\help_screen.py": "6fbca66074e8bf3a577dbe058ccd3027951c902cbaa9dac5109ca70742cd000c",
+    "apps\\elia\\elia_chat\\screens\\home_screen.py": "6f033e19a475caf4afc10938c36dbbfb4221ff87cf32f788a67698eb7a670100",
+    "apps\\elia\\elia_chat\\screens\\rename_chat_screen.py": "4a762821db0446698df1a0204ac4dd3c4b863081b049d22288a7af5f6599b746",
+    "apps\\elia\\elia_chat\\widgets\\agent_is_typing.py": "e169ee2a06a0b26626d8a0c4a33a99560d3becdfeca00358c755f63fa95aadf4",
+    "apps\\elia\\elia_chat\\widgets\\app_header.py": "5fe9088d468ee15cad42534c594ccd92f17898bb9b3f73cc33a2fc686069310d",
+    "apps\\elia\\elia_chat\\widgets\\chat.py": "551ec73e0ec6201b43e3a7561b14c0ab98e07216b83752412dfe226f540d1c3a",
+    "apps\\elia\\elia_chat\\widgets\\chatbox.py": "be52cbdc2fd515538ac457310aba6a52ef32a06da6b2e0a2cfe45181be058264",
+    "apps\\elia\\elia_chat\\widgets\\chat_header.py": "13016fc36e2ec9cbc8a3e2ef99ea63bc0c3ab6aabae515c26a60a1a8689631ac",
+    "apps\\elia\\elia_chat\\widgets\\chat_list.py": "c4da77884a178d94af060cd2238fd9bd7e69c2850ba46a98c0cbfa15c6954898",
+    "apps\\elia\\elia_chat\\widgets\\chat_options.py": "4ed9d9a7b054d2420c972d168e0426dcf1e6ec814ccb5f414458e8983243e727",
+    "apps\\elia\\elia_chat\\widgets\\energy_stats.py": "9493c304bd5a8ea253dd6710b2af909fb48c81f8a19d5ae3fbbef0315782ebc3",
+    "apps\\elia\\elia_chat\\widgets\\prompt_input.py": "851b7c05bdbd11dae1b088d5fe0fbd600e09172d70d769cf58ebe82d016fb35d",
+    "apps\\elia\\elia_chat\\widgets\\token_analysis.py": "c00c363b773bd22d1ec718400b05628eb01dafa5d2a55788f4b5581a869e6017",
+    "apps\\elia\\elia_chat\\widgets\\welcome.py": "95dc37de9a9f268f6166db6c6205048c77b90552ee242eb027c329ddccb09328",
+    "tools\\capture_full_window.py": "f3e90a0169914a2c61de0714fc8a6e0361e8f744551cb550aa59e6d13645345b",
+    "tools\\prepare_runtime.py": "8e35d0f3a042dbce485cf9a163e6107e3f4942e02ee8f9ae673c27038309a7c9",
+    "tools\\render_recording.py": "476357739c84cd2fe952a4aacfcad5a72bc3c1fd716fdb29a7b4a3a2c3e31616",
+    "tools\\verify_resize.py": "5b14b2c24b3428cd3ae2bb91c617ee97d479c16ff713907033a37bda9f2a1976",
+    "tools\\verify_tui.py": "63e181d957ff60d663e70678ab866cf934a7f775c41458e00b54815c382c1d57",
+    "tools\\window_recorder.py": "fa6777d12c1e1ce23f7357698a468e2498355eb2f88934497e96750aa93d2e70",
+    "apps\\elia\\elia_chat\\elia.scss": "d1b0ee1f98774a9f2d657379d068288c13e2af085a9ff0e44a857390d9c1f0da",
+    "cli.py": "2cb637230496f919a6085d47ac434341fccd4c1fdda09785eb54370596be0034",
+    "Start-SEVEN.ps1": "9d23f8c8823680ca9fd474eefe193d6db4c8b5ff4509c32c543b9b014ac8ad4d"
+  },
+  "scope": "Functional routing and interface verification, not an answer-quality benchmark. Original model replies are retained.",
+  "checks": {
+    "profile_selection": true,
+    "failure_then_retry": null,
+    "history_source_label": true,
+    "rename_persistence": true,
+    "chat_details": true,
+    "archive_from_history": true
+  },
+  "results": [
+    {
+      "case": "local-answer",
+      "prompt": "What is the capital of France?",
+      "text": "The capital of France is Paris.",
+      "metadata": {
+        "route": "local",
+        "model": "llama-model",
+        "latency_s": 1.4678303000109736,
+        "source_label": "SEVEN · Local · Est. 14.6 mWh · 38.8 mWh vs profile",
+        "energy_basis": "Configured profile estimate, not measured electricity.",
+        "energy_wh": 0.014638888888888887,
+        "energy_saved_wh": 0.03875000000000001,
+        "energy_profile": "Ryzen AI / XDNA 2 NPU (1–3B SLM)",
+        "energy_baseline_profile": "GPT-4o short prompt (Jegham 2025)"
+      },
+      "chat_id": 1
+    },
+    {
+      "case": "keyword-boundaries",
+      "prompt": "Explain whether a triangle has three sides.",
+      "text": "A triangle by definition has exactly three sides, which are called the three vertices or corners of the triangle. These sides meet at a common point called the vertex or apex of the triangle.\n\nThe three sides of a triangle are:\n\n1. Two line segments that meet at one end (called the base)\n2. One line segment that meets the other end (called the height)\n\nThese three line segments form the sides of the triangle, making it a valid geometric shape with these specific characteristics.",
+      "metadata": {
+        "route": "local",
+        "model": "llama-model",
+        "latency_s": 3.225976699992316,
+        "source_label": "SEVEN · Local · Est. 36.4 mWh · 96.2 mWh vs profile",
+        "energy_basis": "Configured profile estimate, not measured electricity.",
+        "energy_wh": 0.036361111111111115,
+        "energy_saved_wh": 0.09625,
+        "energy_profile": "Ryzen AI / XDNA 2 NPU (1–3B SLM)",
+        "energy_baseline_profile": "GPT-4o short prompt (Jegham 2025)"
+      },
+      "chat_id": 2
+    },
+    {
+      "case": "live-weather",
+      "prompt": "What is the weather in Toronto right now?",
+      "text": "Toronto, Ontario, Canada — 2.5 °C, humidity 75%, wind 16.5 km/h.\nModelled conditions for 2026-11-14T22:15 (America/Toronto). Source: Open-Meteo (https://open-meteo.com/). Retrieved 2026-11-15T03:23:55+00:00.",
+      "metadata": {
+        "route": "api_check",
+        "model": "api-direct",
+        "latency_s": 1.7252998999902047,
+        "source_label": "SEVEN · Live data",
+        "energy_basis": "Configured profile estimate, not measured electricity."
+      },
+      "chat_id": 3
+    },
+    {
+      "case": "live-crypto",
+      "prompt": "BTC price now",
+      "text": "BTC: $65,192.38 USD — Coinbase spot quote. Retrieved 2026-11-15T03:24:00+00:00.\nSource: https://api.coinbase.com/v2/prices/BTC-USD/spot",
+      "metadata": {
+        "route": "api_check",
+        "model": "api-direct",
+        "latency_s": 0.5192590999940876,
+        "source_label": "SEVEN · Live data",
+        "energy_basis": "Configured profile estimate, not measured electricity."
+      },
+      "chat_id": 4
+    },
+    {
+      "case": "live-news",
+      "prompt": "Latest technology news",
+      "text": "Latest entry in BBC technology feed:\nItaly fines Meta €805m over accessing users' photos\nPublished: Sat, 14 Nov 2026 18:28:06 GMT. Retrieved 2026-11-15T03:24:06+00:00.\nhttps://www.bbc.co.uk/news/articles/cwn83gxemk35o?at_medium=RSS&at_campaign=rss\nThis is one feed entry, not an exhaustive search of the requested topic.",
+      "metadata": {
+        "route": "api_check",
+        "model": "api-direct",
+        "latency_s": 0.8416073000116739,
+        "source_label": "SEVEN · Live data",
+        "energy_basis": "Configured profile estimate, not measured electricity."
+      },
+      "chat_id": 5
+    },
+    {
+      "case": "cloud-answer",
+      "prompt": "Explain quantum entanglement in two sentences.",
+      "text": "Quantum entanglement is a phenomenon where two or more particles become interconnected in such a way that the state of one particle instantaneously influences the state of the other, regardless of the distance separating them. This non-local correlation challenges classical intuitions about separability and locality, leading to implications for quantum information and communication technologies.",
+      "metadata": {
+        "route": "cloud",
+        "model": "gpt-4o-mini-2024-07-18",
+        "latency_s": 1.6811580999928992,
+        "source_label": "SEVEN · Cloud · Est. 83.5 mWh",
+        "energy_basis": "Configured profile estimate, not measured electricity.",
+        "energy_wh": 0.08352777777777777,
+        "energy_profile": "GPT-4o short prompt (Jegham 2025)"
+      },
+      "chat_id": 6
+    },
+    {
+      "case": "local-after-cloud",
+      "prompt": "What is 2 + 2? Answer with the number only.",
+      "text": "4",
+      "metadata": {
+        "route": "local",
+        "model": "llama-model",
+        "latency_s": 0.8903646999970078,
+        "source_label": "SEVEN · Local · Est. 37.8 mWh · 100.0 mWh vs profile",
+        "energy_basis": "Configured profile estimate, not measured electricity.",
+        "energy_wh": 0.03777777777777778,
+        "energy_saved_wh": 0.1,
+        "energy_profile": "Ryzen AI / XDNA 2 NPU (1–3B SLM)",
+        "energy_baseline_profile": "GPT-4o short prompt (Jegham 2025)"
+      },
+      "chat_id": 6
+    }
+  ],
+  "frames": [
+    {
+      "file": "frame-00000.svg",
+      "elapsed_s": 9.062999999994645,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "home"
+    },
+    {
+      "file": "frame-00001.svg",
+      "elapsed_s": 10.171999999991385,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00002.svg",
+      "elapsed_s": 10.765999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00003.svg",
+      "elapsed_s": 10.875,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "help"
+    },
+    {
+      "file": "frame-00004.svg",
+      "elapsed_s": 11.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00005.svg",
+      "elapsed_s": 11.60999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00006.svg",
+      "elapsed_s": 12.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00007.svg",
+      "elapsed_s": 12.60999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00008.svg",
+      "elapsed_s": 13.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "profile-selection"
+    },
+    {
+      "file": "frame-00009.svg",
+      "elapsed_s": 13.155999999988126,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00010.svg",
+      "elapsed_s": 13.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00011.svg",
+      "elapsed_s": 14.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00012.svg",
+      "elapsed_s": 14.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00013.svg",
+      "elapsed_s": 15.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00014.svg",
+      "elapsed_s": 15.577999999979511,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00015.svg",
+      "elapsed_s": 16.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00016.svg",
+      "elapsed_s": 16.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00017.svg",
+      "elapsed_s": 17.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00018.svg",
+      "elapsed_s": 17.140999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "local-answer-prompt"
+    },
+    {
+      "file": "frame-00019.svg",
+      "elapsed_s": 17.625,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00020.svg",
+      "elapsed_s": 18.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00021.svg",
+      "elapsed_s": 18.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00022.svg",
+      "elapsed_s": 19.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00023.svg",
+      "elapsed_s": 19.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00024.svg",
+      "elapsed_s": 20.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00025.svg",
+      "elapsed_s": 20.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00026.svg",
+      "elapsed_s": 20.95299999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "local-answer"
+    },
+    {
+      "file": "frame-00027.svg",
+      "elapsed_s": 21.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00028.svg",
+      "elapsed_s": 21.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00029.svg",
+      "elapsed_s": 22.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00030.svg",
+      "elapsed_s": 22.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00031.svg",
+      "elapsed_s": 23.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00032.svg",
+      "elapsed_s": 23.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00033.svg",
+      "elapsed_s": 24.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00034.svg",
+      "elapsed_s": 24.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00035.svg",
+      "elapsed_s": 25.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00036.svg",
+      "elapsed_s": 25.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00037.svg",
+      "elapsed_s": 25.671999999991385,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "keyword-boundaries-prompt"
+    },
+    {
+      "file": "frame-00038.svg",
+      "elapsed_s": 26.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00039.svg",
+      "elapsed_s": 26.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00040.svg",
+      "elapsed_s": 27.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00041.svg",
+      "elapsed_s": 27.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00042.svg",
+      "elapsed_s": 28.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00043.svg",
+      "elapsed_s": 28.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00044.svg",
+      "elapsed_s": 29.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00045.svg",
+      "elapsed_s": 29.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00046.svg",
+      "elapsed_s": 30.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00047.svg",
+      "elapsed_s": 30.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00048.svg",
+      "elapsed_s": 31.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00049.svg",
+      "elapsed_s": 31.265999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "keyword-boundaries"
+    },
+    {
+      "file": "frame-00050.svg",
+      "elapsed_s": 31.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00051.svg",
+      "elapsed_s": 32.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00052.svg",
+      "elapsed_s": 32.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00053.svg",
+      "elapsed_s": 33.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00054.svg",
+      "elapsed_s": 33.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00055.svg",
+      "elapsed_s": 34.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00056.svg",
+      "elapsed_s": 34.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00057.svg",
+      "elapsed_s": 35.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00058.svg",
+      "elapsed_s": 35.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00059.svg",
+      "elapsed_s": 35.640999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "live-weather-prompt"
+    },
+    {
+      "file": "frame-00060.svg",
+      "elapsed_s": 36.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00061.svg",
+      "elapsed_s": 36.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00062.svg",
+      "elapsed_s": 37.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00063.svg",
+      "elapsed_s": 37.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00064.svg",
+      "elapsed_s": 38.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00065.svg",
+      "elapsed_s": 38.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00066.svg",
+      "elapsed_s": 39.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00067.svg",
+      "elapsed_s": 39.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00068.svg",
+      "elapsed_s": 39.687999999994645,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "live-weather"
+    },
+    {
+      "file": "frame-00069.svg",
+      "elapsed_s": 40.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00070.svg",
+      "elapsed_s": 40.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00071.svg",
+      "elapsed_s": 41.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00072.svg",
+      "elapsed_s": 41.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00073.svg",
+      "elapsed_s": 42.015999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "live-crypto-prompt"
+    },
+    {
+      "file": "frame-00074.svg",
+      "elapsed_s": 42.125,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00075.svg",
+      "elapsed_s": 42.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00076.svg",
+      "elapsed_s": 43.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00077.svg",
+      "elapsed_s": 43.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00078.svg",
+      "elapsed_s": 44.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00079.svg",
+      "elapsed_s": 44.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00080.svg",
+      "elapsed_s": 44.73499999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "live-crypto"
+    },
+    {
+      "file": "frame-00081.svg",
+      "elapsed_s": 45.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00082.svg",
+      "elapsed_s": 45.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00083.svg",
+      "elapsed_s": 46.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00084.svg",
+      "elapsed_s": 46.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00085.svg",
+      "elapsed_s": 47.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00086.svg",
+      "elapsed_s": 47.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00087.svg",
+      "elapsed_s": 47.890999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "live-news-prompt"
+    },
+    {
+      "file": "frame-00088.svg",
+      "elapsed_s": 48.140999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00089.svg",
+      "elapsed_s": 48.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00090.svg",
+      "elapsed_s": 49.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00091.svg",
+      "elapsed_s": 49.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00092.svg",
+      "elapsed_s": 50.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00093.svg",
+      "elapsed_s": 50.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00094.svg",
+      "elapsed_s": 51.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00095.svg",
+      "elapsed_s": 51.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "live-news"
+    },
+    {
+      "file": "frame-00096.svg",
+      "elapsed_s": 51.60999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00097.svg",
+      "elapsed_s": 52.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00098.svg",
+      "elapsed_s": 52.640999999974156,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00099.svg",
+      "elapsed_s": 53.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00100.svg",
+      "elapsed_s": 53.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00101.svg",
+      "elapsed_s": 54.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00102.svg",
+      "elapsed_s": 54.671999999991385,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00103.svg",
+      "elapsed_s": 55.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00104.svg",
+      "elapsed_s": 55.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00105.svg",
+      "elapsed_s": 55.73499999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "cloud-answer-prompt"
+    },
+    {
+      "file": "frame-00106.svg",
+      "elapsed_s": 56.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00107.svg",
+      "elapsed_s": 56.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00108.svg",
+      "elapsed_s": 57.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00109.svg",
+      "elapsed_s": 57.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00110.svg",
+      "elapsed_s": 58.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00111.svg",
+      "elapsed_s": 58.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00112.svg",
+      "elapsed_s": 59.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00113.svg",
+      "elapsed_s": 59.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00114.svg",
+      "elapsed_s": 59.905999999988126,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "cloud-answer"
+    },
+    {
+      "file": "frame-00115.svg",
+      "elapsed_s": 60.280999999988126,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00116.svg",
+      "elapsed_s": 60.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00117.svg",
+      "elapsed_s": 61.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00118.svg",
+      "elapsed_s": 61.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00119.svg",
+      "elapsed_s": 62.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00120.svg",
+      "elapsed_s": 62.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00121.svg",
+      "elapsed_s": 62.905999999988126,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "local-after-cloud-prompt"
+    },
+    {
+      "file": "frame-00122.svg",
+      "elapsed_s": 63.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00123.svg",
+      "elapsed_s": 63.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00124.svg",
+      "elapsed_s": 64.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00125.svg",
+      "elapsed_s": 64.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00126.svg",
+      "elapsed_s": 65.07799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00127.svg",
+      "elapsed_s": 65.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00128.svg",
+      "elapsed_s": 65.96899999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "local-after-cloud"
+    },
+    {
+      "file": "frame-00129.svg",
+      "elapsed_s": 66.14099999997416,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00130.svg",
+      "elapsed_s": 66.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00131.svg",
+      "elapsed_s": 67.125,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00132.svg",
+      "elapsed_s": 67.57799999997951,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00133.svg",
+      "elapsed_s": 67.96899999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "reopened-history"
+    },
+    {
+      "file": "frame-00134.svg",
+      "elapsed_s": 68.125,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00135.svg",
+      "elapsed_s": 68.60999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00136.svg",
+      "elapsed_s": 69.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00137.svg",
+      "elapsed_s": 69.60999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00138.svg",
+      "elapsed_s": 70.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00139.svg",
+      "elapsed_s": 70.60999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00140.svg",
+      "elapsed_s": 71.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00141.svg",
+      "elapsed_s": 71.26599999997416,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "renamed-chat"
+    },
+    {
+      "file": "frame-00142.svg",
+      "elapsed_s": 71.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00143.svg",
+      "elapsed_s": 71.93799999999464,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "chat-details"
+    },
+    {
+      "file": "frame-00144.svg",
+      "elapsed_s": 72.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00145.svg",
+      "elapsed_s": 72.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00146.svg",
+      "elapsed_s": 73.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00147.svg",
+      "elapsed_s": 73.35999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": "archived-chat"
+    },
+    {
+      "file": "frame-00148.svg",
+      "elapsed_s": 73.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00149.svg",
+      "elapsed_s": 74.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00150.svg",
+      "elapsed_s": 74.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00151.svg",
+      "elapsed_s": 75.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00152.svg",
+      "elapsed_s": 75.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00153.svg",
+      "elapsed_s": 76.09399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00154.svg",
+      "elapsed_s": 76.59399999998277,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    },
+    {
+      "file": "frame-00155.svg",
+      "elapsed_s": 77.10999999998603,
+      "terminal_size": [
+        156,
+        47
+      ],
+      "checkpoint": null
+    }
+  ],
+  "passed": true
+}

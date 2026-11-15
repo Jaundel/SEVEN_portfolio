@@ -1,0 +1,68 @@
+[
+  {
+    "prompt": "Explain whether a triangle has three sides.",
+    "original": {
+      "route": "API_CHECK",
+      "reason": "needs_realtime_data"
+    },
+    "restored": {
+      "route": "LOCAL",
+      "reason": "default_energy_saving"
+    }
+  },
+  {
+    "prompt": "What is the weather in Toronto right now?",
+    "original": {
+      "route": "API_CHECK",
+      "reason": "needs_realtime_data"
+    },
+    "restored": {
+      "route": "API_CHECK",
+      "reason": "needs_realtime_data"
+    }
+  },
+  {
+    "prompt": "Explain quantum entanglement in two sentences.",
+    "original": {
+      "route": "CLOUD",
+      "reason": "too_complex_for_small_model"
+    },
+    "restored": {
+      "route": "CLOUD",
+      "reason": "too_complex_for_small_model"
+    }
+  },
+  {
+    "prompt": "What is the price of a book?",
+    "original": {
+      "route": "API_CHECK",
+      "reason": "needs_realtime_data"
+    },
+    "restored": {
+      "route": "LOCAL",
+      "reason": "default_energy_saving"
+    }
+  },
+  {
+    "prompt": "What is the capital of France?",
+    "original": {
+      "route": "LOCAL",
+      "reason": "default_energy_saving"
+    },
+    "restored": {
+      "route": "LOCAL",
+      "reason": "default_energy_saving"
+    }
+  },
+  {
+    "prompt": "What is the latest version of Python?",
+    "original": {
+      "route": "API_CHECK",
+      "reason": "needs_realtime_data"
+    },
+    "restored": {
+      "route": "API_CHECK",
+      "reason": "needs_realtime_data"
+    }
+  }
+]

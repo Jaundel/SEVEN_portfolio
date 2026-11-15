@@ -1,0 +1,88 @@
+{
+  "basis": "Configured estimates from the archived application; no cloud electricity was measured.",
+  "local": {
+    "label": "Ryzen AI / XDNA 2 NPU (1\u20133B SLM)",
+    "joules_per_token": 0.85,
+    "range": [
+      0.4,
+      1.3
+    ]
+  },
+  "cloud_proxy": {
+    "label": "GPT-4o short prompt (Jegham 2025)",
+    "joules_per_token": 3.1,
+    "range": [
+      2.5,
+      3.5
+    ],
+    "unused_wh_per_query": 0.43,
+    "adapter_model": "GPT-4o-mini",
+    "mismatch": "GPT-4o profile is not a calibration of GPT-4o-mini."
+  },
+  "formula": "estimated_mWh = estimator_tokens * joules_per_token / 3.6",
+  "precedence": "Per-token coefficient takes precedence over the stored per-query value.",
+  "missing_usage": "The archived estimator uses 500 tokens when token usage is absent or nonpositive.",
+  "cases": [
+    {
+      "case": "local-answer",
+      "prompt": "What is the capital of France?",
+      "estimator_tokens": 62,
+      "tokens_basis": "Recovered from saved Wh and archived coefficient; integer input checked against both saved estimates.",
+      "local_mwh": 14.638888888888888,
+      "cloud_proxy_mwh": 53.38888888888889,
+      "difference_mwh": 38.75000000000001,
+      "local_range_mwh": [
+        6.888888888888889,
+        22.388888888888893
+      ],
+      "cloud_proxy_range_mwh": [
+        43.05555555555556,
+        60.27777777777778
+      ]
+    },
+    {
+      "case": "keyword-boundaries",
+      "prompt": "Explain whether a triangle has three sides.",
+      "estimator_tokens": 154,
+      "tokens_basis": "Recovered from saved Wh and archived coefficient; integer input checked against both saved estimates.",
+      "local_mwh": 36.361111111111114,
+      "cloud_proxy_mwh": 132.61111111111111,
+      "difference_mwh": 96.25,
+      "local_range_mwh": [
+        17.11111111111111,
+        55.61111111111112
+      ],
+      "cloud_proxy_range_mwh": [
+        106.94444444444444,
+        149.72222222222223
+      ]
+    },
+    {
+      "case": "local-after-cloud",
+      "prompt": "What is 2 + 2? Answer with the number only.",
+      "estimator_tokens": 160,
+      "tokens_basis": "Recovered from saved Wh and archived coefficient; integer input checked against both saved estimates.",
+      "local_mwh": 37.77777777777778,
+      "cloud_proxy_mwh": 137.77777777777777,
+      "difference_mwh": 100.0,
+      "local_range_mwh": [
+        17.77777777777778,
+        57.77777777777778
+      ],
+      "cloud_proxy_range_mwh": [
+        111.1111111111111,
+        155.55555555555557
+      ]
+    }
+  ],
+  "source_sha256": {
+    "SEVEN/energy.py": "0d9730656ae80caf45157202499363542568beaca373b4d94ebe0619b2546ab6",
+    "SEVEN/router.py": "ca4354967edc1c60ec50f4317dfd15251b70540f8c1bc628512f6f1deaad1365",
+    "SEVEN/heuristics.py": "4f470cd24918b19ae66faf36f1fce24496c3058bd77663fd413ecd9e4af2f016",
+    "SEVEN/api_tools.py": "f2799183251b308a440bdbb4c35e5adba581c30745952abaa330effa28c64155",
+    "apps/elia/elia_chat/widgets/chat.py": "551ec73e0ec6201b43e3a7561b14c0ab98e07216b83752412dfe226f540d1c3a",
+    "apps/elia/elia_chat/database/database.py": "a2ea1c118b56f08f41574bdf22f8f2e53624812d50b42cc21c00ddbd070cbfa5"
+  },
+  "archive_sha256": "4a8e69c32ad015c1081400e1681a0f8b99bda18673b36cf11a9edad1e7a9a394",
+  "report_sha256": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07"
+}

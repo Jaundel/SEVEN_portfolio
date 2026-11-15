@@ -1,0 +1,435 @@
+{
+  "passed": true,
+  "checked_utc": "2026-11-15T17:42:54.190091+00:00",
+  "browser": {
+    "passed": true,
+    "scope": "Local article and supplement: rendered layouts, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.",
+    "layouts": [
+      {
+        "width": 360,
+        "scroll": 360,
+        "fontPoppins": true,
+        "fontCharter": true,
+        "pictures": [
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
+            "loaded": true,
+            "width": 324,
+            "height": 944
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg",
+            "loaded": true,
+            "width": 324,
+            "height": 417
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case-mobile.svg",
+            "loaded": true,
+            "width": 324,
+            "height": 486
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison-mobile.svg",
+            "loaded": true,
+            "width": 324,
+            "height": 338
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval-mobile.svg",
+            "loaded": true,
+            "width": 324,
+            "height": 347
+          }
+        ],
+        "captions": [
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 25,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 23,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          }
+        ],
+        "smallTableFont": "11.5px",
+        "rejectedControls": 0,
+        "tableCellOverflow": []
+      },
+      {
+        "width": 390,
+        "scroll": 390,
+        "fontPoppins": true,
+        "fontCharter": true,
+        "pictures": [
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
+            "loaded": true,
+            "width": 354,
+            "height": 1032
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg",
+            "loaded": true,
+            "width": 354,
+            "height": 455
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case-mobile.svg",
+            "loaded": true,
+            "width": 354,
+            "height": 531
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison-mobile.svg",
+            "loaded": true,
+            "width": 354,
+            "height": 369
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval-mobile.svg",
+            "loaded": true,
+            "width": 354,
+            "height": 379
+          }
+        ],
+        "captions": [
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 25,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 23,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          }
+        ],
+        "smallTableFont": "11.5px",
+        "rejectedControls": 0,
+        "tableCellOverflow": []
+      },
+      {
+        "width": 768,
+        "scroll": 768,
+        "fontPoppins": true,
+        "fontCharter": true,
+        "pictures": [
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
+            "loaded": true,
+            "width": 444,
+            "height": 1294
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg",
+            "loaded": true,
+            "width": 684,
+            "height": 216
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case.svg",
+            "loaded": true,
+            "width": 684,
+            "height": 293
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison.svg",
+            "loaded": true,
+            "width": 684,
+            "height": 279
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval.svg",
+            "loaded": true,
+            "width": 684,
+            "height": 315
+          }
+        ],
+        "captions": [
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 25,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 23,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          }
+        ],
+        "smallTableFont": "12px",
+        "rejectedControls": 0,
+        "tableCellOverflow": []
+      },
+      {
+        "width": 1440,
+        "scroll": 1440,
+        "fontPoppins": true,
+        "fontCharter": true,
+        "pictures": [
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/system-architecture.svg",
+            "loaded": true,
+            "width": 946,
+            "height": 626
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg",
+            "loaded": true,
+            "width": 946,
+            "height": 299
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case.svg",
+            "loaded": true,
+            "width": 946,
+            "height": 405
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison.svg",
+            "loaded": true,
+            "width": 946,
+            "height": 386
+          },
+          {
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval.svg",
+            "loaded": true,
+            "width": 946,
+            "height": 436
+          }
+        ],
+        "captions": [
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 25,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          },
+          {
+            "words": 23,
+            "links": 0
+          },
+          {
+            "words": 24,
+            "links": 0
+          }
+        ],
+        "smallTableFont": "12px",
+        "rejectedControls": 0,
+        "tableCellOverflow": []
+      }
+    ],
+    "chapters": [
+      {
+        "name": "local-answer",
+        "target": 14.746999999991385,
+        "time": 14.772,
+        "keyboard": true
+      },
+      {
+        "name": "live-weather",
+        "target": 33.48200000000652,
+        "time": 33.5057,
+        "keyboard": true
+      },
+      {
+        "name": "cloud-answer",
+        "target": 53.7,
+        "time": 53.7311,
+        "keyboard": true
+      }
+    ],
+    "supplementLayouts": [
+      {
+        "width": 390,
+        "scroll": 390
+      },
+      {
+        "width": 1440,
+        "scroll": 1440
+      }
+    ],
+    "questions": 60,
+    "responses": 180,
+    "checkedLinks": 31,
+    "errors": []
+  },
+  "delayed_video": {
+    "passed": true,
+    "scope": "Cloud selected before metadata, with each genuine MP4 range response delayed by two seconds.",
+    "before": {
+      "ready": 0,
+      "time": 0,
+      "network": 2
+    },
+    "after": {
+      "time": 53.7148,
+      "ready": 4,
+      "network": 1,
+      "error": null,
+      "status": "",
+      "events": [
+        {
+          "name": "suspend",
+          "time": 0,
+          "ready": 0
+        },
+        {
+          "name": "loadedmetadata",
+          "time": 0,
+          "ready": 4
+        },
+        {
+          "name": "loadeddata",
+          "time": 53.7,
+          "ready": 1
+        },
+        {
+          "name": "canplay",
+          "time": 53.7,
+          "ready": 1
+        },
+        {
+          "name": "seeking",
+          "time": 53.7,
+          "ready": 1
+        },
+        {
+          "name": "suspend",
+          "time": 53.7,
+          "ready": 1
+        },
+        {
+          "name": "seeked",
+          "time": 53.7,
+          "ready": 4
+        },
+        {
+          "name": "canplay",
+          "time": 53.7,
+          "ready": 4
+        },
+        {
+          "name": "play",
+          "time": 53.701,
+          "ready": 4
+        },
+        {
+          "name": "playing",
+          "time": 53.7012,
+          "ready": 4
+        }
+      ]
+    },
+    "requests": [
+      "bytes=0-",
+      "bytes=1671168-"
+    ]
+  },
+  "video_resilience": {
+    "passed": true,
+    "rapidSelection": {
+      "beforeReady": 0,
+      "selected": "cloud-answer",
+      "time": 53.7337,
+      "error": null
+    },
+    "unavailableMedia": "The recording could not load. Reload the page to try again."
+  },
+  "source_sha256": {
+    "index.html": "3fa259dc091b7fcd71252d4ce360be2a6e900217c1fb9d7deaf962bc52a322d9",
+    "supplement.html": "06e7ee5fca771d7ffc7a4f382b1f66c4a788de831299e41ccca613031ff37ad6",
+    "article.css": "692cd13e0033ee146d72bdd9aba229cff8bc6c7f67a8729a8bfce1e59c170693",
+    "article-tokens.css": "688874f302b3d7a0bc6c5210a68f57f93e1f8cb8cb870865a56fe7c2e6ac052c",
+    "article.js": "36f32a8c4c8af2900182901400c679769018faf9d1c07d44f81766d47241cfa1",
+    "data/answers.json": "a7ea5c786503382a68bde08b74d009dd3423470a083f06079469e0e80f49dfbe",
+    "data/study-summary.json": "604a08bd79ae2249f506229857331f28a671e7fa61a4f659ce2912d6c2852ea8",
+    "data/route-comparison.json": "54c8797ee979cd2944e6cc4aaed0af267cacf9aa31ca08e57e84d1fa46819f62",
+    "data/paired-routes.json": "c8ddb293e8f035d1805183de94d3130de19da318e18ec081d2c3e7df65e456b6",
+    "evidence/analyse_study.py": "a10b5ec12c81043af965de12382a4bdab762f7bc8d1c076c3d912581b135a51b",
+    "evidence/verify_article.py": "f725059cb2a06f3863605042f115c3a52d1b7ec53acd429c9134ae4fb10dd6c0",
+    "evidence/PROVENANCE.md": "56f2dcc390c44397f84b6cd188d5022f40b60edad000a62aa0a52349d49b8507",
+    "evidence/figure-style.json": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
+    "evidence/figure-manifest.json": "0096d97ce6db02ae58313d8a1f03ab9ec10d76a25481918e4d71c2df0e428c06",
+    "evidence/build_publication_figures.py": "722b8b74a5fb24a8e21a38ba0a08665e9fa017d74eb4de3fc47f0087cdfc8c38",
+    "evidence/system_figures.py": "747c2831aca87db75a57169382e6191accb2e41a1863f1858abd66bb750a9f55",
+    "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
+    "evidence/publication-figures.json": "bcea5b7c0056cb050324791e22a4332e204f027ff77fd2c5148e5b27ff25a44a",
+    "evidence/check_article_browser.js": "b7e62c47b4d3acf6bae643b553520b29a5dab9e152db893d9df6b0ce12de04dd",
+    "evidence/check_video_loading.js": "bce6f7215f91b9af40b1caaca70133718ee3ab78f42bd3ef69ce052658b476d5",
+    "evidence/check_video_resilience.js": "ab6de35d494e55d73bbb85a19e6c665c21c132adbe0f8fe1554a277031c0ac38",
+    "evidence/serve_preview.py": "d6f1138b92491e8e7768e4c7be7ccae56f9f0028a1817955bf8e4ae7e979608f",
+    "evidence/check_preview_ranges.py": "c6dcd94d7236562290343c5b30bc1870ee9c2cc672866f3925cf4898984d8970"
+  },
+  "screenshots_sha256": {
+    "output/playwright/seven-finished-1440.png": "9a7aa29455ef2c7de9b489df8dfd31bfb66439cb9994b97b6d873549ce32d255",
+    "output/playwright/seven-finished-390.png": "8a831673d378a830da43df79887a26971770f7c12d67c92ef7979dab4c8fbcc5",
+    "output/playwright/seven-finished-answers-1440.png": "a7715d7cabad53109008dd56af91c36cec370c8f87977e58d37ac755e3087fff",
+    "output/playwright/seven-finished-answers-390.png": "d239ca72774b95564d44a3d380e40c3dcd1f963371b66e4b01b1183f7b769f7f",
+    "output/playwright/seven-finished-energy-1440.png": "28c5b96ed67e5ed92c1ba1997172159166d41c2fcf943c919a7b4adc2d8a2a83",
+    "output/playwright/seven-finished-energy-390.png": "3d5a08171b0decd3aaddd1c49ebad46a8d33488c593a02d864dcd13d89969377",
+    "output/playwright/seven-finished-measurement-1440.png": "0ca4ecdd8b0d130ab1abfab4986295a296d6262a2462e3a7b5eaa0895fdd0c60",
+    "output/playwright/seven-finished-measurement-390.png": "1a44b3b54f08c6099dfd03033c4927d4772ed08f768fa8983ba0f2f515c522c7",
+    "output/playwright/seven-finished-routing-1440.png": "82c62722fe59e4c707d2568f8d301003d6dbd3170d1ad5d67c2a77ca6d625ea0",
+    "output/playwright/seven-finished-routing-390.png": "a13a15582e50cc11044188b7dcb71561ba35c546e5bc7835396d762a3efe9a6b",
+    "output/playwright/seven-finished-system-1440.png": "f874cedee3e4beb26a4333b02ac2c6cd3adbe1a9c94448bbb8ba00f8d0505254",
+    "output/playwright/seven-finished-system-390.png": "f053dab2936affa93bf15f1d0a5e53b6c1d7ed1456001562dbf1236dc802b6c3",
+    "output/playwright/seven-finished-top-1440.png": "85d06d7050b713d2219b1597c4ff707d415dee48701a466ede7d9dc6d7189a4c",
+    "output/playwright/seven-finished-top-390.png": "3295f45c777553dc19be55c888d50253ba78b722fe5efdfe8e9d53240e25a32a"
+  }
+}

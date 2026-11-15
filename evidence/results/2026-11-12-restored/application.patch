@@ -1,0 +1,1079 @@
+diff --git a/.gitignore b/.gitignore
+index f52eeb6..c3980a8 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -38,3 +38,11 @@ coverage.*
+ # OS-specific noise
+ .DS_Store
+ Thumbs.db
++
++# Local task notes
++SPEC.md
++STATE.md
++AGENTS.md
++CLAUDE.md
++.claude/
++output/
+diff --git a/SEVEN/api_check.py b/SEVEN/api_check.py
+index 03758c4..9a75fc4 100644
+--- a/SEVEN/api_check.py
++++ b/SEVEN/api_check.py
+@@ -1,129 +1,32 @@
+-# ============================================================
+-#  File: api_check.py
+-#  Project: SEVEN (Sustainable Energy via Efficient Neural-routing)
+-#  Description: API check helper that decides if real-time calls are needed before Lemonade.
+-#  Author(s): Team SEVEN
+-#  Date: 2025-11-12
+-# ============================================================
+-"""Bridge between the local Lemonade client and external real-time APIs."""
+-
++"""Return live facts directly; never turn an API failure into invented data."""
+ from __future__ import annotations
++import time
++from .heuristics import detect_api_intent
++from .api_tools import get_crypto_price, get_news, get_weather
++from .local_model import LocalModelResponse
+ 
+-import logging
+-from typing import List, Tuple
+-
+-# Support both package and direct script execution
+-try:
+-    from .heuristics import detect_api_intent
+-    from .api_tools import get_crypto_price, get_news, get_weather
+-    from .local_model import (
+-        LemonadeClientError,
+-        LocalModelResponse,
+-        ask_local,
+-    )
+-    from .prompts import build_local_prompt, get_system_prompt_local
+-except ImportError:
+-    from heuristics import detect_api_intent
+-    from api_tools import get_crypto_price, get_news, get_weather
+-    from local_model import (
+-        LemonadeClientError,
+-        LocalModelResponse,
+-        ask_local,
+-    )
+-    from prompts import build_local_prompt, get_system_prompt_local
+ 
+-LOGGER = logging.getLogger(__name__)
++def unavailable_response(prompt: str, message: str) -> LocalModelResponse:
++    return LocalModelResponse(prompt=prompt, text=message, model='api-unavailable',
++        latency_s=0.0, tokens_used=None, raw={}, route='API_CHECK',
++        route_reason='live_data_unavailable', warning='No current facts were retrieved.')
+ 
+ 
+-def _classify_api_need(prompt: str) -> Tuple[bool, List[str]]:
+-    """Decide if any APIs are needed using lightweight heuristics."""
++def run_api_check(prompt: str, *, system_prompt: str | None = None,
++                  temperature: float = 0.7, max_tokens: int = 512) -> LocalModelResponse:
+     intent = detect_api_intent(prompt)
+-    if intent:
+-        return True, [intent]
+-    return False, []
+-
+-
+-def _collect_api_data(prompt: str, apis: List[str]) -> List[str]:
+-    """Call the required APIs and return their friendly summaries."""
+-    results: List[str] = []
+-    for api in apis:
+-        try:
+-            if api == "weather":
+-                results.append(f"Weather: {get_weather(prompt)}")
+-            elif api == "crypto":
+-                results.append(f"Crypto: {get_crypto_price(prompt)}")
+-            elif api == "news":
+-                results.append(f"News: {get_news(prompt)}")
+-            else:
+-                LOGGER.info("Unknown API intent '%s' ignored.", api)
+-        except Exception as exc:  # pylint: disable=broad-except
+-            LOGGER.warning("%s API failed: %s", api.capitalize(), exc)
+-            results.append(f"{api.capitalize()} API error: {exc}")
+-    return results
+-
+-
+-def run_api_check(
+-    prompt: str,
+-    *,
+-    system_prompt: str | None = None,
+-    temperature: float = 0.7,
+-    max_tokens: int = 512,  # Increased from 128 - prompts control brevity, not truncation
+-) -> LocalModelResponse:
+-    """Run the API check pipeline and augment the local model when needed."""
+-    # Use SEVEN Local identity if no custom system prompt provided
+-    final_system_prompt = system_prompt if system_prompt else get_system_prompt_local()
+-
+-    needs_api, apis = _classify_api_need(prompt)
+-    if not needs_api:
+-        return ask_local(
+-            prompt,
+-            system_prompt=final_system_prompt,
+-            temperature=temperature,
+-            max_tokens=max_tokens,
+-        )
+-
+-    api_results = _collect_api_data(prompt, apis)
+-    if api_results:
+-        api_context = "\n".join(api_results)
+-
+-        # Build optimized prompt with API data embedded
+-        synthesis_prompt = build_local_prompt(
+-            user_query=prompt,
+-            api_data=api_context,
+-            allow_richer_context=False,  # Keep answers brief even with API data
+-        )
+-
+-        try:
+-            return ask_local(
+-                synthesis_prompt,
+-                system_prompt=final_system_prompt,
+-                temperature=temperature,
+-                max_tokens=max_tokens,
+-            )
+-        except LemonadeClientError as exc:
+-            LOGGER.warning("Synthesis via local model failed (%s). Returning API context.", exc)
+-            return LocalModelResponse(
+-                prompt=prompt,
+-                text=api_context,
+-                model="api-direct",
+-                latency_s=0.0,
+-                tokens_used=None,
+-                raw={},
+-            )
+-
+-    LOGGER.info("APIs were requested but returned no data; falling back to local response.")
+-
+-    # Build prompt without API data (with a note about unavailability in the query)
+-    fallback_query = f"{prompt}\n\n(Note: Real-time data APIs were unavailable, respond with general knowledge.)"
+-    fallback_prompt = build_local_prompt(
+-        user_query=fallback_query,
+-        allow_richer_context=False,
+-    )
+-
+-    return ask_local(
+-        fallback_prompt,
+-        system_prompt=final_system_prompt,
+-        temperature=temperature,
+-        max_tokens=max_tokens,
+-    )
+-
++    if intent is None:
++        return unavailable_response(prompt, 'This question needs current information, but SEVEN only supports weather, crypto prices and news tools. Please check a current source.')
++    started = time.perf_counter()
++    try:
++        text = {'weather': get_weather, 'crypto': get_crypto_price, 'news': get_news}[intent](prompt)
++    except Exception:
++        # Exceptions from HTTP clients may contain API keys in their URL.
++        text = f'{intent.capitalize()} data unavailable. Please try again later.'
++    if 'unavailable' in text.lower():
++        result = unavailable_response(prompt, text)
++    else:
++        result = LocalModelResponse(prompt=prompt, text=text, model='api-direct',
++            latency_s=0.0, tokens_used=None, raw={}, route='API_CHECK', route_reason='live_data_retrieved')
++    result.latency_s = time.perf_counter() - started
++    return result
+diff --git a/SEVEN/api_tools.py b/SEVEN/api_tools.py
+index ee6f2bf..68e636e 100644
+--- a/SEVEN/api_tools.py
++++ b/SEVEN/api_tools.py
+@@ -56,7 +56,9 @@ def get_weather(prompt: str) -> str:
+     if not api_key:
+         return "Weather data unavailable (set OPENWEATHER_API_KEY)."
+ 
+-    location = _extract_location(prompt) or "New York"
++    location = _extract_location(prompt)
++    if not location:
++        return "Weather data unavailable. Include a city, for example: weather in Toronto."
+     params = {"q": location, "appid": api_key, "units": "metric"}
+ 
+     try:
+@@ -83,8 +85,8 @@ def get_weather(prompt: str) -> str:
+             parts.append(f"humidity {humidity}%")
+         return ", ".join(parts) + " (OpenWeather)"
+     except Exception as exc:
+-        LOGGER.warning("OpenWeather lookup failed: %s", exc)
+-        return f"Weather data unavailable ({exc})"
++        LOGGER.warning("OpenWeather lookup failed (%s)", type(exc).__name__)
++        return "Weather data unavailable. Check the provider configuration and connection."
+ 
+ 
+ # ---------------------------------------------------------------------------
+@@ -107,7 +109,7 @@ COIN_ALIASES = {
+ def _resolve_coin_symbol(prompt: str) -> str:
+     lowered = (prompt or "").lower()
+     for alias, symbol in COIN_ALIASES.items():
+-        if alias in lowered:
++        if re.search(r"(?<!\w)" + re.escape(alias) + r"(?!\w)", lowered):
+             return symbol
+     return "BTC"
+ 
+@@ -149,8 +151,8 @@ def get_crypto_price(prompt: str) -> str:
+ 
+         return f"{symbol}: ${price:,.2f} USD (CoinDesk)"
+     except Exception as exc:
+-        LOGGER.warning("CoinDesk lookup failed: %s", exc)
+-        return f"Crypto price unavailable ({exc})"
++        LOGGER.warning("CoinDesk lookup failed (%s)", type(exc).__name__)
++        return "Crypto price unavailable. Check the provider configuration and connection."
+ 
+ 
+ # ---------------------------------------------------------------------------
+@@ -185,8 +187,8 @@ def get_news(prompt: str) -> str:
+         url = article.get("url") or ""
+         return f"{title} - {source} ({url})"
+     except Exception as exc:
+-        LOGGER.warning("NewsAPI lookup failed: %s", exc)
+-        return f"News data unavailable ({exc})"
++        LOGGER.warning("NewsAPI lookup failed (%s)", type(exc).__name__)
++        return "News data unavailable. Check the provider configuration and connection."
+ 
+ 
+ __all__ = ["get_weather", "get_crypto_price", "get_news"]
+diff --git a/SEVEN/cloud_model.py b/SEVEN/cloud_model.py
+index 6fbc57c..601f125 100644
+--- a/SEVEN/cloud_model.py
++++ b/SEVEN/cloud_model.py
+@@ -50,6 +50,10 @@ class CloudModelResponse:
+     latency_s: float
+     tokens_used: Optional[int]
+     energy: Optional["EnergyEstimate"] = None
++    route: str = "CLOUD"
++    route_reason: str = ""
++    warning: Optional[str] = None
++    local_attempt_energy_wh: Optional[float] = None
+ 
+ 
+ def _openai_model() -> str:
+@@ -93,7 +97,7 @@ def ask_cloud(
+     spinner = Spinner("Processing via OpenAI")
+     spinner.start()
+     try:
+-        client = OpenAI(api_key=_openai_api_key())
++        client = OpenAI(api_key=_openai_api_key(), timeout=45.0, max_retries=1)
+         messages = []
+ 
+         # Use SEVEN Cloud identity if no custom system prompt provided
+@@ -107,12 +111,15 @@ def ask_cloud(
+                 model=_openai_model(),
+                 messages=messages,
+                 temperature=temperature,
+-                max_tokens=max_tokens,
++                max_completion_tokens=max_tokens,
+             )
+         except Exception as exc:  # OpenAI SDK raises generic errors
+-            raise CloudModelError(f"OpenAI request failed: {exc}") from exc
++            status = getattr(exc, 'status_code', None)
++            raise CloudModelError(f"OpenAI request failed ({type(exc).__name__}, status {status}). Check account access, quota and model configuration.") from exc
+         latency = time.perf_counter() - start
+ 
++        if not completion.choices:
++            raise CloudModelError('OpenAI returned no completion choices.')
+         choice = completion.choices[0]
+         text = (
+             choice.message.content
+@@ -120,6 +127,8 @@ def ask_cloud(
+             else ""
+         )
+         tokens_used = getattr(completion.usage, "total_tokens", None)
++        if not text.strip():
++            raise CloudModelError('OpenAI returned no text. Try a larger completion budget or another model.')
+ 
+         return CloudModelResponse(
+             prompt=prompt,
+diff --git a/SEVEN/heuristics.py b/SEVEN/heuristics.py
+index ced36c0..1b398f9 100644
+--- a/SEVEN/heuristics.py
++++ b/SEVEN/heuristics.py
+@@ -19,6 +19,7 @@ All heuristics are based on:
+ 
+ from __future__ import annotations
+ 
++import re
+ from typing import Optional
+ 
+ # Support both package and direct script execution
+@@ -54,7 +55,6 @@ API_INTENT_KEYWORDS = {
+         "doge",
+         "token",
+         "coin",
+-        "price",
+     ],
+     "news": [
+         "news",
+@@ -149,6 +149,11 @@ UNCERTAINTY_PHRASES = [
+ # Maximum words before considering query too complex
+ MAX_LOCAL_WORD_COUNT = 150
+ 
++
++def matches_phrase(text: str, phrase: str) -> bool:
++    """Match complete words, including multiword markers and asset symbols."""
++    return re.search(r"(?<!\w)" + re.escape(phrase) + r"(?!\w)", text, re.IGNORECASE) is not None
++
+ # ============================================================
+ # Pre-routing Classification
+ # ============================================================
+@@ -188,15 +193,15 @@ def classify_query_type(prompt: str) -> dict[str, str]:
+     word_count = len(prompt.split())
+ 
+     # Check 1: Real-time data requirements (highest priority)
+-    if any(keyword in lowered for keyword in REALTIME_KEYWORDS):
++    if any(matches_phrase(lowered, keyword) for keyword in REALTIME_KEYWORDS):
+         return {"route": "API_CHECK", "reason": "needs_realtime_data"}
+ 
+     # Check 2: Specialized domain knowledge
+-    if any(domain in lowered for domain in SPECIALIZED_DOMAINS):
++    if any(matches_phrase(lowered, domain) for domain in SPECIALIZED_DOMAINS):
+         return {"route": "CLOUD", "reason": "specialized_domain"}
+ 
+     # Check 3: Obviously too complex for small models
+-    if any(marker in lowered for marker in COMPLEX_MARKERS):
++    if any(matches_phrase(lowered, marker) for marker in COMPLEX_MARKERS):
+         return {"route": "CLOUD", "reason": "too_complex_for_small_model"}
+ 
+     # Check 4: Length-based complexity
+@@ -214,7 +219,7 @@ def detect_api_intent(prompt: str) -> Optional[str]:
+ 
+     lowered = prompt.lower()
+     for intent, keywords in API_INTENT_KEYWORDS.items():
+-        if any(keyword in lowered for keyword in keywords):
++        if any(matches_phrase(lowered, keyword) for keyword in keywords):
+             return intent
+     return None
+ 
+diff --git a/SEVEN/local_model.py b/SEVEN/local_model.py
+index 9cb98bf..51440f6 100644
+--- a/SEVEN/local_model.py
++++ b/SEVEN/local_model.py
+@@ -71,24 +71,28 @@ class Spinner:
+         idx = 0
+         while self.running:
+             char = self.spinner_chars[idx % len(self.spinner_chars)]
+-            sys.stdout.write(f"\r{self.message}... {char}")
+-            sys.stdout.flush()
++            sys.stderr.write(f"\r{self.message}... {char}")
++            sys.stderr.flush()
+             time.sleep(0.1)
+             idx += 1
+ 
+     def start(self):
+         """Start the spinner in a background thread."""
++        if not sys.stderr.isatty() or os.getenv("SEVEN_NO_SPINNER") == "1":
++            return
+         self.running = True
+         self.thread = threading.Thread(target=self._spin, daemon=True)
+         self.thread.start()
+ 
+     def stop(self):
+         """Stop the spinner and clear the line."""
++        if not self.running:
++            return
+         self.running = False
+         if self.thread:
+             self.thread.join()
+-        sys.stdout.write("\r" + " " * (len(self.message) + 6) + "\r")
+-        sys.stdout.flush()
++        sys.stderr.write("\r" + " " * (len(self.message) + 6) + "\r")
++        sys.stderr.flush()
+ 
+ 
+ class LemonadeClientError(RuntimeError):
+@@ -118,6 +122,9 @@ class LocalModelResponse:
+     baseline_energy: Optional["EnergyEstimate"] = None
+     energy_savings_wh: Optional[float] = None
+     energy_savings_kwh: Optional[float] = None
++    route: str = "LOCAL"
++    route_reason: str = ""
++    warning: Optional[str] = None
+ 
+ 
+ def _base_url() -> str:
+diff --git a/SEVEN/main.py b/SEVEN/main.py
+index 7589e87..699a656 100644
+--- a/SEVEN/main.py
++++ b/SEVEN/main.py
+@@ -1,33 +1,93 @@
+-# ============================================================
+-#  File: main.py
+-#  Project: SEVEN (Sustainable Energy via Efficient Neural-routing)
+-#  Description: Command-line interface entry point and workflow scaffold.
+-#  Author(s): Team SEVEN
+-#  Date: 2025-11-07
+-# ============================================================
+-"""Entry point module for the SEVEN energy-aware CLI router."""
++"""Terminal commands for SEVEN, also available as ``python -m SEVEN``."""
++from __future__ import annotations
+ 
++import argparse
++import json
++import os
++import sys
++from urllib.parse import urlsplit
++from dataclasses import asdict
+ 
+-def main() -> None:
+-    """Run the interactive CLI workflow for SEVEN.
++from .settings import load_settings
+ 
+-    Args:
+-        None: This function consumes no parameters.
+ 
+-    Returns:
+-        None: The function performs side effects only.
++def doctor() -> dict:
++    import requests
++    from .local_model import _base_url, _model_name
++    base = _base_url()
++    info = {"local_url": base, "local_model": _model_name(),
++            "cloud_model": os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
++            "cloud_key_configured": bool(os.getenv("OPENAI_API_KEY")),
++            "live_keys_configured": {k: bool(os.getenv(k)) for k in
++                ("OPENWEATHER_API_KEY", "COINDESK_API_KEY", "NEWS_API_KEY")},
++            "energy": "Profile estimates only; no hardware power meter attached."}
++    try:
++        response = requests.get(base.rstrip('/') + '/models', timeout=5)
++        if response.status_code == 404:
++            parsed = urlsplit(base)
++            response = requests.get(f'{parsed.scheme}://{parsed.netloc}/health', timeout=5)
++            response.raise_for_status()
++            health = response.json()
++            info['local_ready'] = health.get('status') == 'ok'
++            info['backend_mode'] = health.get('execution_mode')
++        else:
++            response.raise_for_status()
++            info['local_ready'] = True
++            info['models'] = [x['id'] for x in response.json().get('data', [])]
++    except (requests.RequestException, ValueError, KeyError):
++        info['local_ready'] = False
++        info['local_error'] = 'Local backend unavailable. Start Lemonade and check LEMONADE_BASE_URL.'
++    return info
+ 
+-    Raises:
+-        None.
+ 
+-    TODO:
+-        * Collect prompts via input or prompt_toolkit with graceful exit commands.
+-        * Call router.route_prompt and branch to local or cloud handlers.
+-        * Invoke energy.timed_energy_call to retrieve Wh consumption/savings.
+-        * Render responses, routing metadata, and energy metrics using Rich layouts.
+-    """
+-    pass
++def main(argv: list[str] | None = None) -> int:
++    load_settings()
++    parser = argparse.ArgumentParser(description="SEVEN: inspect routing or run a prompt.")
++    action = parser.add_mutually_exclusive_group(required=True)
++    action.add_argument('--ask', metavar='PROMPT')
++    action.add_argument('--classify', metavar='PROMPT')
++    action.add_argument('--doctor', action='store_true')
++    parser.add_argument('--cloud', action='store_true', help='Send this prompt directly to OpenAI.')
++    parser.add_argument('--no-escalate', action='store_true', help='Return local uncertainty without cloud escalation.')
++    parser.add_argument('--json', action='store_true', help='Emit one JSON object, without terminal animation.')
++    parser.add_argument('--max-tokens', type=int, default=512)
++    args = parser.parse_args(argv)
++    if args.json:
++        os.environ['SEVEN_NO_SPINNER'] = '1'
++    try:
++        if args.doctor:
++            payload = doctor()
++        elif args.classify is not None:
++            from .heuristics import classify_query_type
++            payload = classify_query_type(args.classify)
++        else:
++            from .router import route_prompt
++            if not 1 <= args.max_tokens <= 32768:
++                raise ValueError('--max-tokens must be between 1 and 32768.')
++            result = route_prompt(args.ask, use_cloud=args.cloud,
++                auto_escalate=not args.no_escalate, max_tokens=args.max_tokens)
++            payload = asdict(result)
++            payload.pop('raw', None)
++            payload['energy_basis'] = 'Configured profile estimate; not measured electricity.'
++        if args.json:
++            print(json.dumps(payload, ensure_ascii=False))
++        elif 'text' in payload:
++            print(payload['text'])
++            print(f"\n{payload['route']} · {payload['model']} · {payload['latency_s']:.2f}s")
++            if payload.get('warning'):
++                print('Warning: ' + payload['warning'])
++            if payload.get('energy'):
++                print(f"Estimated energy: {payload['energy']['watt_hours']:.5f} Wh (profile assumption)")
++        else:
++            print(json.dumps(payload, indent=2, ensure_ascii=False))
++        return 0
++    except (RuntimeError, ValueError) as exc:
++        if args.json:
++            print(json.dumps({'error': str(exc)}))
++        else:
++            print(str(exc), file=sys.stderr)
++        return 1
+ 
+ 
+-if __name__ == "__main__":
+-    main()
++if __name__ == '__main__':
++    raise SystemExit(main())
+diff --git a/SEVEN/prompts.py b/SEVEN/prompts.py
+index 4556990..c66bc1a 100644
+--- a/SEVEN/prompts.py
++++ b/SEVEN/prompts.py
+@@ -1,156 +1,31 @@
+-# ============================================================
+-#  File: prompts.py
+-#  Project: SEVEN (Sustainable Energy via Efficient Neural-routing)
+-#  Description: Prompt templates for API synthesis and system instructions.
+-#  Author(s): Team SEVEN
+-#  Date: 2025-11-16
+-# ============================================================
+-"""Centralized prompt templates for SEVEN's energy-aware routing system.
+-
+-This module contains all prompt engineering logic, making it easy to:
+-- Update prompts without touching routing code
+-- A/B test different prompt strategies
+-- Maintain consistency across the codebase
+-"""
+-
++"""Short, calibrated instructions for SEVEN's local and cloud adapters."""
+ from __future__ import annotations
+ 
+ 
+-def get_api_synthesis_prompt(api_data: str, user_query: str) -> str:
+-    """Generate prompt for synthesizing API data with user query.
+-
+-    Used when real-time data (weather, news, crypto) needs to be
+-    combined with user's question using the local model.
+-
+-    Args:
+-        api_data: Formatted string containing API results (e.g., "Weather: 15 deg C, sunny")
+-        user_query: Original user question (e.g., "What's the weather in Toronto?")
+-
+-    Returns:
+-        Formatted prompt string ready to send to the model.
+-
+-    Example:
+-        >>> api_data = "Weather: The weather in Paris is clear with 15 deg C."
+-        >>> query = "What's the weather in Paris?"
+-        >>> prompt = get_api_synthesis_prompt(api_data, query)
+-        >>> # Send prompt to model...
+-    """
+-    return f"""Based on this real-time data, answer the user's question naturally.
+-
+-Real-time data:
+-{api_data}
+-
+-User question: {user_query}
+-
+-Provide a clear, concise answer using the freshest data above."""
+-
+-
+ def get_system_prompt_local() -> str:
+-    """System prompt optimized for small local models.
++    return 'You are a helpful assistant. Answer accurately and concisely.'
+ 
+-    Note: This is a basic version. For production use, prefer build_local_prompt()
+-    which includes canon knowledge principles and anti-hallucination safeguards.
+-
+-    Returns:
+-        System prompt string for local model initialization.
+-    """
+-    return (
+-        "You are SEVEN Local, an AI assistant focused on energy-efficient routing. "
+-        "You have strong knowledge of science, math, history, famous people, and general topics. "
+-        "Answer questions confidently and concisely. "
+-        'Only say "I\'m not sure" if you truly don\'t know something obscure or very specific.'
+-    )
+ 
+ 
+ def get_system_prompt_cloud() -> str:
+-    """System prompt for cloud models (OpenAI, Groq).
+-
+-    Cloud models have more freedom and capacity since we're already
+-    paying for the inference. They're only called when local models
+-    can't handle the query or explicitly decline.
+-
+-    Returns:
+-        System prompt string for cloud model initialization.
+-    """
+-    return (
+-        "You are SEVEN Cloud (Sustainable Energy Via Efficient Neural-routing for SDG 7). "
+-        "You are a high-capacity model called when local models decline or for complex queries. "
+-        "Provide thorough, accurate, and well-structured answers. "
+-        "You have MORE FREEDOM than local models - you may use multiple paragraphs and detailed explanations when appropriate. "
+-        "If uncertain, express it clearly, but you're expected to handle queries that smaller models couldn't."
+-    )
++    return ('You are SEVEN Cloud, called for tasks beyond the local model. '
++            'Give a clear, accurate answer with enough explanation to check it. '
++            'State uncertainty. You have no live data access unless the user supplies current sources.')
+ 
+ 
+-def build_local_prompt(
+-    user_query: str,
+-    api_data: str | None = None,
+-    risk_hint: str | None = None,
+-    allow_richer_context: bool = False,
+-    escalate_immediately: bool = False,
+-) -> str:
+-    """Construct a context-aware prompt for the local SLM.
++def get_api_synthesis_prompt(api_data: str, user_query: str) -> str:
++    return f'Answer using only the supplied facts. Preserve units, dates and sources.\nFacts:\n{api_data}\nQuestion: {user_query}'
+ 
+-    Args:
+-        user_query: The user's raw query text.
+-        api_data: Optional block of real-time data to ground the answer.
+-        risk_hint: Optional note about why this topic is risky (e.g., "pop culture").
+-        allow_richer_context: When True, permit slightly longer answers (up to 3 sentences).
+-        escalate_immediately: When True, force the model to decline so heuristics can escalate.
+ 
+-    Returns:
+-        A formatted prompt string ready to send to the local model.
+-    """
++def build_local_prompt(user_query: str, api_data: str | None = None,
++        risk_hint: str | None = None, allow_richer_context: bool = False,
++        escalate_immediately: bool = False) -> str:
+     if escalate_immediately:
+-        return (
+-            "This query exceeds the safe local knowledge boundary.\n"
+-            'Respond exactly with: "I\'m not sure - please use the cloud model."\n\n'
+-            f"User question: {user_query}"
+-        )
+-
+-    # Build instructions based on context
+-    instructions: list[str] = []
+-
+-    # Lead with confidence and encouragement
+-    instructions.append(
+-        "You know science, math, history, famous people, and general topics well. "
+-        "Answer clearly and include relevant context to be helpful. "
+-        "Keep responses concise but complete."
+-    )
+-
+-    # Only add extra caution if there's a specific risk
+-    if risk_hint:
+-        instructions.append(
+-            f"Note: {risk_hint} - only decline if you're genuinely unsure."
+-        )
+-
+-    # Simple safety rule
+-    instructions.append(
+-        'Only say "I\'m not sure" for truly obscure questions (like someone\'s relatives or niche memes). '
+-        "Don't decline for well-known topics."
+-    )
+-
+-    # Format the guidelines
+-    guidelines = "\n".join(f"{rule}" for rule in instructions)
+-
+-    # Add API data block if present
+-    api_block = ""
+-    if api_data and api_data.strip():
+-        api_block = f"\nREAL-TIME DATA (use this to answer):\n{api_data.strip()}\n"
+-
+-    # Build final prompt (identity is in system_prompt, this is just the user message)
+-    prompt = (
+-        f"GUIDELINES:\n{guidelines}\n"
+-        f"{api_block}\n"
+-        f"USER QUESTION: {user_query}\n\n"
+-        f"YOUR RESPONSE:"
+-    )
+-    return prompt
++        return f'Respond exactly: "I\'m not sure - please use the cloud model."\nQuestion: {user_query}'
++    if api_data:
++        return get_api_synthesis_prompt(api_data, user_query)
++    return user_query.strip()
+ 
+ 
+ def get_fallback_note() -> str:
+-    """Message to append when APIs are unavailable.
+-
+-    Returns:
+-        Note explaining that real-time data isn't available.
+-    """
+-    return "(Note: Real-time data APIs were unavailable, responding with general knowledge.)"
++    return 'Current information could not be retrieved.'
+diff --git a/SEVEN/router.py b/SEVEN/router.py
+index 6a02d80..ad930c2 100644
+--- a/SEVEN/router.py
++++ b/SEVEN/router.py
+@@ -22,11 +22,12 @@ from __future__ import annotations
+ import logging
+ import os
+ import sys
++from dataclasses import replace
+ from typing import Callable, Optional, Union
+ 
+ # Support both package and direct script execution
+ try:
+-    from .api_check import run_api_check
++    from .api_check import run_api_check, unavailable_response
+     from .cloud_model import CloudModelError, CloudModelResponse, ask_cloud
+     from .energy import (
+         CloudProfile,
+@@ -39,7 +40,7 @@ try:
+     from .local_model import LemonadeClientError, LocalModelResponse, ask_local
+     from .prompts import build_local_prompt, get_system_prompt_local
+ except ImportError:
+-    from api_check import run_api_check
++    from api_check import run_api_check, unavailable_response
+     from cloud_model import CloudModelError, CloudModelResponse, ask_cloud
+     from energy import (
+         CloudProfile,
+@@ -129,6 +130,14 @@ def route_prompt(
+     )
+     needs_realtime_data = classification["route"] == "API_CHECK"
+ 
++    # Live facts are returned with their source, without model rewriting or guessing.
++    if needs_realtime_data:
++        if on_status_change:
++            on_status_change('api_fetching')
++        if not enable_realtime_apis:
++            return unavailable_response(prompt, 'Live data tools are disabled. No current facts were retrieved.')
++        return run_api_check(prompt)
++
+     # Route to cloud if obviously too complex for local model
+     if classification["route"] == "CLOUD":
+         LOGGER.info("Pre-routing to cloud (complexity heuristic)")
+@@ -147,42 +156,17 @@ def route_prompt(
+     if on_status_change:
+         on_status_change("local_starting")
+     try:
+-        # Only use API pipeline if realtime data is actually needed
+-        if needs_realtime_data and enable_realtime_apis:
+-            LOGGER.info("Real-time data required; augmenting via API pipeline")
+-            if on_status_change:
+-                on_status_change("api_fetching")
+-            local_response = run_api_check(
+-                prompt,
+-                system_prompt=system_prompt,
+-                temperature=temperature,
+-                max_tokens=max_tokens,
+-            )
+-        else:
+-            if needs_realtime_data and not enable_realtime_apis:
+-                LOGGER.info("Real-time data needed but APIs disabled; using local knowledge only")
+-
+-            # Build optimized prompt with anti-hallucination instructions
+-            optimized_prompt = build_local_prompt(
+-                user_query=prompt,
+-                allow_richer_context=False,  # Force brief answers to reduce hallucination
+-            )
+-
+-            # Use SEVEN Local identity as system prompt if none provided
+-            final_system_prompt = system_prompt if system_prompt else get_system_prompt_local()
+-
+-            local_response = ask_local(
+-                optimized_prompt,
+-                system_prompt=final_system_prompt,
+-                temperature=temperature,
+-                max_tokens=max_tokens,
+-            )
++        optimized_prompt = build_local_prompt(user_query=prompt, allow_richer_context=False)
++        local_response = ask_local(optimized_prompt,
++            system_prompt=system_prompt or get_system_prompt_local(),
++            temperature=temperature, max_tokens=max_tokens)
+ 
+         _annotate_local_energy(
+             local_response,
+             local_profile=active_local_profile,
+             cloud_profile=active_cloud_profile,
+         )
++        local_response.route_reason = classification['reason']
+ 
+         # Post-routing validation (zero cost)
+         if auto_escalate and response_shows_uncertainty(local_response):
+@@ -191,23 +175,34 @@ def route_prompt(
+                 on_status_change("local_uncertain_escalating")
+                 on_status_change("cloud_processing")
+             try:
+-                return _call_cloud(
++                cloud_response = _call_cloud(
+                     prompt,
+                     system_prompt=system_prompt,
+                     temperature=temperature,
+                     max_tokens=max_tokens,
+                     cloud_profile=active_cloud_profile,
+                 )
++                cloud_response.route_reason = 'local_uncertainty'
++                if local_response.energy and cloud_response.energy:
++                    local_wh = local_response.energy.watt_hours
++                    cloud_response.local_attempt_energy_wh = local_wh
++                    cloud_response.energy = _combined_energy(local_response.energy, cloud_response.energy)
++                cloud_response.latency_s += local_response.latency_s
++                return cloud_response
+             except CloudModelError as cloud_exc:
+                 LOGGER.warning(
+                     "Cloud escalation failed (%s), returning local response anyway",
+                     cloud_exc,
+                 )
++                local_response.warning = 'Cloud escalation failed; this local answer remains uncertain.'
++                local_response.text += '\n\n' + local_response.warning
+                 return local_response
+ 
+         return local_response
+ 
+     except LemonadeClientError as exc:
++        if not auto_escalate:
++            raise
+         LOGGER.warning("Local model failed (%s). Falling back to cloud.", exc)
+         try:
+             return _call_cloud(
+@@ -223,33 +218,6 @@ def route_prompt(
+             ) from cloud_exc
+ 
+ 
+-if __name__ == "__main__":
+-    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+-
+-    if len(sys.argv) < 2:
+-        print('Usage: python router.py "your prompt here"')
+-        print('       python router.py "your prompt" --cloud  # Force cloud')
+-        sys.exit(1)
+-
+-    # Parse arguments
+-    args = sys.argv[1:]
+-    force_cloud = "--cloud" in args
+-    if force_cloud:
+-        args.remove("--cloud")
+-
+-    test_prompt = " ".join(args)
+-
+-    try:
+-        result = route_prompt(test_prompt, use_cloud=force_cloud)
+-        print("\n=== SEVEN Router ===")
+-        print(f"Model:   {result.model}")
+-        print(f"Latency: {result.latency_s:.2f}s")
+-        print(f"Tokens:  {result.tokens_used if result.tokens_used else 'N/A'}")
+-        print(f"\nResponse:\n{result.text}")
+-    except Exception as exc:  # pylint: disable=broad-except
+-        print(f"Routing failed: {exc}")
+-        sys.exit(1)
+-
+ 
+ def _call_cloud(
+     prompt: str,
+@@ -277,7 +245,7 @@ def _annotate_local_energy(
+     local_profile: LocalProfile,
+     cloud_profile: CloudProfile,
+ ) -> None:
+-    """Attach actual vs. baseline energy plus savings for local runs."""
++    """Attach configured energy estimates and the chosen comparison profile."""
+ 
+     try:
+         actual = estimate_local_energy(
+@@ -313,3 +281,46 @@ def _attach_cloud_energy(
+         )
+     except Exception as exc:  # pragma: no cover - best-effort metadata
+         LOGGER.warning("Cloud energy annotation failed: %s", exc)
++
++
++def _combined_energy(local, cloud):
++    """Include both completed inference calls in an escalated request estimate."""
++    changes = {key: getattr(local, key) + getattr(cloud, key) for key in
++        ('tokens', 'joules', 'watt_hours', 'kilowatt_hours')}
++    for key in ('joules_min', 'joules_max', 'watt_hours_min', 'watt_hours_max',
++                'kilowatt_hours_min', 'kilowatt_hours_max'):
++        a, b = getattr(local, key), getattr(cloud, key)
++        changes[key] = a + b if a is not None and b is not None else None
++    return replace(cloud, **changes, average_power_w=None,
++        profile_label=local.profile_label + ' + ' + cloud.profile_label,
++        source=local.source + '; ' + cloud.source,
++        note='Combined configured estimates for local attempt and cloud response; not measured electricity.')
++
++
++if __name__ == "__main__":
++    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
++
++    if len(sys.argv) < 2:
++        print('Usage: python router.py "your prompt here"')
++        print('       python router.py "your prompt" --cloud  # Force cloud')
++        sys.exit(1)
++
++    # Parse arguments
++    args = sys.argv[1:]
++    force_cloud = "--cloud" in args
++    if force_cloud:
++        args.remove("--cloud")
++
++    test_prompt = " ".join(args)
++
++    try:
++        result = route_prompt(test_prompt, use_cloud=force_cloud)
++        print("\n=== SEVEN Router ===")
++        print(f"Model:   {result.model}")
++        print(f"Latency: {result.latency_s:.2f}s")
++        print(f"Tokens:  {result.tokens_used if result.tokens_used else 'N/A'}")
++        print(f"\nResponse:\n{result.text}")
++    except Exception as exc:  # pylint: disable=broad-except
++        print(f"Routing failed: {exc}")
++        sys.exit(1)
++
+diff --git a/apps/elia/elia_chat/seven_adapter.py b/apps/elia/elia_chat/seven_adapter.py
+index 34e1472..401d254 100644
+--- a/apps/elia/elia_chat/seven_adapter.py
++++ b/apps/elia/elia_chat/seven_adapter.py
+@@ -77,7 +77,7 @@ def call_seven_router(
+         cloud_energy_profile=runtime_config.cloud_profile,
+     )
+ 
+-    route = "local" if isinstance(result, LocalModelResponse) else "cloud"
++    route = getattr(result, "route", "LOCAL").lower()
+     label = _format_source_label(route, result)
+     energy = getattr(result, "energy", None)
+     baseline_energy = getattr(result, "baseline_energy", None)
+@@ -138,7 +138,7 @@ def _extract_text(content: Any) -> str:
+ def _format_source_label(route: str, response: LocalModelResponse | CloudModelResponse) -> str:
+     """Return a concise label with route and energy context."""
+ 
+-    route_display = "Local" if route == "local" else "Cloud"
++    route_display = {"local": "Local", "cloud": "Cloud", "api_check": "Live data"}.get(route, route)
+     energy_phrase = _format_energy_phrase(route, response)
+     if energy_phrase:
+         return f"SEVEN · {route_display} · {energy_phrase}"
+@@ -155,12 +155,12 @@ def _format_energy_phrase(
+         return None
+ 
+     used_mwh = estimate.watt_hours * 1000.0
+-    parts = [f"Used {used_mwh:.1f} mWh"]
++    parts = [f"Est. {used_mwh:.1f} mWh"]
+ 
+     savings = getattr(response, "energy_savings_wh", None)
+     if route == "local" and savings is not None:
+         saved_mwh = savings * 1000.0
+-        parts.append(f"Saved {saved_mwh:.1f} mWh")
++        parts.append(f"{saved_mwh:.1f} mWh vs profile")
+ 
+     return " · ".join(parts)
+ 
+diff --git a/apps/elia/elia_chat/widgets/chat_header.py b/apps/elia/elia_chat/widgets/chat_header.py
+index c4481bd..55e34e1 100644
+--- a/apps/elia/elia_chat/widgets/chat_header.py
++++ b/apps/elia/elia_chat/widgets/chat_header.py
+@@ -112,7 +112,7 @@ class ChatHeader(Widget):
+     def energy_static_content(self) -> str:
+         used = self._format_energy_value(self._energy_used_wh)
+         saved = self._format_energy_value(self._energy_saved_wh)
+-        return f"{used} used · {saved} saved"
++        return f"Est. {used} · {saved} vs profile"
+ 
+     @staticmethod
+     def _format_energy_value(value_wh: float) -> str:
+diff --git a/apps/elia/elia_chat/widgets/chat_options.py b/apps/elia/elia_chat/widgets/chat_options.py
+index 4c50fa8..08d0709 100644
+--- a/apps/elia/elia_chat/widgets/chat_options.py
++++ b/apps/elia/elia_chat/widgets/chat_options.py
+@@ -67,9 +67,9 @@ class OptionsModal(ModalScreen[RuntimeConfig]):
+             vs.border_title = "Energy Profiles"
+             vs.can_focus = False
+             description = (
+-                "Choose the local hardware profile SEVEN should assume when "
+-                "tracking actual energy, along with the cloud baseline used to "
+-                "compute savings. Changes apply only to this session."
++                "Choose assumptions for energy estimates and the comparison baseline. "
++                "These are not measurements. Profiles do not change the running "
++                "model or hardware. Changes apply only to this session."
+             )
+             yield Static(description, id="profiles-description")
+             with RadioSet(id="local-profiles") as local_rs:
+diff --git a/apps/elia/elia_chat/widgets/energy_stats.py b/apps/elia/elia_chat/widgets/energy_stats.py
+index 9b6fca1..04aaf28 100644
+--- a/apps/elia/elia_chat/widgets/energy_stats.py
++++ b/apps/elia/elia_chat/widgets/energy_stats.py
+@@ -4,7 +4,6 @@ from textual.widgets import Static
+ 
+ from elia_chat.chats_manager import ChatsManager
+ from elia_chat.widgets.chat_header import ChatHeader
+-from elia_chat.energy_equivalents import random_equivalent
+ 
+ 
+ class EnergyStats(Static):
+@@ -27,5 +26,4 @@ class EnergyStats(Static):
+         used, saved = await ChatsManager.energy_totals(chat_id=None)
+         used_text = ChatHeader._format_energy_value(used)
+         saved_text = ChatHeader._format_energy_value(saved)
+-        equivalent = random_equivalent(saved)
+-        self.update(f"⚡ {used_text} used · 🌱 {saved_text} saved · {equivalent}")
++        self.update(f"Profile estimates: {used_text} · {saved_text} vs baseline (not measured)")
+diff --git a/apps/elia/elia_chat/widgets/welcome.py b/apps/elia/elia_chat/widgets/welcome.py
+index 401a397..bff5841 100644
+--- a/apps/elia/elia_chat/widgets/welcome.py
++++ b/apps/elia/elia_chat/widgets/welcome.py
+@@ -8,45 +8,23 @@ from textual.widgets import Static
+ 
+ class Welcome(Static):
+     MESSAGE = """
+-[b]SEVEN[/] (Sustainable Energy Via Efficient Neural-routing)
++[b]SEVEN[/] · Choose where your AI runs.
+ 
+-[b u]THE PROBLEM:[/]
+-Every AI query burns 0.35 Wh through cloud GPUs—whether you're asking "What is 2+2?"
+-or writing a novel. At 100M users, GPT-4o alone consumes [b]1,277 GWh annually[/]
+-(118,000 homes). Yet 40% of queries are simple lookups that could run locally at 0.02 Wh.
++[b cyan]LOCAL[/]  Short general questions run on your configured local model.
++[b yellow]LIVE DATA[/]  Weather, crypto and news tools return source information directly.
++[b magenta]CLOUD[/]  Complexity rules or explicit local uncertainty can send your prompt to OpenAI.
+ 
+-AI is projected to consume 134 TWh by 2027. Cloud costs will force subscriptions, pricing
+-out billions. Data centers physically cannot scale to meet exponential demand.
++Routing rules are heuristics. A confident local answer can still be wrong.
++Cloud routing sends the prompt and conversation context to your configured provider.
+ 
+-[b u]THE SOLUTION:[/]
+-SEVEN routes by complexity, not defaults:
++[b]Energy figures are estimates from selected profiles.[/]
++They are not electricity measurements or verified savings. Changing a profile
++changes the calculation; it does not switch your hardware or running model.
+ 
+-[b green]LOCAL (40%)[/]: Factual queries → Phi-3.5 on NPU (0.02 Wh, 94% saved)
+-[b blue]API (8%)[/]: Real-time data → Direct calls (0.001 Wh, 99% saved)
+-[b red]CLOUD (52%)[/]: Complex tasks → GPT-4o only when needed (0.35 Wh)
++Type your question, then press [b]ctrl+j[/] or [b]alt+enter[/].
++[b]ctrl+o[/]  Estimate profiles    [b]f1[/]  Help
+ 
+-[b u]WHY THIS IS NOVEL:[/]
+-Everyone optimizes [b]models[/] (quantization, pruning → 10-20% gains)
+-SEVEN optimizes the [b]orchestration layer[/] (WHERE to compute → 38% gains)
+-
+-The question isn't "How do we make models efficient?" It's "Does this query even
+-need a frontier model?" Asked [b]before[/] inference. This architectural shift—
+-routing intelligence as infrastructure—is what existing solutions miss.
+-
+-[b u]IMPACT AT SCALE:[/]
+-For GPT-4o at 100M users: [b cyan]483 GWh saved annually[/] (45,000 homes, 105,000 cars)
+-Multiply across Claude, Gemini, Llama → [b]terawatt-hour potential[/]
+-
+-Every 1% of global AI queries adopting intelligent routing = [b]12.8 GWh saved annually[/]
+-This scales with adoption, not model improvements. As AI grows 10x, so does impact.
+-
+-[b u]HOW TO USE:[/]
+-Type your message and press [b u]ctrl+j[/] or [b u]alt+enter[/] • Press [b u]ctrl+o[/] to configure
+-
+-[b]UN SDG 7: Affordable and Clean Energy[/]
+-Intelligent routing isn't optimization—it's infrastructure for sustainable AI.
+-
+-[@click='open_repo'][b r]View SEVEN on GitHub[/][/]
++[@click='open_repo'][b]Source and setup instructions →[/][/]
+ """
+ 
+     BORDER_TITLE = "SEVEN - Intelligent Routing for Sustainable AI"
+diff --git a/cli.py b/cli.py
+index 79e8ba1..6b334b5 100644
+--- a/cli.py
++++ b/cli.py
+@@ -11,6 +11,7 @@ from __future__ import annotations
+ 
+ import argparse
+ import asyncio
++import os
+ import sys
+ from pathlib import Path
+ 
+@@ -53,6 +54,12 @@ def parse_args() -> argparse.Namespace:
+ 
+ 
+ def main() -> None:
++    if any(arg in sys.argv for arg in ('--ask', '--classify', '--doctor')):
++        from SEVEN.main import main as command_main
++        raise SystemExit(command_main())
++    from SEVEN.settings import load_settings
++    load_settings()
++    os.environ['SEVEN_NO_SPINNER'] = '1'
+     args = parse_args()
+     _bootstrap_paths()
+     _ensure_database_exists()

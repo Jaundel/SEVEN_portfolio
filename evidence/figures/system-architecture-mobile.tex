@@ -1,0 +1,65 @@
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{fontspec}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setmainfont[Path=../fonts/,BoldFont=Poppins-SemiBold.ttf,ItalicFont=Poppins-Italic.ttf]{Poppins-Regular.ttf}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{calc,arrows.meta}
+\definecolor{ink}{HTML}{161b22}
+\definecolor{text}{HTML}{353535}
+\definecolor{muted}{HTML}{646c74}
+\definecolor{line}{HTML}{d7dadd}
+\definecolor{wash}{HTML}{f6f6f6}
+\definecolor{tint}{HTML}{e6ecef}
+\definecolor{link}{HTML}{1d63b7}
+\definecolor{local}{HTML}{376c97}
+\definecolor{api}{HTML}{995d46}
+\definecolor{cloud}{HTML}{7b649b}
+\definecolor{match}{HTML}{7d9fc4}
+\definecolor{miss}{HTML}{e0e3e5}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=-1pt]
+\path[use as bounding box] (0,0) rectangle (350,1020);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{13}{19.5}\selectfont] at (14,12) {\textbf{I. Request execution}};
+\path[draw=ink,fill=ink!10!white,line width=.65pt,rounded corners=4pt] (52,48) rectangle (298,105);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont] at (63,57) {Terminal input};
+\node[anchor=north west,inner sep=0pt,text=text,align=left,font=\fontsize{10.5}{15.75}\selectfont,text width=224pt] at (63,79) {Prompt + optional forced-cloud mode};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=muted] (175,105) -- (175,133);
+\path[draw=ink,fill=ink!10!white,line width=.65pt,rounded corners=4pt] (52,133) rectangle (298,200);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont] at (63,142) {Ordered routing rules};
+\node[anchor=north west,inner sep=0pt,text=text,align=left,font=\fontsize{10.5}{15.75}\selectfont,text width=224pt] at (63,164) {Live data $\rightarrow$ domain / complexity\\ $\rightarrow$ length >150 words $\rightarrow$ local default};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=local] (175,200) -- (175,232);
+\path[draw=local,fill=local!10!white,line width=.65pt,rounded corners=4pt] (52,232) rectangle (298,311);
+\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{12}{18.0}\selectfont] at (63,241) {Llama 3.2 1B};
+\node[anchor=north west,inner sep=0pt,text=text,align=left,font=\fontsize{10.5}{15.75}\selectfont,text width=224pt] at (63,263) {System + user prompt\\Ryzen AI server · NPU + iGPU};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=local] (175,311) -- (175,337);
+\path[draw=local,fill=local!10!white,line width=.65pt,rounded corners=4pt] (52,337) rectangle (298,393);
+\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{12}{18.0}\selectfont] at (63,346) {Uncertainty phrase check};
+\node[anchor=north west,inner sep=0pt,text=text,align=left,font=\fontsize{10.5}{15.75}\selectfont,text width=224pt] at (63,368) {Four substring phrases · no quality model};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=local] (298,365) -- (329,365) -- (329,650) -- (278,650);
+\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{9}{13.5}\selectfont] at (301,402) {reply};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=api] (52,170) -- (23,170) -- (23,451) -- (52,451);
+\path[draw=api,fill=api!10!white,line width=.65pt,rounded corners=4pt] (52,423) rectangle (298,498);
+\node[anchor=north west,inner sep=0pt,text=api,align=left,font=\fontsize{12}{18.0}\selectfont] at (63,432) {Direct live-data tools};
+\node[anchor=north west,inner sep=0pt,text=text,align=left,font=\fontsize{10.5}{15.75}\selectfont,text width=224pt] at (63,454) {Open-Meteo · Coinbase · BBC\\Source + timestamp; no LLM rewrite};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=api] (298,461) -- (329,461);
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=cloud] (52,186) -- (12,186) -- (12,565) -- (52,565);
+\path[draw=cloud,fill=cloud!10!white,line width=.65pt,rounded corners=4pt] (52,532) rectangle (298,607);
+\node[anchor=north west,inner sep=0pt,text=cloud,align=left,font=\fontsize{12}{18.0}\selectfont] at (63,541) {GPT-4o-mini};
+\node[anchor=north west,inner sep=0pt,text=text,align=left,font=\fontsize{10.5}{15.75}\selectfont,text width=224pt] at (63,563) {Cloud adapter\\Domain / complexity or forced mode};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=cloud,dashed] (52,365) -- (36,365) -- (36,565) -- (52,565);
+\node[anchor=north west,inner sep=0pt,text=cloud,align=left,font=\fontsize{9}{13.5}\selectfont] at (54,402) {Uncertain / local error $\rightarrow$ cloud};
+\draw[-{Stealth[length=4pt,width=3.3pt]},line width=.85pt,draw=cloud] (298,570) -- (329,570);
+\path[draw=ink,fill=ink!10!white,line width=.65pt,rounded corners=4pt] (52,629) rectangle (278,695);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont] at (63,638) {Terminal reply + SQLite};
+\node[anchor=north west,inner sep=0pt,text=text,align=left,font=\fontsize{10.5}{15.75}\selectfont,text width=204pt] at (63,660) {Text · source · model · latency\\Configured energy metadata};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{13}{19.5}\selectfont] at (14,732) {\textbf{II. Energy bookkeeping}};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{11.5}{17.25}\selectfont] at (14,766) {Provider usage n $\rightarrow$ configured profile c};
+\path[draw=line,fill=tint!45!white,line width=.65pt,rounded corners=4pt] (14,800) rectangle (336,857);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{14}{21.0}\selectfont] at (28,814) {Estimate (Wh) = n × c / 3,600};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{11}{16.5}\selectfont,text width=322pt] at (14,880) {Local reply: local estimate + cloud-profile baseline.\\Escalation: add completed local and cloud estimates.\\Direct tools: no inference estimate assigned.};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{9.5}{14.25}\selectfont] at (14,968) {Solid: execution / reply \quad Dashed: conditional fallback};
+
+\end{tikzpicture}
+\end{document}

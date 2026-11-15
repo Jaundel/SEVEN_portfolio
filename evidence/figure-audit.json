@@ -1,0 +1,1013 @@
+{
+  "reviewed_utc": "2026-11-15T08:18:14.508159+00:00",
+  "scope": "14 project articles linked from Shikun index plus Clarity; 8 graphics projects, 4 David Ha articles, 3 Jonathan Chang articles; Omni local source inspected separately.",
+  "method": "Primary HTML and rendered figure-section inspection; source-file inspection for Prismer TikZ and MTAN SVG. Browser images retained in ignored output, never substituted for SEVEN evidence.",
+  "limitations": "Selected reference video/WebGL tiles did not finish rendering during capture. Layout/source inspection is not an end-to-end playback test or reproduction of published experiments.",
+  "report": {
+    "path": "evidence/FIGURE_AUDIT.md",
+    "sha256": "1cb903aa9b84c25dcbe2b1e686ffb61f3c851e5a9c51e239f3ac32b427e64eeb"
+  },
+  "authoring_example": {
+    "source": "Public vqav2.tex example linked from Clarity",
+    "local_inspection_copy": "output/references/figure-audit/prismer-vqav2-reference.tex",
+    "sha256": "fb84d036b885e5f313aa1ab2ccde71e46bf59b14c656ef8e519160e4cd338491"
+  },
+  "pages": [
+    {
+      "id": "prismer",
+      "url": "https://shikun.io/projects/prismer",
+      "resolved_url": "https://shikun.io/projects/prismer",
+      "page_sha256": "2f1bc0372ec60804cde8fc0f9b527479859c0cd3e351a69bff3fa10214138afd",
+      "figure_sections": [
+        "Prismer: A Vision-Language Model with Multi-Task Experts",
+        "Introduction",
+        "Prismer Model Design",
+        "Diverse, Task-specific Pre-trained Experts",
+        "Prismer Model Variants",
+        "Experiments",
+        "Fine-tuned Performance on NoCaps and VQAv2",
+        "Zero-shot Performance on COCO Caption and NoCaps",
+        "Few-shot Performance on ImageNet Classification",
+        "Intriguing Properties of Prismer",
+        "Conclusions, Limitations and Discussions",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-prismer-1.png",
+          "sha256": "4f598d789a8579f87d5899db999ff174083c0f8ff2a62bdf016be23aac7e007b"
+        },
+        {
+          "path": "output/playwright/audit-prismer-2.png",
+          "sha256": "aa108ce81c0ec350663a027909e7d46396b1b505ede68fb403a2896fa0b1c2a3"
+        }
+      ]
+    },
+    {
+      "id": "kaleido",
+      "url": "https://shikun.io/projects/kaleido",
+      "resolved_url": "https://shikun.io/projects/kaleido",
+      "page_sha256": "9c94a7217dfc64eac24cb7d87b228355f84d8e926ec8e6611138e60d75f6b5b9",
+      "figure_sections": [
+        "Kaleido: Scaling Sequence-to-Sequence Generative Neural Rendering",
+        "Introduction",
+        "Kaleido Generations",
+        "Single-View Generative Renderings",
+        "Camera Templates",
+        "Multi-View Generative Renderings",
+        "3D Reconstruction",
+        "Emergent Rendering Capabilities",
+        "Conclusions, Limitations and Future Work",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-kaleido-1.png",
+          "sha256": "f9c9ba4bb2c522711135f7617796550de3da942e5531395f80cb27142fbe57e4"
+        },
+        {
+          "path": "output/playwright/audit-kaleido-2.png",
+          "sha256": "caee35f5c43832ac0d72ddb0acd46c278c0b9ac2ee02fc8b6ec9ace820b2d797"
+        }
+      ]
+    },
+    {
+      "id": "eschernet",
+      "url": "https://kxhit.github.io/EscherNet",
+      "resolved_url": "https://kxhit.github.io/EscherNet",
+      "page_sha256": "67194086da53ba55318bff07c7ee608697d37aeeb1e6decd356c2b1fa7371787",
+      "figure_sections": [
+        "EscherNet: A Generative Model for Scalable View Synthesis",
+        "Demo",
+        "--> <!--",
+        "Method Overview",
+        "Camera Positional Encoding (CaPE)",
+        "4DoF CaPE",
+        "6DoF CaPE",
+        "Applications",
+        "Zero-shot Novel View Synthesis",
+        "Compared to 3D Diffusion Models",
+        "Compared to Neural Rendering Methods",
+        "Results on Real-World Objects",
+        "Single/Multi-Image 3D Reconstruction",
+        "Text-to-3D Generation",
+        "BibTex",
+        "Miscs"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-eschernet-1.png",
+          "sha256": "f0acf6fb1a06f5bea19f466983d8d50ce574b5004dc28fc9d0f7ba44b22150ed"
+        },
+        {
+          "path": "output/playwright/audit-eschernet-2.png",
+          "sha256": "f9a83f02e7739dc9e279f15878bea7d5c00f0dd990ac7b28975300956ed20443"
+        }
+      ]
+    },
+    {
+      "id": "auto-lambda",
+      "url": "https://shikun.io/projects/auto-lambda",
+      "resolved_url": "https://shikun.io/projects/auto-lambda",
+      "page_sha256": "855f672ddb3ca768660f4e01d9d74fd5decafedc5a4c8220f6f88f6cfae770a7",
+      "figure_sections": [
+        "Auto-$\\lambda$: Disentangling Dynamic Task Relationships",
+        "Introduction",
+        "Background",
+        "Notations",
+        "The Design of Optimisation Methods",
+        "Auto-$\\boldsymbol \\lambda$: Exploring Dynamic Task Relationships",
+        "Are Multi-task Optimisation Methods Really Useful?",
+        "Experiments",
+        "Baselines",
+        "Results on Dense Prediction Tasks",
+        "Intriguing Learning Strategies in Auto-$\\boldsymbol \\lambda$",
+        "Understanding The Structure of Tasks",
+        "Understanding The Transferred Task Knowledge (Blue Sky Thinking)",
+        "Skills v.s. Geometry",
+        "In-Domain v.s. Out-Domain",
+        "Conclusions, Limitations and Discussion",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-auto-lambda-1.png",
+          "sha256": "69ba27b2367441d188fa1666069cb32e7dd15163e9f817bfb19ed64c730b5527"
+        },
+        {
+          "path": "output/playwright/audit-auto-lambda-2.png",
+          "sha256": "6cf3fcbf55d36c972516c9be5b265d595595da6e749de12ab39e2eb6b89cebc8"
+        }
+      ]
+    },
+    {
+      "id": "reco",
+      "url": "https://shikun.io/projects/regional-contrast",
+      "resolved_url": "https://shikun.io/projects/regional-contrast",
+      "page_sha256": "0615afb48045224eec7f5ecf62939ffe581b6e6fbdfc6c8f5bcdba7576455358",
+      "figure_sections": [
+        "ReCo: Regional Contrast",
+        "Introduction",
+        "Learning Semantic Segmentation with ReCo",
+        "Experiments & Visualisations",
+        "Semi-Supervised Segmentation Benchmark Redesign",
+        "Results on Partial Dataset Full Labels",
+        "Results on Full Dataset Partial Labels",
+        "Conclusion",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-reco-1.png",
+          "sha256": "344739e0337929b220d5e207d2a8264f54c3cb9209450f1672b48c484cc6ac4b"
+        },
+        {
+          "path": "output/playwright/audit-reco-2.png",
+          "sha256": "298f28641c00bfa12348bc970462e31d4d3654d1a3da0e34cbd12a1f242ea692"
+        }
+      ]
+    },
+    {
+      "id": "shape-adaptor",
+      "url": "https://shikun.io/projects/shape-adaptor",
+      "resolved_url": "https://shikun.io/projects/shape-adaptor",
+      "page_sha256": "7e010e56e41f6ec546056aeb736fd04f6a4ead50cdf85bbde3f2998591ed818f",
+      "figure_sections": [
+        "Shape Adaptor",
+        "Introduction",
+        "The Design of Shape Adaptor",
+        "Shape Adaptor as a Learnable Down-Sampling Layer",
+        "Experiments",
+        "Results on Image Classification Datasets",
+        "Robustness on Number of Shape Adaptors",
+        "Robustness on Shape Adaptor Initialisation",
+        "A detailed Study on Neural Shape Learning",
+        "Other Applications",
+        "Automated Shape Compression (AutoSC)",
+        "Automated Transfer Learning (AutoTL)",
+        "Conclusions & Future Directions",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-shape-adaptor-1.png",
+          "sha256": "b26476befdedde975e0ca20c81b4f8547bdd746424fbe7e45cb261581fc153dd"
+        },
+        {
+          "path": "output/playwright/audit-shape-adaptor-2.png",
+          "sha256": "b33771a881f38a3492c8c167572f374bfd041332a335fb1bcd757c86172950f4"
+        }
+      ]
+    },
+    {
+      "id": "maxl",
+      "url": "https://shikun.io/projects/meta-auxiliary-learning",
+      "resolved_url": "https://shikun.io/projects/meta-auxiliary-learning",
+      "page_sha256": "452be1cf9965a48653c1999186843d65e6190e4dfab8b2048a7d057c035f2a3e",
+      "figure_sections": [
+        "MAXL: Meta Auxiliary Learning",
+        "Introduction",
+        "Generalisation of Auxiliary Tasks",
+        "Intriguing Observations on Auxiliary Learning",
+        "The Design of MAXL",
+        "Detailed Formulation",
+        "Mask SoftMax for Hierarchical Predictions",
+        "Experiments",
+        "Visualisations of Generated Knowledge",
+        "Conclusion & Future Work",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-maxl-1.png",
+          "sha256": "7a298f3b450a187ef24464edd0002e5c5ac5362e4e2cbbf74077a30f78699217"
+        },
+        {
+          "path": "output/playwright/audit-maxl-2.png",
+          "sha256": "86685bc1a4f82e2e2ba46735061f1c9f10b352ed759ebf3065a411632708bbe7"
+        }
+      ]
+    },
+    {
+      "id": "mtan",
+      "url": "https://shikun.io/projects/multi-task-attention-network",
+      "resolved_url": "https://shikun.io/projects/multi-task-attention-network",
+      "page_sha256": "a1800e6fb9ca0718e2fadab80783f7a313fbec096066b748840b7406cd455f5b",
+      "figure_sections": [
+        "MTAN: Multi-Task Attention Network",
+        "Introduction",
+        "The Design of MTAN",
+        "Experiments",
+        "Baselines",
+        "Dynamic Weight Average (DWA)",
+        "Results on Image-to-Image Predictions",
+        "Robustness to Task Weighting Schemes",
+        "Visualisation of Attended Features",
+        "Results on Many-to-Many Predictions (Visual Decathlon Challenge)",
+        "Conclusion",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-mtan-1.png",
+          "sha256": "917de52d94526e1ff155b9dc20c1eb2b61744e37939d8371a758a2c0694b2e7f"
+        },
+        {
+          "path": "output/playwright/audit-mtan-2.png",
+          "sha256": "5398d1292aa79168f8cb4ad2f8f94880f29ba62b9d1ea1df46f269db9fbe6a98"
+        }
+      ]
+    },
+    {
+      "id": "vsl",
+      "url": "https://shikun.io/projects/variational-shape-learner",
+      "resolved_url": "https://shikun.io/projects/variational-shape-learner",
+      "page_sha256": "35af933ccd59f7dda1f3214ac73122250257d1b92d602c44ed8233a946ee3c64",
+      "figure_sections": [
+        "VSL: Variational Shape Learner",
+        "Introduction",
+        "The Design Philosophy",
+        "Limitation of Prior Methods",
+        "Why Hierarchical?",
+        "Experiments and Visualisations",
+        "Single Shape Generation",
+        "Shape Morphing",
+        "Unsupervised Shape Classification",
+        "Single Image Shape Retrieval",
+        "Shape Arithmetic",
+        "Conclusion",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-vsl-1.png",
+          "sha256": "b4f8a88da2078e3af73bc5cae9645a363224198c8f2ce3e4c521eab144d00e9c"
+        },
+        {
+          "path": "output/playwright/audit-vsl-2.png",
+          "sha256": "b153a2859f2c3a555ef9b569badbb78a193348108237baf592a822632fbec4c7"
+        }
+      ]
+    },
+    {
+      "id": "clarity",
+      "url": "https://shikun.io/projects/clarity",
+      "resolved_url": "https://shikun.io/projects/clarity",
+      "page_sha256": "f3ea5e52b82a03582a89c0cdf79944413d6915a0873120eeb38027435ab43a3d",
+      "figure_sections": [
+        "Clarity: A Minimalist Website Template for AI Research",
+        "Introduction",
+        "Containers and Visual Diagrams",
+        "Container Layouts",
+        "Container Colour",
+        "Design Features",
+        "Fundamentals",
+        "Mathematics",
+        "Code",
+        "Tables",
+        "Slide Display",
+        "Selection Display",
+        "Comparison Display",
+        "Video Control / Buttons",
+        "Other Design Tips",
+        "Colour",
+        "Icons",
+        "Data Plots and Visualisation",
+        "Open-Source Contribution and Future Plans",
+        "License"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-clarity-1.png",
+          "sha256": "5cbaca7dd25b69fa464fd777ae6c4dce746326450d342e335e3b60a03be6556e"
+        },
+        {
+          "path": "output/playwright/audit-clarity-2.png",
+          "sha256": "e110188a850b9cf3ecede99d76ca32e8a177686bed5040e8e0686fc507f66f17"
+        },
+        {
+          "path": "output/playwright/audit-clarity-plot.png",
+          "sha256": "6834b51164de6f6854f7eca4f9ea660fa571472d4aed212fd8e91ac5ebfc22a0"
+        }
+      ]
+    },
+    {
+      "id": "hypernerf",
+      "url": "https://hypernerf.github.io/",
+      "resolved_url": "https://hypernerf.github.io/",
+      "page_sha256": "909a9e260c7363a8c0a59946f98a8f4a668a4a57244df51c7326b28f36d07b9f",
+      "figure_sections": [
+        "A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields",
+        "HyperNeRF handles topological variations by modeling a family of shapes in a higher-dimensional space, thereby producing more realistic renderings and more accurate geometric reconstructions.",
+        "Abstract",
+        "Video",
+        "Motivation",
+        "Level-Set Methods",
+        "Slicing Surfaces",
+        "HyperNeRF",
+        "Hyper-Space Template",
+        "BibTeX",
+        "Acknowledgements"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-hypernerf-1.png",
+          "sha256": "b89f5b10192dfada0a7ffb964fa09706d640b144a31733c4030d950ce5bacb3f"
+        },
+        {
+          "path": "output/playwright/audit-hypernerf-2.png",
+          "sha256": "d4eaf2655014d2a4abd4f329eda21caa6cd49a2e61f016eafe3ca755bff206c2"
+        }
+      ]
+    },
+    {
+      "id": "nerfies",
+      "url": "https://nerfies.github.io/",
+      "resolved_url": "https://nerfies.github.io/",
+      "page_sha256": "8e117ddef3e9776cd5ddb6333667428c22e8c218074cf2988e4c6a8b403cf081",
+      "figure_sections": [
+        "Nerfies: Deformable Neural Radiance Fields",
+        "Nerfies turns selfie videos from your phone into free-viewpoint portraits.",
+        "Abstract",
+        "Video",
+        "Visual Effects",
+        "Matting",
+        "Animation",
+        "Interpolating states",
+        "Re-rendering the input video",
+        "Related Links",
+        "BibTeX"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-nerfies-1.png",
+          "sha256": "903dbbd48a9a4f1c6143567368608334202ae434fd6fc760d55c7d441139bfef"
+        },
+        {
+          "path": "output/playwright/audit-nerfies-2.png",
+          "sha256": "25785c21a2727c49f7c766985b86c8bff541b916018004112f8b2c30c40c71e6"
+        }
+      ]
+    },
+    {
+      "id": "mipnerf360",
+      "url": "https://jonbarron.info/mipnerf360/",
+      "resolved_url": "https://jonbarron.info/mipnerf360/",
+      "page_sha256": "a5a585b9d602f9f0f8fac7262ffe355cf0c56cb640bea1dec758e04de634b1c4",
+      "figure_sections": [
+        "Mip-NeRF 360 : Unbounded Anti-Aliased Neural Radiance Fields CVPR 2022 (Oral Presentation)",
+        "Paper",
+        "Video",
+        "Dataset Pt. 1",
+        "Dataset Pt. 2",
+        "Code",
+        "Abstract",
+        "Video",
+        "Citation",
+        "Acknowledgements"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-mipnerf360-1.png",
+          "sha256": "a067b6e0907b66c7d14a0dda0a4dbcd6682367d2218e5ce582080da211ba060e"
+        },
+        {
+          "path": "output/playwright/audit-mipnerf360-2.png",
+          "sha256": "fc6598828d2e1ca762a9506582f28bf3126298929b398552403bdfc8ef9245fa"
+        }
+      ]
+    },
+    {
+      "id": "zipnerf",
+      "url": "https://jonbarron.info/zipnerf/",
+      "resolved_url": "https://jonbarron.info/zipnerf/",
+      "page_sha256": "520a6383f3525c648f36057224408835d50ee10f39ed7d3c793f9d50ca2d3fee",
+      "figure_sections": [
+        "Zip-NeRF : Anti-Aliased Grid-Based Neural Radiance Fields ICCV 2023 (Oral Presentation, Best Paper Finalist)",
+        "Paper",
+        "Video",
+        "Code",
+        "Data",
+        "Google Vertex AI Notebook",
+        "Abstract",
+        "Video",
+        "360° Video Flythroughs",
+        "Multisampling",
+        "XY aliasing",
+        "Z aliasing",
+        "Citation",
+        "Acknowledgements"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-zipnerf-1.png",
+          "sha256": "fcf2aaf65ec6c1f5f5f776170f26bd6ff2aaecf78e6828627d2bd9536ca44a9e"
+        },
+        {
+          "path": "output/playwright/audit-zipnerf-2.png",
+          "sha256": "1d415f35570c4d46c3aeb9d0d4b78579363d0c3fe009a7818bfd088b9925951f"
+        }
+      ]
+    },
+    {
+      "id": "refnerf",
+      "url": "https://dorverbin.github.io/refnerf/",
+      "resolved_url": "https://dorverbin.github.io/refnerf/",
+      "page_sha256": "910efbe07290547b3d6920127cae0ecc3fe74986452b212f25382431b4550458",
+      "figure_sections": [
+        "Ref-NeRF : Structured View-Dependent Appearance for Neural Radiance Fields CVPR 2022 (Oral Presentation, Best Student Paper Honorable Mention)",
+        "Paper",
+        "Video",
+        "Shiny Dataset",
+        "Shiny Dataset Source",
+        "Real Dataset",
+        "Code",
+        "Abstract",
+        "Video",
+        "Reflection Direction Parameterization",
+        "Integrated Directional Encoding",
+        "Additional Synthetic Results",
+        "Results on Captured Scenes",
+        "Scene Editing",
+        "Citation",
+        "Acknowledgements"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-refnerf-1.png",
+          "sha256": "7f720f16777a6638a4e81d84f16d18a6fdef9d0f2fd2ff839d5d88453878ad38"
+        },
+        {
+          "path": "output/playwright/audit-refnerf-2.png",
+          "sha256": "0b30baf2b6946f2a9a630d9cb64a74bcceb82c96e6fca4b0d7eff60936ecbd83"
+        }
+      ]
+    },
+    {
+      "id": "camp",
+      "url": "https://camp-nerf.github.io/",
+      "resolved_url": "https://camp-nerf.github.io/",
+      "page_sha256": "7c3566bb5e585a467c80a285f64ca91d01641c7867447dc4db8bdd8068ab0d17",
+      "figure_sections": [
+        "CamP: Camera Preconditioning for Neural Radiance Fields",
+        "Abstract",
+        "Video",
+        "Camera Preconditioning",
+        "Rotation",
+        "Translation",
+        "Mobile Phone Captures",
+        "Mip-NeRF 360 Dataset",
+        "Side-by-Side Comparisons on Perturbed Mip-NeRF 360 Dataset",
+        "NeRF-Synthetic Dataset",
+        "Related Links",
+        "Acknowledgements",
+        "BibTeX"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-camp-1.png",
+          "sha256": "29eafe6d9e36701b4f43b7489e2a03e5924d885d312b454b7e484d4dc0b4177b"
+        },
+        {
+          "path": "output/playwright/audit-camp-2.png",
+          "sha256": "254a08ce8543bce05b22254bc952b01a645815ebc0c2b088140fe9319b69400d"
+        }
+      ]
+    },
+    {
+      "id": "reconfusion",
+      "url": "https://reconfusion.github.io/",
+      "resolved_url": "https://reconfusion.github.io/",
+      "page_sha256": "958454c43e18f4980b31e3eb994d05cc852fcb5abd38620ddfc4f3b768af780f",
+      "figure_sections": [
+        "ReconFusion : 3D Reconstruction with Diffusion Priors",
+        "Abstract",
+        "Recon Fusion = 3D Reconstruction + Diffusion Prior",
+        "ReconFusion enables high-quality 3D reconstruction from few views",
+        "ReconFusion outperforms other few-view NeRF methods",
+        "ReconFusion improves both few-view and many-view reconstruction",
+        "ReconFusion distills a consistent 3D model from inconsistent samples",
+        "Citation",
+        "Acknowledgements"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-reconfusion-1.png",
+          "sha256": "4a2a003465d413fff9ea91bad7d8fdc4f0bce2e569e6e154347d686ca2f655de"
+        },
+        {
+          "path": "output/playwright/audit-reconfusion-2.png",
+          "sha256": "6767248926207605b9872a5a3ccf2af826103fad3b886992ca89d72a3445cf45"
+        }
+      ]
+    },
+    {
+      "id": "eclipse",
+      "url": "https://dorverbin.github.io/eclipse/",
+      "resolved_url": "https://dorverbin.github.io/eclipse/",
+      "page_sha256": "7b934227486bc73a42420ef7177885127c9b298520b6a882033b88beb3398031",
+      "figure_sections": [
+        "Eclipse : Disambiguating Illumination and Materials using Unintended Shadows CVPR 2024 (Oral Presentation)",
+        "Paper",
+        "Video",
+        "Code [coming soon]",
+        "Abstract",
+        "Video",
+        "Model",
+        "Results",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-eclipse-1.png",
+          "sha256": "d4a8ed9d07c2655f39497ac50a905230d356d177465acd955baa08b0704c99b1"
+        },
+        {
+          "path": "output/playwright/audit-eclipse-2.png",
+          "sha256": "626aa1be873e98563f79e21e226639afff28f7778c51c14c35ff7469430aa44a"
+        }
+      ]
+    },
+    {
+      "id": "worldmodels",
+      "url": "https://worldmodels.github.io/",
+      "resolved_url": "https://worldmodels.github.io/",
+      "page_sha256": "aa83d567c5a31d39b1cfc2b9b694c33c84c5d102e75f850bf1e9153f098d0f03",
+      "figure_sections": [
+        "This page requires Javascript. Please enable it for https://worldmodels.github.io/",
+        "World Models",
+        "Can agents learn inside of their own dreams?",
+        "Abstract",
+        "Introduction",
+        "Agent Model",
+        "VAE (V) Model",
+        "MDN-RNN (M) Model",
+        "Controller (C) Model",
+        "Putting Everything Together",
+        "Car Racing Experiment: World Model for Feature Extraction",
+        "Procedure",
+        "Car Racing Experiment Results",
+        "V Model Only",
+        "Full World Model (V and M)",
+        "Car Racing Dreams",
+        "VizDoom Experiment: Learning Inside of a Dream",
+        "Procedure",
+        "Training Inside of the Dream",
+        "Transfer Policy to Actual Environment",
+        "Cheating the World Model",
+        "Iterative Training Procedure",
+        "Related Work",
+        "Discussion",
+        "Acknowledgments",
+        "Citation",
+        "Open Source Code",
+        "Reuse",
+        "Appendix",
+        "Variational Autoencoder",
+        "Mixture Density Network + Recurrent Neural Network",
+        "Controller",
+        "Evolution Strategies",
+        "DoomRNN"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-worldmodels-1.png",
+          "sha256": "c394e47192193dde45118f97994060c59278d1d25775b9d69118d235e2a6d613"
+        },
+        {
+          "path": "output/playwright/audit-worldmodels-2.png",
+          "sha256": "656b190467a5e5a681dbf736a205e0a22a57d191b306c8df75aef9586d9b20ce"
+        }
+      ]
+    },
+    {
+      "id": "wann",
+      "url": "https://weightagnostic.github.io/",
+      "resolved_url": "https://weightagnostic.github.io/",
+      "page_sha256": "b64dc3337b5be9b843aeba884dde57e07ade17e3cba6051d1bb2a342213b505d",
+      "figure_sections": [
+        "This page requires Javascript. Please enable it for https://weightagnostic.github.io/",
+        "Weight Agnostic Neural Networks",
+        "Abstract",
+        "Introduction",
+        "Related Work",
+        "Weight Agnostic Neural Network Search",
+        "Experimental Results",
+        "Discussion and Future Work",
+        "Acknowledgements",
+        "Citation",
+        "Open Source Code",
+        "Reuse",
+        "Supplementary Materials",
+        "“Have you also thought about trying ... ?”",
+        "Searching for network architecture using a single weight rather than range of weights.",
+        "Searching for network architecture using random weights for each connection.",
+        "Adding noise to the single weight values.",
+        "Using backpropagation to fine-tune weights of a WANN.",
+        "Why did you choose to use many different activation functions in the same network? Why not just ReLU? Wouldn't too many activations break biological plausibility?",
+        "Performance Profiles",
+        "Average Performance (100 trial) versus Weight for Champion Networks",
+        "Additional Bipedal Walker Results",
+        "Increasing the search space",
+        "Bloopers"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-wann-1.png",
+          "sha256": "1045ff91cb164ff659e628550e7172b2810db35172b6e41cf38f78114226ca00"
+        },
+        {
+          "path": "output/playwright/audit-wann-2.png",
+          "sha256": "96b610edee7477f53c532517af1442c727cb6e372862671db457c1e844f58c1a"
+        },
+        {
+          "path": "output/playwright/audit-wann-operators.png",
+          "sha256": "679a7c71b2d5cb90e9f896dcabb125fba8741f5a96ed81f701a448ebef2da228"
+        },
+        {
+          "path": "output/playwright/audit-wann-results.png",
+          "sha256": "0909fed3b117cf329ef1749499e590694cb0797f85bf9c7317e1ec657358b273"
+        }
+      ]
+    },
+    {
+      "id": "visual-es",
+      "url": "https://blog.otoro.net/2017/10/29/visual-evolution-strategies/",
+      "resolved_url": "https://blog.otoro.net/2017/10/29/visual-evolution-strategies/",
+      "page_sha256": "5c1e97b14ce531827beeec194449721cf4f76591a564ebb6931ac6e4edd84fa7",
+      "figure_sections": [
+        "大トロ ml ・ design",
+        "A Visual Guide to Evolution Strategies",
+        "Introduction",
+        "What is an Evolution Strategy?",
+        "Simple Evolution Strategy",
+        "Simple Genetic Algorithm",
+        "Covariance-Matrix Adaptation Evolution Strategy (CMA-ES)",
+        "Natural Evolution Strategies",
+        "OpenAI Evolution Strategy",
+        "Fitness Shaping",
+        "MNIST",
+        "Try It Yourself",
+        "What’s Next?",
+        "Citation",
+        "References and Other Links",
+        "My Previous Evolutionary Projects"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-visual-es-1.png",
+          "sha256": "da9f575f074f9121615b91bb89c840ebc9218370f6130ecb51ff7d79b40effe4"
+        },
+        {
+          "path": "output/playwright/audit-visual-es-2.png",
+          "sha256": "2c4e83ed5726a1534986f5c6715d15d1193e914040bbb4ee98bba7d82f002d99"
+        }
+      ]
+    },
+    {
+      "id": "attentionagent",
+      "url": "https://attentionagent.github.io/",
+      "resolved_url": "https://attentionagent.github.io/",
+      "page_sha256": "68541151b9322c95949c899e196e830e0bd0bfa97d59787538e7779c21351172",
+      "figure_sections": [
+        "This page requires Javascript. Please enable it for https://attentionagent.github.io/",
+        "⚠️ Draft. Please do not share this article❗️🙏🏼🙇🏻",
+        "Neuroevolution of Self-Interpretable Agents",
+        "Abstract",
+        "Introduction",
+        "Background on Self-Attention",
+        "Self-Attention for Images",
+        "Self-Attention as a form of Indirect Encoding",
+        "Self-Attention Agent",
+        "Input Transformation",
+        "Importance Voting via Self-Attention",
+        "Patch Selection and Feature Retrieval",
+        "Controller",
+        "Neuroevolution of the Agent",
+        "Experiments",
+        "Task Description",
+        "Experimental Results",
+        "Region of Interest to Importance Mapping",
+        "Can our agents generalize to unseen environments?",
+        "Related Work",
+        "Discussion",
+        "Conclusion",
+        "Acknowledgements",
+        "Citation",
+        "Open Source Code",
+        "Reuse"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-attentionagent-1.png",
+          "sha256": "162b75e1b48abdf4774b2e791a491d95b20b92c1f1827fde08914f333c425fbd"
+        },
+        {
+          "path": "output/playwright/audit-attentionagent-2.png",
+          "sha256": "7bde4f9bb796327f032e2c096966dcfc68d9e480f7129b91e3aa3e477f54a89c"
+        },
+        {
+          "path": "output/playwright/audit-attentionagent-generalization.png",
+          "sha256": "8b36a2b1cdfba6f915926e33fb972734bb8bede126b847343f8914eacfbb7e5f"
+        },
+        {
+          "path": "output/playwright/audit-attentionagent-overview.png",
+          "sha256": "084d610e2befea325ec92437664b3cf5684e488f3b24bf97ef73ba09c0b5e2d4"
+        }
+      ]
+    },
+    {
+      "id": "chang-vllm",
+      "url": "https://jonathanc.net/blog/vllm-flex-attention-from-scratch",
+      "resolved_url": "https://jonathanc.net/blog/vllm-flex-attention-from-scratch",
+      "page_sha256": "39ffb71d54623982c14ad08bcafa7ed4cdefe26b10d11ddeaa187044972ce679",
+      "figure_sections": [
+        "vLLM from scratch with FlexAttention",
+        "Introduction",
+        "Related works",
+        "Understanding FlexAttention BlockMask",
+        "What is a BlockMask?",
+        "Creating BlockMasks Manually",
+        "Slicing BlockMasks",
+        "Building flex-nano-vllm",
+        "Paged Attention Implementation",
+        "Updating paged KV cache",
+        "Pre-filling Strategy",
+        "Dynamic Batching & CUDA Graphs",
+        "Experiments & Notes",
+        "Memory Management & Preemption",
+        "Testing & Validation",
+        "Performance Results",
+        "Conclusion",
+        "Future work"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-chang-vllm-1.png",
+          "sha256": "0b6b810af1e3bbe9ed5207f33bb013972042024086459e52a9f12469fd5721da"
+        },
+        {
+          "path": "output/playwright/audit-chang-vllm-2.png",
+          "sha256": "868bbd2d1e0a205a901f3aa14fe66cc134b3d330f02af68545223d980725718b"
+        }
+      ]
+    },
+    {
+      "id": "chang-mist",
+      "url": "https://jonathanc.net/blog/mist-bench",
+      "resolved_url": "https://jonathanc.net/blog/mist-bench",
+      "page_sha256": "d2d27da77248bff8afc4b598721674132b492d26e52cd5f8b0ac58af4f3bcf8d",
+      "figure_sections": [
+        "MIST Bench: Building the MIST robot from Pantheon",
+        "Motivation",
+        "Building a MIST",
+        "Designing robot with AI",
+        "3d modeling with AI",
+        "Using AI to write CAD code",
+        "Using ChatGPT Advanced Voice Mode (AVM) with vision",
+        "Image to 3D & AR",
+        "Working with AI in the physical world",
+        "Assembly",
+        "Coding & Safety",
+        "LLMs, Agents, and Robots",
+        "Conclusion"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-chang-mist-1.png",
+          "sha256": "3c1aed444d67401fcfe805d6b9ad49098b49569e0235157b34d4ea9e054e1679"
+        },
+        {
+          "path": "output/playwright/audit-chang-mist-2.png",
+          "sha256": "f235a0d375506949dd32c9fbcb0249cc36abddb8a1ecef0467a5eaf8ddef7856"
+        },
+        {
+          "path": "output/playwright/audit-chang-mist-photo.png",
+          "sha256": "eb5adfe44adfb4d700dd29e8a3bc7574334b9462c045f60ddfe083195d46f7e3"
+        }
+      ]
+    },
+    {
+      "id": "chang-rank",
+      "url": "https://jonathanc.net/blog/llm-effective-rank",
+      "resolved_url": "https://jonathanc.net/blog/llm-effective-rank",
+      "page_sha256": "6fd5ee52a1e2620553dce8bdd4b686c503b0d52ba898914eec72c23ffe571a39",
+      "figure_sections": [
+        "Exploring the Effective Rank of Projection Weights in Attention",
+        "Introduction",
+        "Let’s visualize the singular values of Q, K, V, and O projection weights across different layers",
+        "Now visualize the cumulative energy of singular values across layers",
+        "Aside from the first few layers, the rest look pretty similar. Let’s see the number of components required to reach different energy thresholds across different layers and types.",
+        "Observations:",
+        "Next steps:",
+        "Observations & Discussions"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-chang-rank-1.png",
+          "sha256": "edab6c2b5671404307dbdf1590de12082dea0d40ae3cf2c28e699c5e8a2eff56"
+        },
+        {
+          "path": "output/playwright/audit-chang-rank-2.png",
+          "sha256": "f58abeb91359fdc8b157020cabfebd0fef1ea2f2b613f61808ad65f9dbc5784b"
+        },
+        {
+          "path": "output/playwright/audit-chang-rank-chart.png",
+          "sha256": "3bc28eddfd9aaf0bbd6277e3f04f09e7e586032db787550cc1761bb9911bacfb"
+        }
+      ]
+    },
+    {
+      "id": "rays-as-pixels",
+      "url": "https://wbjang.github.io/raysaspixels/",
+      "resolved_url": "https://wbjang.github.io/raysaspixels/",
+      "page_sha256": "679994bdb32eb8fa02f3582f99f3bc6d840fcab3befd052adf3113fcabe7302e",
+      "figure_sections": [
+        "Rays as Pixels: Learning A Joint Distribution of Videos and Camera Trajectories",
+        "Key Ideas",
+        "Abstract",
+        "Overview",
+        "1. Camera Pose Prediction",
+        "2. Single-Image Video Generation",
+        "3. Camera-Controlled Video Generation",
+        "4. Ablation Study & Self-Consistency",
+        "BibTeX"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-rays-as-pixels-1.png",
+          "sha256": "72e4109b1b1b568b78ef785bf8c503050baa616521236be8058cad34fc844883"
+        },
+        {
+          "path": "output/playwright/audit-rays-as-pixels-2.png",
+          "sha256": "59e4ad0a8d569368e866c18235b21dadf5e6bb2e4ab30b4ebc5b01afa051f467"
+        }
+      ]
+    },
+    {
+      "id": "saber",
+      "url": "https://franciszzj.github.io/Saber/",
+      "resolved_url": "https://franciszzj.github.io/Saber/",
+      "page_sha256": "9271a1fe84eac0a37fe338f071acd8cf1203e73420ca815f357455c4b20de892",
+      "figure_sections": [
+        "Scaling Zero-Shot Reference-to-Video Generation",
+        "Introduction",
+        "Method",
+        "Masked Frames as Reference",
+        "Model Design",
+        "Zero-Shot Inference",
+        "Visualization Results",
+        "Emergent Abilities",
+        "Single Subject Multiple Views",
+        "Cross-Modal Alignment",
+        "Conclusion and Limitations",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-saber-1.png",
+          "sha256": "71af03cdbdfa0cac0e0978e4f512358b9e6bac69192134e3812b3248e08e998e"
+        },
+        {
+          "path": "output/playwright/audit-saber-2.png",
+          "sha256": "24631e4a6f5e4372f3bb325fae0b2081cb75929f84e963d5efb99d4d187c3ef1"
+        }
+      ]
+    },
+    {
+      "id": "mardini",
+      "url": "https://mardini-vidgen.github.io/",
+      "resolved_url": "https://mardini-vidgen.github.io/",
+      "page_sha256": "aeea0d740cd644fdc6e078f23b7fb7dc334f211491347c2b196996fcf7737bf9",
+      "figure_sections": [
+        "MarDini: Masked Auto-Regressive Diffusion for Video Generation at Scale",
+        "Introduction",
+        "MarDini Generations",
+        "Image-To-Video Results",
+        "Video Expansion Results",
+        "Video Interpolation Results",
+        "Auto-Regressive Generation for Slow-Motion Videos",
+        "Zero Shot 3D View Synthesis",
+        "Conclusion",
+        "Citation"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-mardini-1.png",
+          "sha256": "50a4118828de8e8200e30f2e4f34723676e0d5875c78ccb93c9979c9ccb81342"
+        },
+        {
+          "path": "output/playwright/audit-mardini-2.png",
+          "sha256": "e0869022518b4c158c18782288f2ca6fd6f405d05d5e2f62e9053621f2806b34"
+        }
+      ]
+    },
+    {
+      "id": "vmap",
+      "url": "https://kxhit.github.io/vMAP",
+      "resolved_url": "https://kxhit.github.io/vMAP",
+      "page_sha256": "42f92d8863a5abe265923f7703969a6def40c268b41fa7bf1fa08fee6f2b5e9a",
+      "figure_sections": [
+        "vMAP",
+        "Vectorised Object Mapping for Neural Field SLAM",
+        "CVPR 2023",
+        "vMAP can map each object into a separate MLP and then recompose them.",
+        "Video",
+        "Abstract",
+        "Method",
+        "Results",
+        "(The black / red lines are the ground truth / predicted camera trajectory)",
+        "Replica Dataset",
+        "3D Reconstruction",
+        "Scene Recomposition",
+        "Background",
+        "2D Novel View Synthesis",
+        "ScanNet Dataset",
+        "vMAP",
+        "NICE-SLAM",
+        "vMAP",
+        "objSDF",
+        "TSDF",
+        "Live Table Sequence",
+        "BibTeX",
+        "Acknowledgements"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-vmap-1.png",
+          "sha256": "e043cccfb4ee14f86c9b1bb29469a62d40ed58f38c5f36faf97690f409224d3c"
+        },
+        {
+          "path": "output/playwright/audit-vmap-2.png",
+          "sha256": "d40e11e3174cdd060feb5579f32516bb67db10b3f401c84f127d028f2c8c5b1b"
+        }
+      ]
+    },
+    {
+      "id": "imap",
+      "url": "https://edgarsucar.github.io/iMAP/",
+      "resolved_url": "https://edgarsucar.github.io/iMAP/",
+      "page_sha256": "f72828486f45a6bd5e583ca090c2ec8606b9295496a4f384ea77573628022aaa",
+      "figure_sections": [
+        "iMAP",
+        "Implicit Mapping and Positioning in Real-Time",
+        "ICCV 2021",
+        "Overview Video",
+        "Method",
+        "Additional Examples",
+        "Bibtex",
+        "Contact"
+      ],
+      "screenshots": [
+        {
+          "path": "output/playwright/audit-imap-1.png",
+          "sha256": "31ab4c9f29983bb23eb1be1052d5d0825c383b93d53cdb60b23b7d1cc07da8b2"
+        },
+        {
+          "path": "output/playwright/audit-imap-2.png",
+          "sha256": "958c19b52b97b73624a4992bc5efd45d359c2e20e6c9796956a3e423bc9f5e0a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "method": "One stochastic response per question per configuration. Original and template runs use unchanged SEVEN 713203c; revised local prompt uses the archived restoration snapshot. Same seeded sample; no repeated trials or causal improvement claim.",
+  "energy_scope": "Battery-reported whole-laptop discharge, with other active work included. No cloud measurement and no model-only energy claim.",
+  "runs": [
+    {
+      "id": "2026-11-12",
+      "label": "Original / plaintext",
+      "n": 60,
+      "correct": 11,
+      "uncertainty_triggers": 8,
+      "wrong_unflagged": 41,
+      "correct_flagged": 0,
+      "latency_median_s": 5.83142104999979,
+      "latency_p95_s": 12.906717300000036,
+      "completion_tokens": 8023,
+      "inference_wh": 2.542564869619939,
+      "inference_duration_s": 402.1579999923706,
+      "battery_samples": 504,
+      "sample_gap_max_s": 1.1589999198913574,
+      "phases": [
+        {
+          "kind": "idle",
+          "start_ms": 1794462844865,
+          "end_ms": 1794462874866,
+          "duration_s": 30.000999927520752,
+          "covered_s": 28.625,
+          "whole_laptop_wh": 0.058088642739123765,
+          "mean_power_w": 7.3054712265797574
+        },
+        {
+          "kind": "inference",
+          "block": 1,
+          "start_ms": 1794462874866,
+          "end_ms": 1794462994859,
+          "duration_s": 119.99300003051758,
+          "covered_s": 119.99300003051758,
+          "whole_laptop_wh": 0.7286752433234785,
+          "mean_power_w": 21.86153255021011
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794462994861,
+          "end_ms": 1794463024862,
+          "duration_s": 30.000999927520752,
+          "covered_s": 30.000999927520752,
+          "whole_laptop_wh": 0.1736724551359812,
+          "mean_power_w": 20.839999999999993
+        },
+        {
+          "kind": "inference",
+          "block": 2,
+          "start_ms": 1794463024862,
+          "end_ms": 1794463158252,
+          "duration_s": 133.39000010490417,
+          "covered_s": 133.39000010490417,
+          "whole_laptop_wh": 0.8588612406939599,
+          "mean_power_w": 23.17940223455011
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794463158254,
+          "end_ms": 1794463188255,
+          "duration_s": 30.00100016593933,
+          "covered_s": 30.00100016593933,
+          "whole_laptop_wh": 0.1261793743013342,
+          "mean_power_w": 15.141020131739353
+        },
+        {
+          "kind": "inference",
+          "block": 3,
+          "start_ms": 1794463188255,
+          "end_ms": 1794463337030,
+          "duration_s": 148.77499985694885,
+          "covered_s": 148.77499985694885,
+          "whole_laptop_wh": 0.9550283856025007,
+          "mean_power_w": 23.109408109392238
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794463337031,
+          "end_ms": 1794463367032,
+          "duration_s": 30.00100016593933,
+          "covered_s": 29.51900005340576,
+          "whole_laptop_wh": 0.13865468949615956,
+          "mean_power_w": 16.909681265730548
+        }
+      ],
+      "source": "evidence/results/2026-11-12/gsm8k-local.jsonl"
+    },
+    {
+      "id": "2026-11-12-templated",
+      "label": "Template exposed",
+      "n": 60,
+      "correct": 13,
+      "uncertainty_triggers": 0,
+      "wrong_unflagged": 47,
+      "correct_flagged": 0,
+      "latency_median_s": 8.167729600000257,
+      "latency_p95_s": 15.380727279999558,
+      "completion_tokens": 9317,
+      "inference_wh": 2.4243937557794615,
+      "inference_duration_s": 511.69000005722046,
+      "battery_samples": 605,
+      "sample_gap_max_s": 1.1339998245239258,
+      "phases": [
+        {
+          "kind": "idle",
+          "start_ms": 1794463705264,
+          "end_ms": 1794463735266,
+          "duration_s": 30.002000093460083,
+          "covered_s": 28.602999925613403,
+          "whole_laptop_wh": 0.05289965930687056,
+          "mean_power_w": 6.657999999999999
+        },
+        {
+          "kind": "inference",
+          "block": 1,
+          "start_ms": 1794463735266,
+          "end_ms": 1794463881828,
+          "duration_s": 146.56200003623962,
+          "covered_s": 146.56200003623962,
+          "whole_laptop_wh": 0.561155599827266,
+          "mean_power_w": 13.783655783072305
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794463881838,
+          "end_ms": 1794463911840,
+          "duration_s": 30.001999855041504,
+          "covered_s": 30.001999855041504,
+          "whole_laptop_wh": 0.14747830932116485,
+          "mean_power_w": 17.6962174562166
+        },
+        {
+          "kind": "inference",
+          "block": 2,
+          "start_ms": 1794463911840,
+          "end_ms": 1794464093392,
+          "duration_s": 181.55200004577637,
+          "covered_s": 181.55200004577637,
+          "whole_laptop_wh": 0.9438581696492103,
+          "mean_power_w": 18.715791673352076
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794464093395,
+          "end_ms": 1794464123396,
+          "duration_s": 30.000999927520752,
+          "covered_s": 30.000999927520752,
+          "whole_laptop_wh": 0.0977253017844094,
+          "mean_power_w": 11.726645354281933
+        },
+        {
+          "kind": "inference",
+          "block": 3,
+          "start_ms": 1794464123396,
+          "end_ms": 1794464306972,
+          "duration_s": 183.57599997520447,
+          "covered_s": 183.57599997520447,
+          "whole_laptop_wh": 0.919379986302985,
+          "mean_power_w": 18.029415343714838
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794464306975,
+          "end_ms": 1794464336976,
+          "duration_s": 30.00100016593933,
+          "covered_s": 29.165000200271606,
+          "whole_laptop_wh": 0.1458817107239697,
+          "mean_power_w": 18.007000000000005
+        }
+      ],
+      "source": "evidence/results/2026-11-12-templated/gsm8k-local.jsonl"
+    },
+    {
+      "id": "2026-11-12-restored",
+      "label": "Revised local prompt",
+      "n": 60,
+      "correct": 22,
+      "uncertainty_triggers": 0,
+      "wrong_unflagged": 38,
+      "correct_flagged": 0,
+      "latency_median_s": 6.5229741499997544,
+      "latency_p95_s": 10.175197674999435,
+      "completion_tokens": 8411,
+      "inference_wh": 2.1632573736964704,
+      "inference_duration_s": 400.02100014686584,
+      "battery_samples": 500,
+      "sample_gap_max_s": 1.0959999561309814,
+      "phases": [
+        {
+          "kind": "idle",
+          "start_ms": 1794465361203,
+          "end_ms": 1794465391204,
+          "duration_s": 30.000999927520752,
+          "covered_s": 29.405999898910522,
+          "whole_laptop_wh": 0.06614734385225507,
+          "mean_power_w": 8.09802212768629
+        },
+        {
+          "kind": "inference",
+          "block": 1,
+          "start_ms": 1794465391204,
+          "end_ms": 1794465520088,
+          "duration_s": 128.8840000629425,
+          "covered_s": 128.8840000629425,
+          "whole_laptop_wh": 0.6476003083156876,
+          "mean_power_w": 18.08883266191241
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794465520090,
+          "end_ms": 1794465550090,
+          "duration_s": 30.0,
+          "covered_s": 30.0,
+          "whole_laptop_wh": 0.15577926152935131,
+          "mean_power_w": 18.693511383522157
+        },
+        {
+          "kind": "inference",
+          "block": 2,
+          "start_ms": 1794465550090,
+          "end_ms": 1794465673311,
+          "duration_s": 123.22100019454956,
+          "covered_s": 123.22100019454956,
+          "whole_laptop_wh": 0.7952232481773407,
+          "mean_power_w": 23.23308274497399
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794465673331,
+          "end_ms": 1794465703332,
+          "duration_s": 30.000999927520752,
+          "covered_s": 30.000999927520752,
+          "whole_laptop_wh": 0.09761094217361191,
+          "mean_power_w": 11.712922658376277
+        },
+        {
+          "kind": "inference",
+          "block": 3,
+          "start_ms": 1794465703332,
+          "end_ms": 1794465851248,
+          "duration_s": 147.91599988937378,
+          "covered_s": 147.91599988937378,
+          "whole_laptop_wh": 0.7204338172034422,
+          "mean_power_w": 17.534017576679428
+        },
+        {
+          "kind": "idle",
+          "start_ms": 1794465851251,
+          "end_ms": 1794465881252,
+          "duration_s": 30.00100016593933,
+          "covered_s": 29.978000164031982,
+          "whole_laptop_wh": 0.08758588762064776,
+          "mean_power_w": 10.518019671393699
+        }
+      ],
+      "source": "evidence/results/2026-11-12-restored/gsm8k-local.jsonl"
+    }
+  ]
+}

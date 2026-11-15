@@ -1,0 +1,80 @@
+{
+  "dataset": "databricks/databricks-dolly-15k (CC BY-SA 3.0)",
+  "dataset_sha256": "2df9083338b4abd6bceb5635764dab5d833b393b55759dffb0959b6fcbf794ec",
+  "seven_commit": "713203c0c59fe478a01c6c7ac9a24bb3d86e3bef",
+  "heuristics_sha256": "1c88d4b103dcf37acc5e1947eb71d724e8755c100ad8a02d342374204020f896",
+  "prompts": 15011,
+  "routes": {
+    "API_CHECK": 3745,
+    "LOCAL": 10688,
+    "CLOUD": 578
+  },
+  "reasons": {
+    "needs_realtime_data": 3745,
+    "default_energy_saving": 10688,
+    "prompt_too_long": 500,
+    "too_complex_for_small_model": 72,
+    "specialized_domain": 6
+  },
+  "api_check_total": 3745,
+  "api_check_from_in_word_match_only": 2510,
+  "routes_if_whole_words": {
+    "API_CHECK": 1235,
+    "LOCAL": 12270,
+    "CLOUD": 1506
+  },
+  "by_category": {
+    "brainstorming": {
+      "LOCAL": 1612,
+      "API_CHECK": 148,
+      "CLOUD": 6
+    },
+    "classification": {
+      "LOCAL": 1664,
+      "API_CHECK": 468,
+      "CLOUD": 4
+    },
+    "closed_qa": {
+      "API_CHECK": 973,
+      "CLOUD": 217,
+      "LOCAL": 583
+    },
+    "creative_writing": {
+      "LOCAL": 610,
+      "API_CHECK": 70,
+      "CLOUD": 29
+    },
+    "general_qa": {
+      "LOCAL": 1992,
+      "API_CHECK": 186,
+      "CLOUD": 13
+    },
+    "information_extraction": {
+      "API_CHECK": 900,
+      "LOCAL": 430,
+      "CLOUD": 176
+    },
+    "open_qa": {
+      "LOCAL": 3474,
+      "API_CHECK": 262,
+      "CLOUD": 6
+    },
+    "summarization": {
+      "API_CHECK": 738,
+      "CLOUD": 127,
+      "LOCAL": 323
+    }
+  },
+  "api_intent": {
+    "none": 1149,
+    "weather": 1028,
+    "crypto": 1464,
+    "news": 104
+  },
+  "api_intent_in_word_only": {
+    "weather": 627,
+    "none": 674,
+    "crypto": 1170,
+    "news": 39
+  }
+}

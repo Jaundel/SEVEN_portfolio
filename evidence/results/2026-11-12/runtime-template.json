@@ -1,0 +1,7 @@
+{
+  "source_model_revision": "4a814619e51faf20b93d1b14792d1c1d99586dbf",
+  "change": "Copy bundled chat_template.jinja into tokenizer_config.json.chat_template in an isolated runtime directory; model weights unchanged.",
+  "template_sha256": "b582d2fda0f25a88324b6b5d56812b56f6f2c7890a08c9503cbed42ed70c7f3e",
+  "original_tokenizer_config_sha256": "da8239e10288096c16ab2dece6456ea527a9267d17beabafd9a6f0f47678895b",
+  "runtime_tokenizer_config_sha256": "790808f640daceb54d5bf97fa8d25d2586a581e6d6336227afa11343e4518460"
+}

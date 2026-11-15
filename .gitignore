@@ -1,0 +1,13 @@
+# Local tools and task notes
+.venv/
+output/
+.playwright-cli/
+__pycache__/
+*.pyc
+SPEC.md
+STATE.md
+AGENTS.md
+.claude/
+CLAUDE.md
+evidence/datasets/
+evidence/results/**/*.stop

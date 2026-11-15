@@ -1,0 +1,37 @@
+{
+  "dataset": "databricks/databricks-dolly-15k",
+  "n": 15011,
+  "dataset_sha256": "2df9083338b4abd6bceb5635764dab5d833b393b55759dffb0959b6fcbf794ec",
+  "method": "Each unmodified classifier function executed on instruction plus optional context. Decisions only; no inference, answer grading or ground-truth route labels.",
+  "versions": [
+    {
+      "label": "Original",
+      "sha256": "1c88d4b103dcf37acc5e1947eb71d724e8755c100ad8a02d342374204020f896",
+      "routes": {
+        "API_CHECK": 3745,
+        "LOCAL": 10688,
+        "CLOUD": 578
+      },
+      "source": "evidence/results/router-2026-11-14/original-heuristics.py"
+    },
+    {
+      "label": "Restored",
+      "sha256": "4f470cd24918b19ae66faf36f1fce24496c3058bd77663fd413ecd9e4af2f016",
+      "routes": {
+        "API_CHECK": 1191,
+        "LOCAL": 12288,
+        "CLOUD": 1532
+      },
+      "source": "evidence/results/router-2026-11-14/restored-heuristics.py"
+    }
+  ],
+  "changed": 2556,
+  "transitions": {
+    "API_CHECK -> API_CHECK": 1191,
+    "LOCAL -> LOCAL": 10688,
+    "CLOUD -> CLOUD": 576,
+    "API_CHECK -> CLOUD": 956,
+    "API_CHECK -> LOCAL": 1598,
+    "CLOUD -> LOCAL": 2
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "method": "Validated archived data -> authored TikZ and PGFPlots -> Tectonic PDF -> vector SVG. Poppins embedded in PDF; SVG glyph paths. Mobile and desktop compose the same observations without changing results.",
+  "versions": {
+    "tectonic": "Tectonic 0.17.0+20260731",
+    "pymupdf": "2.1",
+    "numpy": "2.5.4"
+  },
+  "figures": [
+    {
+      "name": "system-architecture",
+      "width_pt": 976.3400268554688,
+      "height_pt": 645.5800170898438
+    },
+    {
+      "name": "energy-comparison",
+      "width_pt": 757.1599731445312,
+      "height_pt": 308.8399963378906
+    },
+    {
+      "name": "routing-rule",
+      "width_pt": 757.1599731445312,
+      "height_pt": 239.10000610351562
+    },
+    {
+      "name": "answer-case",
+      "width_pt": 757.1599731445312,
+      "height_pt": 323.7900085449219
+    },
+    {
+      "name": "power-interval",
+      "width_pt": 757.1599731445312,
+      "height_pt": 348.69000244140625
+    },
+    {
+      "name": "system-architecture-mobile",
+      "width_pt": 348.69000244140625,
+      "height_pt": 1016.1900024414062
+    },
+    {
+      "name": "energy-comparison-mobile",
+      "width_pt": 348.69000244140625,
+      "height_pt": 363.6400146484375
+    },
+    {
+      "name": "routing-rule-mobile",
+      "width_pt": 348.69000244140625,
+      "height_pt": 448.32000732421875
+    },
+    {
+      "name": "answer-case-mobile",
+      "width_pt": 348.69000244140625,
+      "height_pt": 523.0399780273438
+    },
+    {
+      "name": "power-interval-mobile",
+      "width_pt": 348.69000244140625,
+      "height_pt": 373.6000061035156
+    }
+  ],
+  "answer_case": {
+    "row": 663,
+    "configuration": "Original / plaintext",
+    "selection": "First seeded question, not selected by outcome",
+    "complete_response": "You need to subtract the number of newspapers delivered to District A from the total, then add back the number delivered to District C.\n\n600 - 198 = 412\n412 + 209 = 621\n\nJames delivers 621 newspapers to District B."
+  },
+  "power_interval": {
+    "kind": "inference",
+    "block": 1,
+    "start_ms": 1794462874866,
+    "end_ms": 1794462994859,
+    "duration_s": 119.99300003051758,
+    "covered_s": 119.99300003051758,
+    "whole_laptop_wh": 0.7286752433234785,
+    "mean_power_w": 21.86153255021011
+  },
+  "route_case": {
+    "prompt": "Explain whether a triangle has three sides.",
+    "original": {
+      "route": "API_CHECK",
+      "reason": "needs_realtime_data"
+    },
+    "restored": {
+      "route": "LOCAL",
+      "reason": "default_energy_saving"
+    }
+  },
+  "energy_comparison": {
+    "basis": "Configured estimates from the archived application; no cloud electricity was measured.",
+    "local": {
+      "label": "Ryzen AI / XDNA 2 NPU (1\u20133B SLM)",
+      "joules_per_token": 0.85,
+      "range": [
+        0.4,
+        1.3
+      ]
+    },
+    "cloud_proxy": {
+      "label": "GPT-4o short prompt (Jegham 2025)",
+      "joules_per_token": 3.1,
+      "range": [
+        2.5,
+        3.5
+      ],
+      "unused_wh_per_query": 0.43,
+      "adapter_model": "GPT-4o-mini",
+      "mismatch": "GPT-4o profile is not a calibration of GPT-4o-mini."
+    },
+    "formula": "estimated_mWh = estimator_tokens * joules_per_token / 3.6",
+    "precedence": "Per-token coefficient takes precedence over the stored per-query value.",
+    "missing_usage": "The archived estimator uses 500 tokens when token usage is absent or nonpositive.",
+    "cases": [
+      {
+        "case": "local-answer",
+        "prompt": "What is the capital of France?",
+        "estimator_tokens": 62,
+        "tokens_basis": "Recovered from saved Wh and archived coefficient; integer input checked against both saved estimates.",
+        "local_mwh": 14.638888888888888,
+        "cloud_proxy_mwh": 53.38888888888889,
+        "difference_mwh": 38.75000000000001,
+        "local_range_mwh": [
+          6.888888888888889,
+          22.388888888888893
+        ],
+        "cloud_proxy_range_mwh": [
+          43.05555555555556,
+          60.27777777777778
+        ]
+      },
+      {
+        "case": "keyword-boundaries",
+        "prompt": "Explain whether a triangle has three sides.",
+        "estimator_tokens": 154,
+        "tokens_basis": "Recovered from saved Wh and archived coefficient; integer input checked against both saved estimates.",
+        "local_mwh": 36.361111111111114,
+        "cloud_proxy_mwh": 132.61111111111111,
+        "difference_mwh": 96.25,
+        "local_range_mwh": [
+          17.11111111111111,
+          55.61111111111112
+        ],
+        "cloud_proxy_range_mwh": [
+          106.94444444444444,
+          149.72222222222223
+        ]
+      },
+      {
+        "case": "local-after-cloud",
+        "prompt": "What is 2 + 2? Answer with the number only.",
+        "estimator_tokens": 160,
+        "tokens_basis": "Recovered from saved Wh and archived coefficient; integer input checked against both saved estimates.",
+        "local_mwh": 37.77777777777778,
+        "cloud_proxy_mwh": 137.77777777777777,
+        "difference_mwh": 100.0,
+        "local_range_mwh": [
+          17.77777777777778,
+          57.77777777777778
+        ],
+        "cloud_proxy_range_mwh": [
+          111.1111111111111,
+          155.55555555555557
+        ]
+      }
+    ],
+    "source_sha256": {
+      "SEVEN/energy.py": "0d9730656ae80caf45157202499363542568beaca373b4d94ebe0619b2546ab6",
+      "SEVEN/router.py": "ca4354967edc1c60ec50f4317dfd15251b70540f8c1bc628512f6f1deaad1365",
+      "SEVEN/heuristics.py": "4f470cd24918b19ae66faf36f1fce24496c3058bd77663fd413ecd9e4af2f016",
+      "SEVEN/api_tools.py": "f2799183251b308a440bdbb4c35e5adba581c30745952abaa330effa28c64155",
+      "apps/elia/elia_chat/widgets/chat.py": "551ec73e0ec6201b43e3a7561b14c0ab98e07216b83752412dfe226f540d1c3a",
+      "apps/elia/elia_chat/database/database.py": "a2ea1c118b56f08f41574bdf22f8f2e53624812d50b42cc21c00ddbd070cbfa5"
+    },
+    "archive_sha256": "4a8e69c32ad015c1081400e1681a0f8b99bda18673b36cf11a9edad1e7a9a394",
+    "report_sha256": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07"
+  },
+  "source_sha256": {
+    "evidence/build_publication_figures.py": "722b8b74a5fb24a8e21a38ba0a08665e9fa017d74eb4de3fc47f0087cdfc8c38",
+    "evidence/system_figures.py": "747c2831aca87db75a57169382e6191accb2e41a1863f1858abd66bb750a9f55",
+    "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
+    "evidence/demo/report.json": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07",
+    "evidence/demo/source-snapshot.zip": "4a8e69c32ad015c1081400e1681a0f8b99bda18673b36cf11a9edad1e7a9a394",
+    "evidence/analyse_study.py": "a10b5ec12c81043af965de12382a4bdab762f7bc8d1c076c3d912581b135a51b",
+    "data/answers.json": "a7ea5c786503382a68bde08b74d009dd3423470a083f06079469e0e80f49dfbe",
+    "data/paired-routes.json": "c8ddb293e8f035d1805183de94d3130de19da318e18ec081d2c3e7df65e456b6",
+    "evidence/results/2026-11-12/battery.csv": "81d2bca6d13fd3d2326b3d2b83467bc32f3072829948fabd687a9521369404f8",
+    "evidence/results/2026-11-12/run.json": "433b8bfb7133024470c4a1b7797986ea9ce154ada14c6efbdccb8b8b1523240f",
+    "evidence/results/router-2026-11-14/original-heuristics.py": "1c88d4b103dcf37acc5e1947eb71d724e8755c100ad8a02d342374204020f896",
+    "evidence/results/router-2026-11-14/restored-heuristics.py": "4f470cd24918b19ae66faf36f1fce24496c3058bd77663fd413ecd9e4af2f016",
+    "evidence/figure-style.json": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
+    "evidence/fonts/Poppins-Italic.ttf": "4fa76ae75b40f926420514044722cb97f32186cafd3b38263cc34dad7174d46d",
+    "evidence/fonts/Poppins-Medium.ttf": "90373e7d838d32468438fc3e152dca0bdb12edcab99ea639f158790b1ba1fd05",
+    "evidence/fonts/Poppins-Regular.ttf": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba",
+    "evidence/fonts/Poppins-SemiBold.ttf": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286"
+  },
+  "files_sha256": {
+    "evidence/figures/system-architecture.tex": "161496c5dfe2df212aff3405a2d1dda2bfe905a4332872bcddd958ef87aebc88",
+    "assets/figures/system-architecture.pdf": "79c445e04977ff2c9d2535a30210ae10566f77dab4093861960f144f012ef184",
+    "assets/figures/system-architecture.svg": "82992827d9ac4f73da42cf54682276327ce644267c46d024e19836d35297b796",
+    "evidence/figures/energy-comparison.tex": "9a783a9af7e9b33889122fc9c2ece7f1412c749c0c1752843d26ea57be59c65e",
+    "assets/figures/energy-comparison.pdf": "a5fff6f32f2fb5ccf596b0fdc415e30b39c2aecdb14237bf177dd1902a92fe8d",
+    "assets/figures/energy-comparison.svg": "e718c50c2ecdd87e1332ba5da4959a0e8f90c7c1fa4e6fe2db875db3b9074a88",
+    "evidence/figures/routing-rule.tex": "b23173026c154c519382dda8e03fb217fb958b4063ba93e21a3e0c32c1f3f574",
+    "assets/figures/routing-rule.pdf": "854dab5b8efd93aaf7ab9b9c555dd04fdf7515aa39fd79ddaf48949f896345b7",
+    "assets/figures/routing-rule.svg": "ce9a83f48225acab0c440fbd9c15524dcf980ef25954de10d72b91b2c6013fde",
+    "evidence/figures/answer-case.tex": "5369549c397f07debcc86f3a3a868db2116f222f31227da2a05cd0d2ccacad06",
+    "assets/figures/answer-case.pdf": "de46bc5e6cc71918201fc189eade7c86b56e103bd51b480cea559b889dc71b80",
+    "assets/figures/answer-case.svg": "1bf6bffc0b282e714af01ea538783723db6afda81ef3574448318d15266d6c55",
+    "evidence/figures/power-interval.tex": "db4da6b066c5a7506fed34b779ccb6f9a4a0030ab04e70b6c8fcbe75e86c68eb",
+    "assets/figures/power-interval.pdf": "27e86cb5386ff2c224204b35ab5a422258eeda1e1bba0cfa4e9698f9c94a9494",
+    "assets/figures/power-interval.svg": "a3fb8f4340dbfed11da27bfbdbe3fe534319b9bd61789c914653cb92376fdbed",
+    "evidence/figures/system-architecture-mobile.tex": "849d6668b4e7faf423bf70931efc5b35f3147d14f71e43fd2fbeafc531a3c84f",
+    "assets/figures/system-architecture-mobile.pdf": "ab3a54fb08d418b4387b1d02aff53463776d8a45a6661f5e048cb568451cdbd3",
+    "assets/figures/system-architecture-mobile.svg": "e359d06f679b2047b8970a4acd22194c699bcec432be421a816151ba13c10846",
+    "evidence/figures/energy-comparison-mobile.tex": "295f345aa4be452a8996af6a4e01ad98f62d3e6d51410bf2ce0fa5c67b9efe91",
+    "assets/figures/energy-comparison-mobile.pdf": "f70eb59c1f31c94f4bae8a5d495345b7e59abf415da16cd831e1025635af1661",
+    "assets/figures/energy-comparison-mobile.svg": "36c978e9d1e861391cc79bd27faedc0523f74f36d51322783272a9086d05735d",
+    "evidence/figures/routing-rule-mobile.tex": "abbde6ede6bda4c5f2d11ecf568f85461030305f2391cb50aa2371e0bc26d799",
+    "assets/figures/routing-rule-mobile.pdf": "838b47ed9e25f457b4af26ff4e0ccb5c087f7f2649ec4f5abbfd4cced5ebfdc7",
+    "assets/figures/routing-rule-mobile.svg": "fd5314fea26e2615046bbe6c803a13fa9251e470e7cea04f469b4c17f3692919",
+    "evidence/figures/answer-case-mobile.tex": "624b8fef7aca54e05e305621196b0f60a1120d78523f7279c51e3d9a5819f42a",
+    "assets/figures/answer-case-mobile.pdf": "cd50a37b492e0cb47258b5985fceb6325bc4f0f3e4b71a2c84fd5cc82ac11a0c",
+    "assets/figures/answer-case-mobile.svg": "80863537d18f43b6597cc1766a2aa04e2e161e85dc6eb01aaa545b62f0e5911a",
+    "evidence/figures/power-interval-mobile.tex": "134bcbdab721bce35810b56786d41407ade7568ee7baad342c02dc14a6bfd178",
+    "assets/figures/power-interval-mobile.pdf": "24d442c256886a4780e6a6de0b71835067bcdf7745db8020b6bf0c7fa3d09c4d",
+    "assets/figures/power-interval-mobile.svg": "2ab2dcb1e8e63f07c3466945d92d47be450da126fd6bf1b2c516e0c1a9cc345f",
+    "evidence/figures/power-interval.csv": "3184cd91b16f44e5bfab42e212db03fffcd396c7e079c9a292c1f5d082766f7e"
+  }
+}

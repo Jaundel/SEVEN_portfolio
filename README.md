@@ -1,12 +1,15 @@
-# SEVEN Web Console
+# SEVEN portfolio article
 
-This folder is the portfolio-safe browser version of SEVEN.
+An evidence-led account of Team SEVEN's local model, live-data tools and cloud fallback. The article uses a complete 1920 × 1140 application recording, paired decisions on 15,011 prompts, 180 preserved local responses and whole-laptop battery traces. Browser controls select recorded evidence; they do not run inference or accept an API key.
 
-- It does not modify the collaborator copy in `Downloads/SEVEN-main (1)`.
-- It mirrors SEVEN's routing heuristics in `src/app.js`.
-- It uses demo responses by default.
-- Optional live mode accepts an OpenRouter key for the current browser session only.
-- The local-class route uses `meta-llama/llama-3.2-3b-instruct:free`.
-- The cloud-class route uses `google/gemma-4-26b-a4b-it:free`.
+Preview from this directory with `python evidence/serve_preview.py`, then open http://127.0.0.1:8765/. This local server supports the byte-range requests needed for native video chapter seeking. A basic server that ignores ranges can play the video but clamp chapter jumps to zero.
 
-Energy values are estimates using SEVEN-style profile coefficients, not browser power measurements.
+Read [the supplement](supplement.html) for complete responses, measurement methods and downloads. [Methods and provenance](evidence/PROVENANCE.md) records source versions, dataset hashes, limitations and licences. The [30-page figure audit](evidence/FIGURE_AUDIT.md) informs the current presentation.
+
+`evidence/analyse_study.py` validates all three preserved studies and builds the supplementary traces. `evidence/build_publication_figures.py` typesets the article's figures with TikZ/PGFPlots through Tectonic, then exports vector SVGs from the PDFs. Editable TeX and plotting CSV are retained in `evidence/figures`; `evidence/publication-figures.json` pins their source data and output hashes. Python dependencies are pinned in `evidence/requirements.txt`. Tectonic must be installed separately, or passed with `--tectonic PATH`. Run both scripts, then `python evidence/verify_article.py`.
+
+The restored application source and setup are packaged at `evidence/demo/restored-source.zip`. Its capture source is separate from the earlier November 12 local studies. Models, runtime binaries, credentials and personal chat history are excluded. Live outputs are historical records and contain unedited model errors.
+
+The system architecture describes the captured application source. The energy comparison executes its archived estimator and reproduces saved values; it explicitly identifies the GPT-4o profile / GPT-4o-mini adapter mismatch. It is separate from the whole-laptop measurements.
+
+Legacy browser-console files and pre-existing evidence remain in the checkout; `index.html`, `article.css` and `article.js` form the current article. GitHub Pages publishes the repository's main branch at https://jaundel.github.io/SEVEN_portfolio/ . Exact evidence bytes are preserved across platforms for manifest verification.

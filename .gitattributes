@@ -1,2 +1,8 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Scientific records, source snapshots and asset manifests use exact byte hashes.
+# Preserve the captured/exported bytes on every platform.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Generated paths and retained source records keep their original formatting.
+assets/figures/** -whitespace
+evidence/results/** -whitespace
+evidence/figures/** -whitespace
+evidence/fonts/OFL.txt -whitespace

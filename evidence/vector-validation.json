@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "renderer": "PyMuPDF 2.1",
+  "figures": [
+    {
+      "file": "assets/figures/system-architecture.pdf",
+      "sha256": "79c445e04977ff2c9d2535a30210ae10566f77dab4093861960f144f012ef184",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 8602
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 11228
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/energy-comparison.pdf",
+      "sha256": "a5fff6f32f2fb5ccf596b0fdc415e30b39c2aecdb14237bf177dd1902a92fe8d",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 9564
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/routing-rule.pdf",
+      "sha256": "854dab5b8efd93aaf7ab9b9c555dd04fdf7515aa39fd79ddaf48949f896345b7",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 8792
+        },
+        {
+          "name": "BZIVMZ+Poppins-SemiBold",
+          "embedded_bytes": 6578
+        },
+        {
+          "name": "IXFAWU+LMMono10-Regular-Identity-H",
+          "embedded_bytes": 2093
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/answer-case.pdf",
+      "sha256": "de46bc5e6cc71918201fc189eade7c86b56e103bd51b480cea559b889dc71b80",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 11264
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/power-interval.pdf",
+      "sha256": "27e86cb5386ff2c224204b35ab5a422258eeda1e1bba0cfa4e9698f9c94a9494",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 9384
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/system-architecture-mobile.pdf",
+      "sha256": "ab3a54fb08d418b4387b1d02aff53463776d8a45a6661f5e048cb568451cdbd3",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 7910
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 11044
+        },
+        {
+          "name": "IXFAWU+CMSY10",
+          "embedded_bytes": 403
+        },
+        {
+          "name": "TQTHRL+CMSY9",
+          "embedded_bytes": 394
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/energy-comparison-mobile.pdf",
+      "sha256": "f70eb59c1f31c94f4bae8a5d495345b7e59abf415da16cd831e1025635af1661",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 9564
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/routing-rule-mobile.pdf",
+      "sha256": "838b47ed9e25f457b4af26ff4e0ccb5c087f7f2649ec4f5abbfd4cced5ebfdc7",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 8792
+        },
+        {
+          "name": "BZIVMZ+Poppins-SemiBold",
+          "embedded_bytes": 6578
+        },
+        {
+          "name": "IXFAWU+LMMono10-Regular-Identity-H",
+          "embedded_bytes": 2093
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/answer-case-mobile.pdf",
+      "sha256": "cd50a37b492e0cb47258b5985fceb6325bc4f0f3e4b71a2c84fd5cc82ac11a0c",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 11264
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/power-interval-mobile.pdf",
+      "sha256": "24d442c256886a4780e6a6de0b71835067bcdf7745db8020b6bf0c7fa3d09c4d",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-Regular",
+          "embedded_bytes": 9340
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    }
+  ]
+}

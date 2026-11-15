@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-12",
+  "dataset": "openai/gsm8k test",
+  "dataset_url": "https://github.com/openai/grade-school-math/blob/master/grade_school_math/data/test.jsonl",
+  "dataset_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "seed": 7,
+  "rows": [
+    663,
+    308,
+    808,
+    98,
+    148,
+    1097,
+    192,
+    748,
+    1193,
+    118,
+    1039,
+    439,
+    76,
+    176,
+    888,
+    856,
+    143,
+    492,
+    185,
+    1128,
+    869,
+    121,
+    1158,
+    253,
+    457,
+    1291,
+    1284,
+    126,
+    1181,
+    1199,
+    812,
+    101,
+    452,
+    95,
+    1140,
+    272,
+    593,
+    858,
+    295,
+    1107,
+    241,
+    1169,
+    631,
+    1147,
+    370,
+    211,
+    1191,
+    1308,
+    384,
+    762,
+    199,
+    1121,
+    128,
+    1155,
+    122,
+    1267,
+    421,
+    1016,
+    1088,
+    875
+  ],
+  "seven_commit": "713203c0c59fe478a01c6c7ac9a24bb3d86e3bef",
+  "source_sha256": {
+    "local_model.py": "42dda619dc1f43ab87e3b106ab941cdec9bdf35a9613ad28bb1ae4e2c96f4227",
+    "heuristics.py": "1c88d4b103dcf37acc5e1947eb71d724e8755c100ad8a02d342374204020f896",
+    "prompts.py": "0ae18a7dc1f1f6f0ca3f6610b6a2c3451600b78de63d5bc2c2e4024d087bc854",
+    "energy.py": "0d9730656ae80caf45157202499363542568beaca373b4d94ebe0619b2546ab6"
+  },
+  "backend": {
+    "execution_mode": "hybrid",
+    "max_prompt_length": 2048,
+    "model": "llama-model",
+    "ryzenai_version": "1.7.0",
+    "status": "ok"
+  },
+  "temperature": 0.7,
+  "max_tokens": 512,
+  "template_configuration": "bundled Jinja template exposed in tokenizer_config.json",
+  "method": "Force every sampled question through build_local_prompt + get_system_prompt_local + ask_local, unchanged SEVEN local path; record classifier and uncertainty decisions separately. Last numeric value must equal GSM8K reference after ####. One stochastic response per question; no retries for correctness.",
+  "power_scope": "Whole-laptop battery discharge, approximately 1 Hz, trapezoidal integration. Other active applications and logger included; no model-only, wall-plug or cloud measurement.",
+  "phases": [
+    {
+      "kind": "idle",
+      "start_ms": 1794463705264,
+      "end_ms": 1794463735266
+    },
+    {
+      "kind": "inference",
+      "block": 1,
+      "start_ms": 1794463735266,
+      "end_ms": 1794463881828
+    },
+    {
+      "kind": "idle",
+      "start_ms": 1794463881838,
+      "end_ms": 1794463911840
+    },
+    {
+      "kind": "inference",
+      "block": 2,
+      "start_ms": 1794463911840,
+      "end_ms": 1794464093392
+    },
+    {
+      "kind": "idle",
+      "start_ms": 1794464093395,
+      "end_ms": 1794464123396
+    },
+    {
+      "kind": "inference",
+      "block": 3,
+      "start_ms": 1794464123396,
+      "end_ms": 1794464306972
+    },
+    {
+      "kind": "idle",
+      "start_ms": 1794464306975,
+      "end_ms": 1794464336976
+    }
+  ]
+}

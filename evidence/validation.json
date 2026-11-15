@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checked_utc": "2026-11-15T17:42:43.337565+00:00",
+  "scope": "Local file/data integrity and complete video decode; browser checks recorded separately.",
+  "relative_targets": 40,
+  "publication_figures": 10,
+  "questions": 60,
+  "responses": 180,
+  "routing_decisions": 15011,
+  "native_capture_pngs": 8,
+  "decoded_frames": 1013,
+  "decoded_duration_s": 67.533333,
+  "article_sha256": {
+    "index.html": "3fa259dc091b7fcd71252d4ce360be2a6e900217c1fb9d7deaf962bc52a322d9",
+    "supplement.html": "06e7ee5fca771d7ffc7a4f382b1f66c4a788de831299e41ccca613031ff37ad6",
+    "article.css": "692cd13e0033ee146d72bdd9aba229cff8bc6c7f67a8729a8bfce1e59c170693",
+    "article-tokens.css": "688874f302b3d7a0bc6c5210a68f57f93e1f8cb8cb870865a56fe7c2e6ac052c",
+    "article.js": "36f32a8c4c8af2900182901400c679769018faf9d1c07d44f81766d47241cfa1",
+    "data/answers.json": "a7ea5c786503382a68bde08b74d009dd3423470a083f06079469e0e80f49dfbe",
+    "data/study-summary.json": "604a08bd79ae2249f506229857331f28a671e7fa61a4f659ce2912d6c2852ea8",
+    "data/route-comparison.json": "54c8797ee979cd2944e6cc4aaed0af267cacf9aa31ca08e57e84d1fa46819f62",
+    "data/paired-routes.json": "c8ddb293e8f035d1805183de94d3130de19da318e18ec081d2c3e7df65e456b6",
+    "evidence/analyse_study.py": "a10b5ec12c81043af965de12382a4bdab762f7bc8d1c076c3d912581b135a51b",
+    "evidence/verify_article.py": "f725059cb2a06f3863605042f115c3a52d1b7ec53acd429c9134ae4fb10dd6c0",
+    "evidence/PROVENANCE.md": "56f2dcc390c44397f84b6cd188d5022f40b60edad000a62aa0a52349d49b8507",
+    "evidence/figure-style.json": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
+    "evidence/figure-manifest.json": "0096d97ce6db02ae58313d8a1f03ab9ec10d76a25481918e4d71c2df0e428c06",
+    "evidence/build_publication_figures.py": "722b8b74a5fb24a8e21a38ba0a08665e9fa017d74eb4de3fc47f0087cdfc8c38",
+    "evidence/system_figures.py": "747c2831aca87db75a57169382e6191accb2e41a1863f1858abd66bb750a9f55",
+    "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
+    "evidence/publication-figures.json": "bcea5b7c0056cb050324791e22a4332e204f027ff77fd2c5148e5b27ff25a44a"
+  }
+}

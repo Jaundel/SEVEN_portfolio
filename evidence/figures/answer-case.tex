@@ -1,0 +1,34 @@
+\documentclass[tikz,border=0pt]{standalone}
+\usepackage{fontspec}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setmainfont[Path=../fonts/,BoldFont=Poppins-SemiBold.ttf,ItalicFont=Poppins-Italic.ttf]{Poppins-Regular.ttf}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{calc,arrows.meta}
+\definecolor{ink}{HTML}{161b22}
+\definecolor{text}{HTML}{353535}
+\definecolor{muted}{HTML}{646c74}
+\definecolor{line}{HTML}{d7dadd}
+\definecolor{wash}{HTML}{f6f6f6}
+\definecolor{tint}{HTML}{e6ecef}
+\definecolor{link}{HTML}{1d63b7}
+\definecolor{local}{HTML}{376c97}
+\definecolor{api}{HTML}{995d46}
+\definecolor{cloud}{HTML}{7b649b}
+\definecolor{match}{HTML}{7d9fc4}
+\definecolor{miss}{HTML}{e0e3e5}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=-1pt]
+\path[use as bounding box] (0,0) rectangle (760,325);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12.4}{18.6}\selectfont,text width=724pt] at (18,16) {James delivers 600 newspapers in a day. He delivers 198 newspapers to District A, some to District B and 209 newspapers to District C. How many newspapers does he deliver to District B?};
+\draw[line,line width=.6pt] (18,89) -- (742,89);
+\node[anchor=north west,inner sep=0pt,text=api,align=left,font=\fontsize{12}{18.0}\selectfont] at (18,104) {(a) Recorded local reply};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12.2}{18.299999999999997}\selectfont,text width=330pt] at (18,138) {You need to subtract the number of newspapers delivered to District A from the total, then add back the number delivered to District C.\par\vspace{9pt}600 - 198 = 412\\412 + 209 = 621\par\vspace{9pt}James delivers 621 newspapers to District B.};
+\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{12}{18.0}\selectfont] at (415,104) {(b) Reference calculation};
+\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{18}{27.0}\selectfont] at (415,144) {600 − 198 − 209 = 193};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont,text width=310pt] at (415,191) {Subtract both delivered quantities\\from the total.};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont] at (415,259) {Uncertainty rule: not triggered};
+
+\end{tikzpicture}
+\end{document}

@@ -1,208 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEVEN: Sustainable Energy via Efficient Neural Routing</title>
-  <link rel="icon" href="data:," />
-  <style>
-    /* ── reset ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    /* ── tokens (otoro / neural-biome palette) ── */
-    :root {
-      --bg:       #ffffff;
-      --ink:      #222222;
-      --muted:    #777777;
-      --faint:    #eeeeee;
-      --line:     #d6d6d6;
-      --link:     #1d63b7;
-      --green:    #1b9e77;
-      --green-s:  #e7f5ef;
-      --orange:   #d95f02;
-      --red:      #c0392b;
-      --sans: "Poppins", "Helvetica Neue", Arial, sans-serif;
-      --serif: "Charter", Georgia, "Times New Roman", serif;
-      --mono: "SF Mono", "Cascadia Mono", Consolas, "Liberation Mono", monospace;
-    }
-
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ── article body ── */
-    section { margin-bottom: 42px; }
-    /* Text runs in the shared reading column; demos and figures use the full width. */
-    article section > :is(h2, h3, p, ol, ul, blockquote, pre, .note) {
-      max-width: var(--article-column);
-      margin-left: auto;
-      margin-right: auto;
-    }
-    article section > p { margin-bottom: 18px; }
-    article section > p:last-child { margin-bottom: 0; }
-    code { font-family: var(--mono); font-size: 0.92em; }
-
-    /* ── table ── */
-    .data-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-family: var(--sans); font-size: 13px; }
-    .data-table th { background: var(--ink); color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; }
-    .data-table td { padding: 7px 12px; border-bottom: 1px solid var(--faint); vertical-align: top; }
-    .data-table tr:nth-child(even) td { background: #fafafa; }
-    .green { color: var(--green); font-weight: 600; }
-    .red   { color: var(--red);   font-weight: 600; }
-
-    /* ── references ── */
-    .references { font-size: 13px; font-family: var(--sans); }
-    .references li { margin-bottom: 8px; color: #444; line-height: 1.5; }
-
-
-    .scientific-figure { margin: 28px 0 38px; }
-    .scientific-figure img { display: block; width: 100%; height: auto; }
-    .scientific-figure figcaption { font: 13px/1.55 var(--sans); color: #535b65; margin-top: 12px; }
-    .scientific-figure figcaption strong { color: #222; }
-    .recorded-demo img { background: #060621; border: 1px solid #d6d6d6; }
-    .recording-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 18px; margin-top: 12px; font: 13px var(--sans); }
-    .recording-controls button { font: inherit; color: #222; background: #fff; border: 1px solid #bbb; border-radius: 3px; padding: 7px 12px; cursor: pointer; }
-    .recording-controls button:focus-visible, a:focus-visible { outline: 3px solid #2166ac; outline-offset: 4px; }
-    .rule-list { padding-left: 24px; }
-    .rule-list li { margin-bottom: 12px; }
-    .data-table caption { text-align: left; margin-bottom: 10px; font-weight: 600; }
-    .data-table tbody th { background: #fff; color: #222; font-weight: 400; border-bottom: 1px solid #eee; }
-    .table-scroll { overflow-x: auto; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
-  </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" />
-  <link rel="stylesheet" href="/assets/fontawesome-free-7.2.0-web/css/all.min.css" />
-  <link rel="stylesheet" href="/assets/stylesheets/site-nav.css?v=20260924" />
-  <link rel="stylesheet" href="/assets/stylesheets/article.css?v=20260924" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEVEN: Choosing where AI runs — Jaundel Simon</title>
+<meta name="description" content="A local-first AI terminal, restored and examined through real application footage, paired routing decisions and recorded answers.">
+<meta property="og:title" content="SEVEN: Choosing where AI runs"><meta property="og:description" content="A working system, and what its routing and uncertainty rules actually do."><meta property="og:image" content="assets/demo/home.png">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="article.css?v=692cd13e0033"><script src="article.js?v=36f32a8c4c8a" defer></script>
 </head>
-<body class="article-page" style="--article-tint: #e4eaf6; --article-tint-2: #f8fafd; --nav-dot: #3f6fd8;">
-    <div class="article-top">
-      <header class="site-shell site-nav">
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="/">Home</a>
-          <a class="active" href="/projects.html">Projects</a>
-          <a href="/assets/Jaundel_Simon_Resume.pdf?v=20260917-resume">Resume</a>
-          <a href="/about.html">About</a>
-        </nav>
-        <nav class="social-links" aria-label="Social links">
-          <a href="https://www.instagram.com/tsampurado/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://github.com/Jaundel" aria-label="GitHub"><i class="fa-brands fa-github-alt"></i></a>
-          <a href="https://www.linkedin.com/in/jaundelsimon/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </nav>
-      </header>
-      <header class="site-shell article-hero">
-        <div class="article-intro">
-          <h1 class="article-title">SEVEN: Sustainable Energy via Efficient Neural Routing</h1>
-          <p class="article-byline">Jaundel Simon, with Samin, Yusuf, Hamanpreet and Aadil</p>
-          <p class="article-abstract">SEVEN routes prompts between local inference, live-data tools and a cloud fallback. The terminal application combines a rule-based router with an inspectable energy estimator.</p>
-          <p class="article-links">
-            <a class="article-button" href="#demo">Demo <i class="fa-solid fa-play" aria-hidden="true"></i></a>
-            <a class="article-button" href="https://github.com/Jaundel/SEVEN">Code <i class="fa-brands fa-github" aria-hidden="true"></i></a>
-          </p>
-          <p class="article-venue">TMU Hack the World winner &middot; 2025</p>
-        </div>
-        <figure class="article-cover">
-          <img src="assets/figures/demo-poster.png" alt="The SEVEN terminal application" />
-        </figure>
-      </header>
-    </div>
-  <main class="site-shell article-body">
-  <article>
-
-    <section id="demo" aria-labelledby="demo-heading">
-      <h2 id="demo-heading">SEVEN in use</h2>
-      <p>A screen recording of the original terminal application, showing a prompt moving through SEVEN’s interface.</p>
-      <figure class="scientific-figure recorded-demo">
-        <img id="demo-motion" src="assets/seven-thumbnail.gif" width="1100" height="606" alt="Screen recording of SEVEN’s terminal interface, showing a prompt being entered and routed." />
-        <div class="recording-controls"><button id="demo-toggle" type="button" aria-pressed="false">Pause animation</button><a href="https://1drv.ms/v/c/f50db683b6e01fe0/IQCvTUpeo3u0To4zQzUzrUtrAQ9sqBgCNvL9BZjpvw14i_U?e=ejnXPy">Watch the full recording</a></div>
-        <figcaption>Original SEVEN interface recording. Energy values shown in the interface are estimates calculated by the application.</figcaption>
-      </figure>
-    </section>
-
-    <section id="insight">
-      <h2>Classify Before You Compute</h2>
-      <p>SEVEN makes a routing decision before model inference: try a local model, retrieve current information for a local answer, or call a cloud model. The aim is to avoid using the same compute path for every request.</p>
-      <p>The classifier uses keyword checks and prompt length rather than another language model. This avoids an extra inference call; the checks still execute on the CPU. It is a practical heuristic, not a guarantee that a small model can answer a prompt correctly.</p>
-      <p>Model routing and cascading are explored in <a href="https://arxiv.org/abs/2406.18665">RouteLLM</a> and <a href="https://arxiv.org/abs/2305.05176">FrugalGPT</a>. Those studies motivate the approach; their reported quality and cost results are not SEVEN benchmark results.</p>
-    </section>
-
-    <section id="architecture">
-      <h2>Three Paths, One Router</h2>
-      <p><code>route_prompt()</code> coordinates the execution path. Real-time keywords select an API-context path, complexity checks select the cloud path, and the default is a local model served through Lemonade. A user can also force cloud execution.</p>
-      <figure class="scientific-figure">
-        <a href="assets/figures/routing-architecture.svg"><img src="assets/figures/routing-architecture.svg" width="1396" height="951" loading="lazy" alt="Code-based routing diagram: the classifier branches to API context and local synthesis, local inference, or cloud inference. Local and API responses pass through uncertainty validation, with an optional cloud retry, before returning a response and energy estimate." /></a>
-        <figcaption><strong>Figure 1.</strong> Explanatory control-flow diagram, traced from <a href="https://github.com/Jaundel/SEVEN/blob/713203c0c59fe478a01c6c7ac9a24bb3d86e3bef/SEVEN/router.py">router.py</a> and <a href="https://github.com/Jaundel/SEVEN/blob/713203c0c59fe478a01c6c7ac9a24bb3d86e3bef/SEVEN/api_check.py">api_check.py</a>. Arrows describe program logic, not measured traffic proportions or latency.</figcaption>
-      </figure>
-      <p>The API path retrieves weather, cryptocurrency or news context and normally asks the local model to synthesise an answer. It is not a zero-inference route. When local synthesis fails, the API helper can return the retrieved context directly.</p>
-      <p>When enabled, post-routing validation escalates an empty local answer or explicit uncertainty phrases such as “I don’t know” to the cloud. Local backend errors also trigger a fallback. This catches specific failure signals; it does not detect every incorrect answer.</p>
-    </section>
-
-    <section id="classifier">
-      <h2>The Ordered Checks</h2>
-      <p>The first matching rule wins. The classifier in <a href="https://github.com/Jaundel/SEVEN/blob/713203c0c59fe478a01c6c7ac9a24bb3d86e3bef/SEVEN/heuristics.py">heuristics.py</a> applies these checks:</p>
-      <ol class="rule-list">
-        <li><strong>Real-time terms:</strong> select <code>API_CHECK</code> for terms such as weather, news, prices or current information.</li>
-        <li><strong>Specialised domains:</strong> select <code>CLOUD</code> for configured technical domain phrases.</li>
-        <li><strong>Complexity markers:</strong> select <code>CLOUD</code> for configured requests such as detailed writing, proofs and multi-step explanations.</li>
-        <li><strong>Prompt length:</strong> select <code>CLOUD</code> above 150 words.</li>
-        <li><strong>Otherwise:</strong> try <code>LOCAL</code>.</li>
-      </ol>
-      <p>Because these are substring and length checks, wording can change the route. Routing quality needs evaluation on a labelled prompt set rather than being inferred from the rules alone.</p>
-    </section>
-
-    <section id="numbers">
-      <h2>What the Energy Display Calculates</h2>
-      <p>SEVEN’s energy display uses software profiles. With a per-token coefficient, the estimator calculates <code>E (Wh) = token count × J/token ÷ 3600</code>. These are modelled quantities, not readings from a power meter.</p>
-      <figure class="scientific-figure">
-        <a href="assets/figures/energy-estimate.svg"><img src="assets/figures/energy-estimate.svg" width="1328" height="739" loading="lazy" alt="Line plot of estimated energy versus 1 to 1000 tokens. The configured local profile uses 0.85 joules per token; the cloud profile uses 3.10. Shading shows the configured coefficient bounds, not a confidence interval." /></a>
-        <figcaption><strong>Figure 2.</strong> Reproducible evaluation of the default local and cloud profiles in <a href="https://github.com/Jaundel/SEVEN/blob/713203c0c59fe478a01c6c7ac9a24bb3d86e3bef/SEVEN/energy.py">energy.py</a>. Shading shows configured coefficient ranges. The curves compare assumptions in the software, not equivalent-quality hardware measurements. <a href="data/energy_estimates.csv">Values (CSV)</a> · <a href="data/energy_profiles.json">Coefficients</a> · <a href="tools/build_figures.py">Figure code</a>.</figcaption>
-      </figure>
-      <div class="table-scroll"><table class="data-table">
-        <caption>Examples evaluated from the same profiles</caption>
-        <thead><tr><th scope="col">Token count</th><th scope="col">Local estimate (Wh)</th><th scope="col">Cloud estimate (Wh)</th></tr></thead>
-        <tbody><tr><th scope="row">100</th><td>0.0236</td><td>0.0861</td></tr><tr><th scope="row">500</th><td>0.1181</td><td>0.4306</td></tr><tr><th scope="row">1,000</th><td>0.2361</td><td>0.8611</td></tr></tbody>
-      </table></div>
-      <p>When token usage is unavailable, this implementation substitutes 500 tokens. The local result is compared with a cloud estimate using the same token count. A change of profile changes the estimate. API/network energy and the full cost of multiple inference attempts are not comprehensively measured by this calculation.</p>
-    </section>
-
-    <section>
-      <h2>What This Demonstrates</h2>
-      <p>The implementation connects a terminal interface, rule-based routing, a local inference server, live-data tools and cloud fallback. The recording demonstrates its use; the diagram describes its control flow; the plot makes its energy assumptions inspectable.</p>
-      <p>A measured efficiency claim would additionally need recorded device power, response quality, token counts, latency and escalation rates under a defined workload. The code and coefficient plots alone do not establish a universal energy-saving percentage.</p>
-    </section>
-
-    <section id="references">
-      <h2>Sources</h2>
-      <ol class="references">
-        <li><a href="https://github.com/Jaundel/SEVEN/tree/713203c0c59fe478a01c6c7ac9a24bb3d86e3bef">SEVEN source snapshot</a>: routing, API synthesis, heuristics and energy profiles.</li>
-        <li><a href="https://arxiv.org/abs/2406.18665">RouteLLM: Learning to Route LLMs from Preference Data</a>, 2024.</li>
-        <li><a href="https://arxiv.org/abs/2305.05176">FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance</a>, 2023.</li>
-        <li><a href="https://library.hkust.edu.hk/news-events/news/using-ai-create-scientific-figures-responsibly">HKUST Library: Using AI to Create Scientific Figures Responsibly</a>, figure-method guidance.</li>
-      </ol>
-    </section>
-
-  </article>
-
-  </main>
-
-    <footer class="site-shell article-footer">
-      <p>SEVEN &middot; Jaundel Simon &middot; 2025</p>
-      <p><a href="/projects.html">All projects</a></p>
-    </footer>
-
-<script>
-  const motion = document.getElementById('demo-motion');
-  const toggle = document.getElementById('demo-toggle');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let paused = reduced.matches;
-  function showMotion() {
-    motion.src = paused ? 'assets/figures/demo-poster.png' : 'assets/seven-thumbnail.gif';
-    toggle.textContent = paused ? 'Play animation' : 'Pause animation';
-    toggle.setAttribute('aria-pressed', String(paused));
-  }
-  toggle.addEventListener('click', () => { paused = !paused; showMotion(); });
-  showMotion();
-</script>
-</body>
-</html>
+<body>
+<a class="skip" href="#article">Skip to article</a>
+<div class="top">
+<nav class="shell site-nav" aria-label="Primary navigation"><div class="nav-links"><a href="https://jaundel.github.io/">Home</a><a class="active" href="https://jaundel.github.io/projects.html">Projects</a><a href="https://jaundel.github.io/assets/Jaundel_Simon_Resume.pdf">Résumé</a><a href="https://jaundel.github.io/about.html">About</a></div><div class="social-links"><a href="https://github.com/Jaundel">GitHub</a><a href="https://www.linkedin.com/in/jaundelsimon/">LinkedIn</a></div></nav>
+<header class="shell hero">
+<div class="hero-copy">
+<h1>SEVEN: Choosing where AI runs</h1>
+<p class="byline">Jaundel Simon, with Samin, Yusuf, Hamanpreet and Aadil</p>
+<p class="abstract">A short question can run on a laptop. A weather question needs a current source. A harder request may need a cloud model. SEVEN brings these paths into one terminal application and shows which path produced each answer.</p>
+<div class="links"><a href="#demo">Watch SEVEN</a><a href="https://github.com/Jaundel/SEVEN">Project code</a></div>
+<p class="venue">Sustainable Energy via Efficient Neural-routing<br>Team hackathon project, 2025 · Revisited, November 2026</p>
+</div>
+<figure class="hero-cover"><img src="assets/demo/home.png" width="1920" height="1140" alt="The original PROJECT SEVEN sign in the restored terminal application"></figure>
+</header></div>
+<main id="article">
+<figure id="demo" class="shell demo-figure">
+<div class="recording"><video id="seven-video" controls playsinline preload="metadata" poster="assets/demo/home.png" width="1920" height="1140" aria-label="SEVEN application walkthrough"><source src="assets/demo/seven-full-window.mp4" type="video/mp4">Your browser cannot play this recording. <a href="assets/demo/seven-full-window.mp4">Open the recording.</a></video></div>
+<div id="chapters" class="chapters" role="group" aria-label="Play an execution path"><span>Jump to</span><button type="button" data-chapter="local-answer">Local answer</button><button type="button" data-chapter="live-weather">Live data</button><button type="button" data-chapter="cloud-answer">Cloud answer</button></div>
+<p id="video-status" class="video-status" role="status" hidden></p>
+<figcaption><b>SEVEN running on the laptop.</b> Local inference, live lookups and a cloud response in one conversation. The complete window and waiting time are preserved.</figcaption>
+</figure>
+<article>
+<section id="system" class="shell">
+<h2>Three paths, one conversation</h2>
+<p class="lead">How much work can stay on the machine in front of us?</p>
+<p>We built SEVEN around a small local model, live-data tools and a cloud fallback. A set of rules chooses a path before generation. The terminal keeps that path with the answer, including when a saved conversation is reopened.</p>
+<p>My contribution to the original team was the local-model adapter: connecting to Lemonade Server, sending prompts, normalising replies and token usage, and handling retries. Samin built the cloud adapter; Yusuf handled routing and prompts; Hamanpreet worked on energy estimates; Aadil handled the terminal interface.</p>
+<p>The restored application runs Llama 3.2 1B through a Ryzen AI runtime. Supported weather, cryptocurrency and news requests return results from Open-Meteo, Coinbase and BBC directly, preserving their sources and numbers. Domain and complexity rules select GPT-4o-mini; a local failure or explicit uncertainty phrase can also trigger a cloud attempt.</p>
+<figure class="wide scientific system-figure"><picture><source media="(max-width:900px)" srcset="assets/figures/system-architecture-mobile.svg"><img src="assets/figures/system-architecture.svg" width="980" height="648" loading="lazy" alt="SEVEN system architecture. Ordered rules dispatch to local Llama 3.2 1B on the laptop, direct live-data tools, or GPT-4o-mini. Local uncertainty or failure can escalate to cloud. Replies and their metadata persist in SQLite. Separate accounting converts provider token counts through configured energy profiles."></picture><figcaption><b>Figure 1. The restored system.</b> Execution paths converge on a saved reply. Conditional fallback reaches the cloud; energy accounting uses token counts and configured profiles.</figcaption></figure>
+<p>Getting the application running again raised a more useful set of questions: what does a routing rule actually recognise, when does a wrong answer escape escalation, and what can the laptop’s power measurements establish?</p>
+</section>
+<section id="routing" class="shell">
+<h2>One substring changed the execution path</h2>
+<p>The original classifier searched for cryptocurrency symbols anywhere in the text. The symbol <span class="api-text">eth</span> therefore matched inside <em>whether</em>. A question about a triangle entered the live-data path before the local model was considered.</p>
+<figure class="wide scientific"><picture><source media="(max-width:600px)" srcset="assets/figures/routing-rule-mobile.svg"><img src="assets/figures/routing-rule.svg" width="760" height="240" loading="lazy" alt="The original substring rule finds eth inside whether and selects live data. The restored word-boundary rule finds no match and selects the local model."></picture><figcaption><b>Figure 2. The matched characters explain the decision.</b> Both classifier versions were executed on the same sentence. The restored rule requires a complete word.</figcaption></figure>
+<p>I then ran both versions over the same <strong>15,011 Dolly-15k prompts</strong>. The restoration added word boundaries and removed the ambiguous keyword <em>price</em>. Most decisions stayed the same; the table isolates those that changed.</p>
+<div class="table-wrap narrow"><table id="routing-table"><caption>Changed initial decisions on the same 15,011 prompts</caption><thead><tr><th scope="col">Original path</th><th scope="col">Restored path</th><th scope="col">Prompts</th></tr></thead><tbody><tr><th scope="row" class="api-text">Live-data check</th><td class="local-text">Local</td><td>1,598</td></tr><tr><th scope="row" class="api-text">Live-data check</th><td class="cloud-text">Cloud</td><td>956</td></tr><tr><th scope="row" class="cloud-text">Cloud</th><td class="local-text">Local</td><td>2</td></tr></tbody></table></div>
+<p>These are changes in rule behaviour. Dolly does not label the correct destination, so the counts cannot establish routing accuracy. Word boundaries also leave intent unresolved: “What is the latest version of Python?” still selects live data, although SEVEN has no software-release tool.</p>
+</section>
+<section id="answers" class="shell">
+<h2>Wrong answers can pass the uncertainty check</h2>
+<p>SEVEN looks for four explicit uncertainty phrases in a local reply. That makes escalation inexpensive, but a wrong answer need not contain one. I tested the same seeded sample of 60 GSM8K questions under three preserved local configurations.</p>
+<div class="table-wrap narrow"><table id="quality-table"><caption>60 questions per configuration · one recorded response per question</caption><thead><tr><th scope="col">Local configuration</th><th scope="col">Numeric<br>matches</th><th scope="col">Flagged<br>by rule</th><th scope="col">Unflagged<br>misses</th></tr></thead><tbody><tr><th scope="row">Original / plaintext</th><td>11</td><td>8</td><td>41</td></tr><tr><th scope="row">Template exposed</th><td>13</td><td>0</td><td>47</td></tr><tr><th scope="row">Revised local prompt</th><td>22</td><td>0</td><td>38</td></tr></tbody></table></div>
+<p>The revised-prompt run produced more numeric matches, yet <strong>none of its 38 non-matching replies triggered the uncertainty rule</strong>. These single stochastic runs do not isolate why the match count changed. They do show why absence of an uncertainty phrase is a weak acceptance check.</p>
+<figure class="wide scientific"><picture><source media="(max-width:600px)" srcset="assets/figures/answer-case-mobile.svg"><img src="assets/figures/answer-case.svg" width="760" height="325" loading="lazy" alt="First sampled question: distribute 600 newspapers after 198 and 209 deliveries. The complete original local reply incorrectly answers 621 without uncertainty. The reference calculation gives 193."></picture><figcaption><b>Figure 3. A confident arithmetic failure.</b> The first sampled question, under the original configuration. The complete recorded reply is reproduced alongside the reference calculation.</figcaption></figure>
+<p>The response above fails both the subtraction and the choice of operation. Its wording still passes the phrase check. The study grades only the last number against the reference answer; it does not score reasoning. The <a href="supplement.html#responses">complete paired responses</a> preserve what that simple grade leaves out.</p>
+</section>
+<section id="energy" class="shell">
+<h2>What SEVEN estimates for local and cloud inference</h2>
+<p>The energy display compares a completed local reply with a hypothetical cloud run at the same token count. In the recorded France example, the local profile gives <span class="local-text"><strong>14.6 mWh</strong></span> and the cloud profile gives <span class="cloud-text"><strong>53.4 mWh</strong></span>: a configured difference of 38.8 mWh.</p>
+<figure class="wide scientific"><picture><source media="(max-width:600px)" srcset="assets/figures/energy-comparison-mobile.svg"><img src="assets/figures/energy-comparison.svg" width="760" height="310" loading="lazy" alt="Configured comparison for the France example at an estimator input of 62 tokens. Local profile: 14.6 milliwatt-hours. GPT-4o cloud proxy: 53.4 milliwatt-hours. Whiskers show configured coefficient bounds. These are estimates, not measured cloud energy."></picture><figcaption><b>Figure 4. The comparison behind the display.</b> Both bars use the same estimator input. Whiskers show configured coefficient bounds, rather than repeated measurements.</figcaption></figure>
+<p>The calculation is token count × joules per token, converted to Wh. The local coefficient is 0.85 J/token; the cloud coefficient is 3.10 J/token. These coefficients make the comparison change proportionally with token count; they do not establish the electricity used by either request.</p>
+<p>There is also a model mismatch: the default cloud profile is labelled GPT-4o, while the adapter calls GPT-4o-mini. The local profile describes an NPU, while the demonstrated runtime uses NPU and iGPU together. The comparison is therefore a proxy built into the application, not a calibrated result for this hardware and cloud model. The <a href="supplement.html#estimates">estimator details</a> preserve its assumptions and exact calculation.</p>
+</section>
+<section id="measurement" class="shell">
+<h2>What the battery actually measured</h2>
+<p>The project’s sustainability goal needs a physical measurement. During the local studies, I sampled battery-reported discharge power at roughly one-second intervals. The figure shows the first 20-question block of the original run, with loaded-idle periods on either side.</p>
+<figure class="wide scientific"><picture><source media="(max-width:600px)" srcset="assets/figures/power-interval-mobile.svg"><img src="assets/figures/power-interval.svg" width="760" height="350" loading="lazy" alt="Whole-laptop power samples surrounding the first original inference block. The 20-question interval lasts 120.0 seconds and integrates to 0.729 watt-hours. Display, operating system and other applications are included."></picture><figcaption><b>Figure 5. Energy over an actual inference interval.</b> Shading marks the 20 requests. The integral includes the whole laptop; loaded-idle power is not subtracted.</figcaption></figure>
+<p>This interval consumed <strong>0.729 Wh over 120.0 seconds</strong>. It includes the screen, operating system and other active applications. The three complete studies consumed 2.543, 2.424 and 2.163 Wh during their inference blocks, but their different replies, durations and background activity prevent an efficiency ranking.</p>
+<p>No cloud energy was measured. The Wh values shown inside SEVEN are profile-based estimates, separate from this telemetry. A savings claim would need comparable successful workloads, repeated trials and a defined measurement boundary for both execution paths.</p>
+</section>
+<section id="next" class="shell">
+<h2>A working system, with testable limits</h2>
+<p>Restoring SEVEN made the original idea usable again: one conversation can reach a local model, a current source or a cloud model, and retain where each answer came from. Testing it exposed the limits of the rules behind that experience.</p>
+<p>The next steps follow directly: evaluate routing against labelled intent, evaluate escalation against answer correctness, and measure complete requests—including failed attempts—under a controlled power protocol.</p>
+</section>
+<section id="methods" class="shell methods">
+<h2>Methods and source</h2>
+<p>The walkthrough shows the restored application. The November 12 studies retain their earlier source snapshots; later repairs do not change those recorded results. GSM8K uses test rows sampled with seed 7, Llama 3.2 1B, temperature 0.7 and a 512-token limit.</p>
+<p><a href="supplement.html">Study methods, complete responses and downloads</a><br><a href="evidence/demo/restored-source.zip" download>Restored application and setup</a> · <a href="https://github.com/Jaundel/SEVEN/tree/713203c0c59fe478a01c6c7ac9a24bb3d86e3bef">Original source</a></p>
+<p class="small">Terminal footage is an unchanged application capture. Figures use verified records and authored TikZ/PGFPlots; AI assistance supported code and typesetting. No generative image tool was used. Presentation follows the portfolio’s Omni format and <a href="https://shikun.io/projects/clarity">Shikun Liu’s Clarity</a>.</p>
+</section>
+</article></main>
+<footer class="shell foot"><p>SEVEN · Jaundel Simon</p><a href="https://jaundel.github.io/projects.html">All projects</a></footer>
+</body></html>

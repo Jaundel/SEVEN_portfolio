@@ -1,0 +1,79 @@
+{
+  "utc": "20261115T032311Z",
+  "method": "Windows Graphics Capture of the complete maximized Windows Terminal window selected by unique title; native observed dimensions, no crop or resize. FFmpeg H.264 encoding; unchanged frames repeated at 15 fps to preserve wall time.",
+  "window_title": "SEVEN-CAPTURE-20261115T032311Z",
+  "width": 1920,
+  "height": 1140,
+  "terminal_size": [
+    156,
+    47
+  ],
+  "video": "seven-full-window.mp4",
+  "bytes": 2250686,
+  "source_report": "evidence/demo/report.json",
+  "checks": {
+    "profile_selection": true,
+    "failure_then_retry": null,
+    "history_source_label": true,
+    "rename_persistence": true,
+    "chat_details": true,
+    "archive_from_history": true
+  },
+  "checkpoints": [
+    {
+      "label": "home",
+      "seconds": 2.8570000000065194,
+      "image": "home.png"
+    },
+    {
+      "label": "profile-selection",
+      "seconds": 6.903999999997905,
+      "image": "profile-selection.png"
+    },
+    {
+      "label": "local-answer",
+      "seconds": 14.746999999991385,
+      "image": "local-answer.png"
+    },
+    {
+      "label": "live-weather",
+      "seconds": 33.48200000000652,
+      "image": "live-weather.png"
+    },
+    {
+      "label": "live-crypto",
+      "seconds": 38.52899999999791,
+      "image": "live-crypto.png"
+    },
+    {
+      "label": "live-news",
+      "seconds": 44.90399999999791,
+      "image": "live-news.png"
+    },
+    {
+      "label": "cloud-answer",
+      "seconds": 53.7,
+      "image": "cloud-answer.png"
+    },
+    {
+      "label": "reopened-history",
+      "seconds": 61.76299999999465,
+      "image": "reopened-history.png"
+    }
+  ],
+  "ffmpeg_exit": 0,
+  "source_capture_id": "20261115T032311Z",
+  "files_sha256": {
+    "assets/demo/cloud-answer.png": "da94ad238ba4bf75795746dc3f92ce5a2b4ebedf00fe6c95ae87aa8e5df8eb9f",
+    "assets/demo/home.png": "c8f82deae388bcc0719eed37489b232d1258b45983a83a1f6351cef2f708af4e",
+    "assets/demo/live-crypto.png": "94e264859417333de7eb7341a3182495f70c64fbcd0a0023d8681587cc333133",
+    "assets/demo/live-news.png": "cba577890c69ea7d46b08a84a47e2b7464016f6fa0bc2c2f2e39c7a6dc6a5f8d",
+    "assets/demo/live-weather.png": "1551b6f5d5f9e69cbc56170128038a35c39c0c9da8fb9fbe8999fbbe50382a61",
+    "assets/demo/local-answer.png": "8f400040a43051144ed054719b27651fbc9f92ee0a2fbf0493de8412f4256011",
+    "assets/demo/profile-selection.png": "9b80a170deee9a8fb4bf895b2e9030d55638964c0a3cba13196e70d1fc1618b5",
+    "assets/demo/reopened-history.png": "7ccf2f37000fd511f9b4f88edacdee8784aec1ab50c1c5876c2b5bd772f69589",
+    "assets/demo/seven-full-window.mp4": "80bea2f449883d6375f8b3cb90a24fb1ab52246891613750cb5971cf102a2db8",
+    "evidence/demo/report.json": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07",
+    "evidence/demo/source-snapshot.zip": "4a8e69c32ad015c1081400e1681a0f8b99bda18673b36cf11a9edad1e7a9a394"
+  }
+}
