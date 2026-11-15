@@ -4,15 +4,15 @@
   "figures": [
     {
       "file": "assets/figures/system-architecture.pdf",
-      "sha256": "79c445e04977ff2c9d2535a30210ae10566f77dab4093861960f144f012ef184",
+      "sha256": "9ce245cc6e7e1cd8f0a981c61e9868451c2444b8c01aef29c77eb3af7cdb991f",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-SemiBold",
-          "embedded_bytes": 8602
+          "embedded_bytes": 7930
         },
         {
           "name": "BZIVMZ+Poppins-Regular",
-          "embedded_bytes": 11228
+          "embedded_bytes": 12344
         }
       ],
       "selectable_text": true,
@@ -20,7 +20,7 @@
     },
     {
       "file": "assets/figures/energy-comparison.pdf",
-      "sha256": "a5fff6f32f2fb5ccf596b0fdc415e30b39c2aecdb14237bf177dd1902a92fe8d",
+      "sha256": "fdf2b9269f6a767ae17c67573f663068b3a48d9ceba157b8a35c5c82ce966d8c",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
@@ -32,7 +32,7 @@
     },
     {
       "file": "assets/figures/routing-rule.pdf",
-      "sha256": "854dab5b8efd93aaf7ab9b9c555dd04fdf7515aa39fd79ddaf48949f896345b7",
+      "sha256": "d8b08bc879ef7dfa877a4e5d5be84889a57807ead88eeab88b35a1ea6d7e3b06",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
@@ -52,7 +52,7 @@
     },
     {
       "file": "assets/figures/answer-case.pdf",
-      "sha256": "de46bc5e6cc71918201fc189eade7c86b56e103bd51b480cea559b889dc71b80",
+      "sha256": "1fec36e719183fda39a50f64b22898bfecff900914494ad578652330c44bc806",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
@@ -64,7 +64,7 @@
     },
     {
       "file": "assets/figures/power-interval.pdf",
-      "sha256": "27e86cb5386ff2c224204b35ab5a422258eeda1e1bba0cfa4e9698f9c94a9494",
+      "sha256": "9a740609419370827aaf819e9b23955adc06cdf80de0a371eccaa13196902578",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
@@ -76,23 +76,15 @@
     },
     {
       "file": "assets/figures/system-architecture-mobile.pdf",
-      "sha256": "ab3a54fb08d418b4387b1d02aff53463776d8a45a6661f5e048cb568451cdbd3",
+      "sha256": "e54cd2d5e0e471d7e307cacf15bfeb1dce89a5fde0bd168d520236b08a8a0edb",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-SemiBold",
-          "embedded_bytes": 7910
+          "embedded_bytes": 7930
         },
         {
           "name": "BZIVMZ+Poppins-Regular",
-          "embedded_bytes": 11044
-        },
-        {
-          "name": "IXFAWU+CMSY10",
-          "embedded_bytes": 403
-        },
-        {
-          "name": "TQTHRL+CMSY9",
-          "embedded_bytes": 394
+          "embedded_bytes": 12344
         }
       ],
       "selectable_text": true,
@@ -100,7 +92,7 @@
     },
     {
       "file": "assets/figures/energy-comparison-mobile.pdf",
-      "sha256": "f70eb59c1f31c94f4bae8a5d495345b7e59abf415da16cd831e1025635af1661",
+      "sha256": "fed0b82ab8182f707ee3e9abdb051625d02833e08b50e17e658d5d5118e63599",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
@@ -112,7 +104,7 @@
     },
     {
       "file": "assets/figures/routing-rule-mobile.pdf",
-      "sha256": "838b47ed9e25f457b4af26ff4e0ccb5c087f7f2649ec4f5abbfd4cced5ebfdc7",
+      "sha256": "43049fd28bcf7ef9c7a490f6f342f3cd406b272535a0ec4e362db253d1280c84",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
@@ -132,7 +124,7 @@
     },
     {
       "file": "assets/figures/answer-case-mobile.pdf",
-      "sha256": "cd50a37b492e0cb47258b5985fceb6325bc4f0f3e4b71a2c84fd5cc82ac11a0c",
+      "sha256": "2da7c1586882edcbece63877b12bbd0476636adb1bb84c321c966db6bd57fbe1",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
@@ -144,7 +136,7 @@
     },
     {
       "file": "assets/figures/power-interval-mobile.pdf",
-      "sha256": "24d442c256886a4780e6a6de0b71835067bcdf7745db8020b6bf0c7fa3d09c4d",
+      "sha256": "0143486e561f64c020637baf23e84e7d7a9b30dd115d78af1e396213c2c74903",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",

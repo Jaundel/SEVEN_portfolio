@@ -1,9 +1,10 @@
 {
   "passed": true,
-  "checked_utc": "2026-11-15T17:42:54.190091+00:00",
+  "checked_utc": "2026-11-15T18:08:16.796181+00:00",
   "browser": {
     "passed": true,
-    "scope": "Local article and supplement: rendered layouts, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.",
+    "scope": "Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.",
+    "figureEnlargement": true,
     "layouts": [
       {
         "width": 360,
@@ -15,7 +16,7 @@
             "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
             "loaded": true,
             "width": 324,
-            "height": 944
+            "height": 183
           },
           {
             "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg",
@@ -48,7 +49,7 @@
             "links": 0
           },
           {
-            "words": 25,
+            "words": 26,
             "links": 0
           },
           {
@@ -82,7 +83,7 @@
             "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
             "loaded": true,
             "width": 354,
-            "height": 1032
+            "height": 200
           },
           {
             "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg",
@@ -115,7 +116,7 @@
             "links": 0
           },
           {
-            "words": 25,
+            "words": 26,
             "links": 0
           },
           {
@@ -148,8 +149,8 @@
           {
             "url": "http://127.0.0.1:8765/assets/figures/system-architecture-mobile.svg",
             "loaded": true,
-            "width": 444,
-            "height": 1294
+            "width": 684,
+            "height": 386
           },
           {
             "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg",
@@ -182,7 +183,7 @@
             "links": 0
           },
           {
-            "words": 25,
+            "words": 26,
             "links": 0
           },
           {
@@ -216,7 +217,7 @@
             "url": "http://127.0.0.1:8765/assets/figures/system-architecture.svg",
             "loaded": true,
             "width": 946,
-            "height": 626
+            "height": 533
           },
           {
             "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg",
@@ -249,7 +250,7 @@
             "links": 0
           },
           {
-            "words": 25,
+            "words": 26,
             "links": 0
           },
           {
@@ -278,19 +279,19 @@
       {
         "name": "local-answer",
         "target": 14.746999999991385,
-        "time": 14.772,
+        "time": 14.7717,
         "keyboard": true
       },
       {
         "name": "live-weather",
         "target": 33.48200000000652,
-        "time": 33.5057,
+        "time": 33.4983,
         "keyboard": true
       },
       {
         "name": "cloud-answer",
         "target": 53.7,
-        "time": 53.7311,
+        "time": 53.7224,
         "keyboard": true
       }
     ],
@@ -306,7 +307,7 @@
     ],
     "questions": 60,
     "responses": 180,
-    "checkedLinks": 31,
+    "checkedLinks": 33,
     "errors": []
   },
   "delayed_video": {
@@ -392,9 +393,9 @@
     "unavailableMedia": "The recording could not load. Reload the page to try again."
   },
   "source_sha256": {
-    "index.html": "3fa259dc091b7fcd71252d4ce360be2a6e900217c1fb9d7deaf962bc52a322d9",
-    "supplement.html": "06e7ee5fca771d7ffc7a4f382b1f66c4a788de831299e41ccca613031ff37ad6",
-    "article.css": "692cd13e0033ee146d72bdd9aba229cff8bc6c7f67a8729a8bfce1e59c170693",
+    "index.html": "f9435ae664db347c40ef9880fda2bcc1fe87ccf9aebf891383414582fe6b6161",
+    "supplement.html": "ece1fcfb01045da51c76fac8967c5c817a29c285c2a71e72ea93f117c43bb407",
+    "article.css": "001217dd1a30d4f6f20dd082dd8ba9f4480101425a14bfb3b6a634a334fd9b09",
     "article-tokens.css": "688874f302b3d7a0bc6c5210a68f57f93e1f8cb8cb870865a56fe7c2e6ac052c",
     "article.js": "36f32a8c4c8af2900182901400c679769018faf9d1c07d44f81766d47241cfa1",
     "data/answers.json": "a7ea5c786503382a68bde08b74d009dd3423470a083f06079469e0e80f49dfbe",
@@ -402,34 +403,36 @@
     "data/route-comparison.json": "54c8797ee979cd2944e6cc4aaed0af267cacf9aa31ca08e57e84d1fa46819f62",
     "data/paired-routes.json": "c8ddb293e8f035d1805183de94d3130de19da318e18ec081d2c3e7df65e456b6",
     "evidence/analyse_study.py": "a10b5ec12c81043af965de12382a4bdab762f7bc8d1c076c3d912581b135a51b",
-    "evidence/verify_article.py": "f725059cb2a06f3863605042f115c3a52d1b7ec53acd429c9134ae4fb10dd6c0",
-    "evidence/PROVENANCE.md": "56f2dcc390c44397f84b6cd188d5022f40b60edad000a62aa0a52349d49b8507",
+    "evidence/verify_article.py": "bcbc46d50060db34d36b49df1f3b08833fb8181f8c6240e3e02d32d346052720",
+    "evidence/PROVENANCE.md": "070939b28ba3304a2bc429e45be9b26ca01c03d7c06e983a1d41b0cb9265d06e",
     "evidence/figure-style.json": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
     "evidence/figure-manifest.json": "0096d97ce6db02ae58313d8a1f03ab9ec10d76a25481918e4d71c2df0e428c06",
-    "evidence/build_publication_figures.py": "722b8b74a5fb24a8e21a38ba0a08665e9fa017d74eb4de3fc47f0087cdfc8c38",
-    "evidence/system_figures.py": "747c2831aca87db75a57169382e6191accb2e41a1863f1858abd66bb750a9f55",
+    "evidence/build_publication_figures.py": "771b5f815c8e5d6de5da4e8388e4d40618e01843000dd682d5e30b5d30025f55",
+    "evidence/system_figures.py": "a5328e0a010b70ba73a64adf5b91dcf24eecb3177ed27559cda83f6b431c19b5",
+    "evidence/architecture_plate.py": "040c726fa676aaea7a1fa9cfd728ced3bcedf69d79e9ec36adde683f44b60f22",
+    "data/system-trace.json": "a1673d7c285d30d9cca4e18ebbbf25dd681789dcb446bc4f1f0d2588a872a5ae",
     "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
-    "evidence/publication-figures.json": "bcea5b7c0056cb050324791e22a4332e204f027ff77fd2c5148e5b27ff25a44a",
-    "evidence/check_article_browser.js": "b7e62c47b4d3acf6bae643b553520b29a5dab9e152db893d9df6b0ce12de04dd",
+    "evidence/publication-figures.json": "4c54e2405b9958ed4f5c4d519c0cdfc647813b6e67b4efb4adbdda7758ca1db2",
+    "evidence/check_article_browser.js": "207d90d5501744cbcaafff672a178ae017c1f7e3ce213332e0eaff117cd4b1f6",
     "evidence/check_video_loading.js": "bce6f7215f91b9af40b1caaca70133718ee3ab78f42bd3ef69ce052658b476d5",
     "evidence/check_video_resilience.js": "ab6de35d494e55d73bbb85a19e6c665c21c132adbe0f8fe1554a277031c0ac38",
     "evidence/serve_preview.py": "d6f1138b92491e8e7768e4c7be7ccae56f9f0028a1817955bf8e4ae7e979608f",
     "evidence/check_preview_ranges.py": "c6dcd94d7236562290343c5b30bc1870ee9c2cc672866f3925cf4898984d8970"
   },
   "screenshots_sha256": {
-    "output/playwright/seven-finished-1440.png": "9a7aa29455ef2c7de9b489df8dfd31bfb66439cb9994b97b6d873549ce32d255",
-    "output/playwright/seven-finished-390.png": "8a831673d378a830da43df79887a26971770f7c12d67c92ef7979dab4c8fbcc5",
-    "output/playwright/seven-finished-answers-1440.png": "a7715d7cabad53109008dd56af91c36cec370c8f87977e58d37ac755e3087fff",
-    "output/playwright/seven-finished-answers-390.png": "d239ca72774b95564d44a3d380e40c3dcd1f963371b66e4b01b1183f7b769f7f",
+    "output/playwright/seven-finished-1440.png": "79d5ba884f13c4164304fb7703e47698b5763285771d11d6f17bc76a440e2836",
+    "output/playwright/seven-finished-390.png": "3eae36b14ad61ace50acd00f6461f11c24fca826b132f99e042925a8800e674e",
+    "output/playwright/seven-finished-answers-1440.png": "3879e0554e6baae33bbee5128e2a35b69634353fda2f839f451f78b6bae46584",
+    "output/playwright/seven-finished-answers-390.png": "2c8b36efa57e425034510f45850fe12562e614f7452c7d438757a1c0884983c9",
     "output/playwright/seven-finished-energy-1440.png": "28c5b96ed67e5ed92c1ba1997172159166d41c2fcf943c919a7b4adc2d8a2a83",
-    "output/playwright/seven-finished-energy-390.png": "3d5a08171b0decd3aaddd1c49ebad46a8d33488c593a02d864dcd13d89969377",
-    "output/playwright/seven-finished-measurement-1440.png": "0ca4ecdd8b0d130ab1abfab4986295a296d6262a2462e3a7b5eaa0895fdd0c60",
-    "output/playwright/seven-finished-measurement-390.png": "1a44b3b54f08c6099dfd03033c4927d4772ed08f768fa8983ba0f2f515c522c7",
-    "output/playwright/seven-finished-routing-1440.png": "82c62722fe59e4c707d2568f8d301003d6dbd3170d1ad5d67c2a77ca6d625ea0",
-    "output/playwright/seven-finished-routing-390.png": "a13a15582e50cc11044188b7dcb71561ba35c546e5bc7835396d762a3efe9a6b",
-    "output/playwright/seven-finished-system-1440.png": "f874cedee3e4beb26a4333b02ac2c6cd3adbe1a9c94448bbb8ba00f8d0505254",
-    "output/playwright/seven-finished-system-390.png": "f053dab2936affa93bf15f1d0a5e53b6c1d7ed1456001562dbf1236dc802b6c3",
-    "output/playwright/seven-finished-top-1440.png": "85d06d7050b713d2219b1597c4ff707d415dee48701a466ede7d9dc6d7189a4c",
-    "output/playwright/seven-finished-top-390.png": "3295f45c777553dc19be55c888d50253ba78b722fe5efdfe8e9d53240e25a32a"
+    "output/playwright/seven-finished-energy-390.png": "2f0d1dc27dd0e5d02373ad49edd62ac45fb3fa6a6253ca2f3bd9b9b93235941c",
+    "output/playwright/seven-finished-measurement-1440.png": "4654ea62fd86a4fafdc1b1b1ada6d97876b4b24decf86a6c2d35aef56aad4b5e",
+    "output/playwright/seven-finished-measurement-390.png": "cf2c6c302aea2cc1eb47468b217aff7a5e606a0a4b383861bc985452b4200f17",
+    "output/playwright/seven-finished-routing-1440.png": "d798c2d9739fe95d133b74375d310671503b89b2fb994e9ff6db1af7c1cc31ee",
+    "output/playwright/seven-finished-routing-390.png": "f340ac07d25d58d238f95d3b711ffcf1cb219e1e7ee896ad4c6f8b75428631fb",
+    "output/playwright/seven-finished-system-1440.png": "f9097a32f42775b153aec93abbe1ae31c93937588fa2713b3ccb0fafc1be12f6",
+    "output/playwright/seven-finished-system-390.png": "94b16eb536859437766662d771c3641d96bca0112472d745c8aab0f1a0560c97",
+    "output/playwright/seven-finished-top-1440.png": "b3b75a3ecd71e81432156075850a1895629fffbb164529e780aa748fc8c99e24",
+    "output/playwright/seven-finished-top-390.png": "e41b6e0293da545f6f9dd1f1796707fa21eee76f0f66a0760a82d77ad5fef564"
   }
 }

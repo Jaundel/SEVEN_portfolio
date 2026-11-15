@@ -6,6 +6,12 @@ async page=>{
  await page.route('**/*',route=>route.continue());
  await page.setViewportSize({width:1440,height:1000});
  await page.goto(base,{waitUntil:'networkidle'});
+ const figureWindow=page.waitForEvent('popup');
+ await page.locator('.system-figure>a').click();
+ const enlarged=await figureWindow;await enlarged.waitForLoadState('domcontentloaded');
+ assert(enlarged.url().endsWith('/assets/figures/system-architecture.svg'),'Figure does not open at full size');
+ assert(await enlarged.locator('svg').count()===1,'Vector figure not rendered');
+ await enlarged.close();
  const manifest=await (await page.request.get(base+'evidence/demo/manifest.json')).json();
  const chapters=[];
  for(const name of ['local-answer','live-weather','cloud-answer']){
@@ -61,5 +67,5 @@ async page=>{
  for(const url of [...new Set([...links,...extra])]){const r=await page.request.head(url);assert(r.ok(),'Bad link '+url);checkedLinks++;}
  assert(errors.length===0,JSON.stringify(errors));
  await page.setViewportSize({width:1440,height:1000});await page.goto(base,{waitUntil:'networkidle'});
- return {passed:true,scope:'Local article and supplement: rendered layouts, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.',layouts,chapters,supplementLayouts,questions:records.length,responses:records.length*3,checkedLinks,errors};
+ return {passed:true,scope:'Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.',figureEnlargement:true,layouts,chapters,supplementLayouts,questions:records.length,responses:records.length*3,checkedLinks,errors};
 }

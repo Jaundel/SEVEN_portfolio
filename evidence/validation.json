@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "checked_utc": "2026-11-15T17:42:43.337565+00:00",
+  "checked_utc": "2026-11-15T18:08:05.355539+00:00",
   "scope": "Local file/data integrity and complete video decode; browser checks recorded separately.",
-  "relative_targets": 40,
+  "relative_targets": 41,
   "publication_figures": 10,
   "questions": 60,
   "responses": 180,
@@ -11,9 +11,9 @@
   "decoded_frames": 1013,
   "decoded_duration_s": 67.533333,
   "article_sha256": {
-    "index.html": "3fa259dc091b7fcd71252d4ce360be2a6e900217c1fb9d7deaf962bc52a322d9",
-    "supplement.html": "06e7ee5fca771d7ffc7a4f382b1f66c4a788de831299e41ccca613031ff37ad6",
-    "article.css": "692cd13e0033ee146d72bdd9aba229cff8bc6c7f67a8729a8bfce1e59c170693",
+    "index.html": "f9435ae664db347c40ef9880fda2bcc1fe87ccf9aebf891383414582fe6b6161",
+    "supplement.html": "ece1fcfb01045da51c76fac8967c5c817a29c285c2a71e72ea93f117c43bb407",
+    "article.css": "001217dd1a30d4f6f20dd082dd8ba9f4480101425a14bfb3b6a634a334fd9b09",
     "article-tokens.css": "688874f302b3d7a0bc6c5210a68f57f93e1f8cb8cb870865a56fe7c2e6ac052c",
     "article.js": "36f32a8c4c8af2900182901400c679769018faf9d1c07d44f81766d47241cfa1",
     "data/answers.json": "a7ea5c786503382a68bde08b74d009dd3423470a083f06079469e0e80f49dfbe",
@@ -21,13 +21,15 @@
     "data/route-comparison.json": "54c8797ee979cd2944e6cc4aaed0af267cacf9aa31ca08e57e84d1fa46819f62",
     "data/paired-routes.json": "c8ddb293e8f035d1805183de94d3130de19da318e18ec081d2c3e7df65e456b6",
     "evidence/analyse_study.py": "a10b5ec12c81043af965de12382a4bdab762f7bc8d1c076c3d912581b135a51b",
-    "evidence/verify_article.py": "f725059cb2a06f3863605042f115c3a52d1b7ec53acd429c9134ae4fb10dd6c0",
-    "evidence/PROVENANCE.md": "56f2dcc390c44397f84b6cd188d5022f40b60edad000a62aa0a52349d49b8507",
+    "evidence/verify_article.py": "bcbc46d50060db34d36b49df1f3b08833fb8181f8c6240e3e02d32d346052720",
+    "evidence/PROVENANCE.md": "070939b28ba3304a2bc429e45be9b26ca01c03d7c06e983a1d41b0cb9265d06e",
     "evidence/figure-style.json": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
     "evidence/figure-manifest.json": "0096d97ce6db02ae58313d8a1f03ab9ec10d76a25481918e4d71c2df0e428c06",
-    "evidence/build_publication_figures.py": "722b8b74a5fb24a8e21a38ba0a08665e9fa017d74eb4de3fc47f0087cdfc8c38",
-    "evidence/system_figures.py": "747c2831aca87db75a57169382e6191accb2e41a1863f1858abd66bb750a9f55",
+    "evidence/build_publication_figures.py": "771b5f815c8e5d6de5da4e8388e4d40618e01843000dd682d5e30b5d30025f55",
+    "evidence/system_figures.py": "a5328e0a010b70ba73a64adf5b91dcf24eecb3177ed27559cda83f6b431c19b5",
+    "evidence/architecture_plate.py": "040c726fa676aaea7a1fa9cfd728ced3bcedf69d79e9ec36adde683f44b60f22",
+    "data/system-trace.json": "a1673d7c285d30d9cca4e18ebbbf25dd681789dcb446bc4f1f0d2588a872a5ae",
     "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
-    "evidence/publication-figures.json": "bcea5b7c0056cb050324791e22a4332e204f027ff77fd2c5148e5b27ff25a44a"
+    "evidence/publication-figures.json": "4c54e2405b9958ed4f5c4d519c0cdfc647813b6e67b4efb4adbdda7758ca1db2"
   }
 }

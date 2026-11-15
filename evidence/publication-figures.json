@@ -8,8 +8,8 @@
   "figures": [
     {
       "name": "system-architecture",
-      "width_pt": 976.3400268554688,
-      "height_pt": 645.5800170898438
+      "width_pt": 1016.1900024414062,
+      "height_pt": 572.8499755859375
     },
     {
       "name": "energy-comparison",
@@ -33,8 +33,8 @@
     },
     {
       "name": "system-architecture-mobile",
-      "width_pt": 348.69000244140625,
-      "height_pt": 1016.1900024414062
+      "width_pt": 1016.1900024414062,
+      "height_pt": 572.8499755859375
     },
     {
       "name": "energy-comparison-mobile",
@@ -173,8 +173,8 @@
     "report_sha256": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07"
   },
   "source_sha256": {
-    "evidence/build_publication_figures.py": "722b8b74a5fb24a8e21a38ba0a08665e9fa017d74eb4de3fc47f0087cdfc8c38",
-    "evidence/system_figures.py": "747c2831aca87db75a57169382e6191accb2e41a1863f1858abd66bb750a9f55",
+    "evidence/build_publication_figures.py": "771b5f815c8e5d6de5da4e8388e4d40618e01843000dd682d5e30b5d30025f55",
+    "evidence/system_figures.py": "a5328e0a010b70ba73a64adf5b91dcf24eecb3177ed27559cda83f6b431c19b5",
     "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
     "evidence/demo/report.json": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07",
     "evidence/demo/source-snapshot.zip": "4a8e69c32ad015c1081400e1681a0f8b99bda18673b36cf11a9edad1e7a9a394",
@@ -189,38 +189,42 @@
     "evidence/fonts/Poppins-Italic.ttf": "4fa76ae75b40f926420514044722cb97f32186cafd3b38263cc34dad7174d46d",
     "evidence/fonts/Poppins-Medium.ttf": "90373e7d838d32468438fc3e152dca0bdb12edcab99ea639f158790b1ba1fd05",
     "evidence/fonts/Poppins-Regular.ttf": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba",
-    "evidence/fonts/Poppins-SemiBold.ttf": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286"
+    "evidence/fonts/Poppins-SemiBold.ttf": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286",
+    "evidence/architecture_plate.py": "040c726fa676aaea7a1fa9cfd728ced3bcedf69d79e9ec36adde683f44b60f22",
+    "data/system-trace.json": "a1673d7c285d30d9cca4e18ebbbf25dd681789dcb446bc4f1f0d2588a872a5ae",
+    "evidence/model/genai_config.json": "8e1ca7f099424bb9e98223837673594b4b7e2565979938f33f0af5d0a22aa031",
+    "evidence/model/source.json": "60f70b7695f9b05307fd7daf498d52c4d2046f80927f6e857946864701938e7c"
   },
   "files_sha256": {
-    "evidence/figures/system-architecture.tex": "161496c5dfe2df212aff3405a2d1dda2bfe905a4332872bcddd958ef87aebc88",
-    "assets/figures/system-architecture.pdf": "79c445e04977ff2c9d2535a30210ae10566f77dab4093861960f144f012ef184",
-    "assets/figures/system-architecture.svg": "82992827d9ac4f73da42cf54682276327ce644267c46d024e19836d35297b796",
+    "evidence/figures/system-architecture.tex": "34470730d958df05243710d0bf0adf470aacde04c9c4eda6da94a554d58b6e5d",
+    "assets/figures/system-architecture.pdf": "9ce245cc6e7e1cd8f0a981c61e9868451c2444b8c01aef29c77eb3af7cdb991f",
+    "assets/figures/system-architecture.svg": "fabe87002efc08aba67db7de81fa483b2360ea6b89211ff2a1080310953c0409",
     "evidence/figures/energy-comparison.tex": "9a783a9af7e9b33889122fc9c2ece7f1412c749c0c1752843d26ea57be59c65e",
-    "assets/figures/energy-comparison.pdf": "a5fff6f32f2fb5ccf596b0fdc415e30b39c2aecdb14237bf177dd1902a92fe8d",
+    "assets/figures/energy-comparison.pdf": "fdf2b9269f6a767ae17c67573f663068b3a48d9ceba157b8a35c5c82ce966d8c",
     "assets/figures/energy-comparison.svg": "e718c50c2ecdd87e1332ba5da4959a0e8f90c7c1fa4e6fe2db875db3b9074a88",
     "evidence/figures/routing-rule.tex": "b23173026c154c519382dda8e03fb217fb958b4063ba93e21a3e0c32c1f3f574",
-    "assets/figures/routing-rule.pdf": "854dab5b8efd93aaf7ab9b9c555dd04fdf7515aa39fd79ddaf48949f896345b7",
+    "assets/figures/routing-rule.pdf": "d8b08bc879ef7dfa877a4e5d5be84889a57807ead88eeab88b35a1ea6d7e3b06",
     "assets/figures/routing-rule.svg": "ce9a83f48225acab0c440fbd9c15524dcf980ef25954de10d72b91b2c6013fde",
     "evidence/figures/answer-case.tex": "5369549c397f07debcc86f3a3a868db2116f222f31227da2a05cd0d2ccacad06",
-    "assets/figures/answer-case.pdf": "de46bc5e6cc71918201fc189eade7c86b56e103bd51b480cea559b889dc71b80",
+    "assets/figures/answer-case.pdf": "1fec36e719183fda39a50f64b22898bfecff900914494ad578652330c44bc806",
     "assets/figures/answer-case.svg": "1bf6bffc0b282e714af01ea538783723db6afda81ef3574448318d15266d6c55",
     "evidence/figures/power-interval.tex": "db4da6b066c5a7506fed34b779ccb6f9a4a0030ab04e70b6c8fcbe75e86c68eb",
-    "assets/figures/power-interval.pdf": "27e86cb5386ff2c224204b35ab5a422258eeda1e1bba0cfa4e9698f9c94a9494",
+    "assets/figures/power-interval.pdf": "9a740609419370827aaf819e9b23955adc06cdf80de0a371eccaa13196902578",
     "assets/figures/power-interval.svg": "a3fb8f4340dbfed11da27bfbdbe3fe534319b9bd61789c914653cb92376fdbed",
-    "evidence/figures/system-architecture-mobile.tex": "849d6668b4e7faf423bf70931efc5b35f3147d14f71e43fd2fbeafc531a3c84f",
-    "assets/figures/system-architecture-mobile.pdf": "ab3a54fb08d418b4387b1d02aff53463776d8a45a6661f5e048cb568451cdbd3",
-    "assets/figures/system-architecture-mobile.svg": "e359d06f679b2047b8970a4acd22194c699bcec432be421a816151ba13c10846",
+    "evidence/figures/system-architecture-mobile.tex": "34470730d958df05243710d0bf0adf470aacde04c9c4eda6da94a554d58b6e5d",
+    "assets/figures/system-architecture-mobile.pdf": "e54cd2d5e0e471d7e307cacf15bfeb1dce89a5fde0bd168d520236b08a8a0edb",
+    "assets/figures/system-architecture-mobile.svg": "fabe87002efc08aba67db7de81fa483b2360ea6b89211ff2a1080310953c0409",
     "evidence/figures/energy-comparison-mobile.tex": "295f345aa4be452a8996af6a4e01ad98f62d3e6d51410bf2ce0fa5c67b9efe91",
-    "assets/figures/energy-comparison-mobile.pdf": "f70eb59c1f31c94f4bae8a5d495345b7e59abf415da16cd831e1025635af1661",
+    "assets/figures/energy-comparison-mobile.pdf": "fed0b82ab8182f707ee3e9abdb051625d02833e08b50e17e658d5d5118e63599",
     "assets/figures/energy-comparison-mobile.svg": "36c978e9d1e861391cc79bd27faedc0523f74f36d51322783272a9086d05735d",
     "evidence/figures/routing-rule-mobile.tex": "abbde6ede6bda4c5f2d11ecf568f85461030305f2391cb50aa2371e0bc26d799",
-    "assets/figures/routing-rule-mobile.pdf": "838b47ed9e25f457b4af26ff4e0ccb5c087f7f2649ec4f5abbfd4cced5ebfdc7",
+    "assets/figures/routing-rule-mobile.pdf": "43049fd28bcf7ef9c7a490f6f342f3cd406b272535a0ec4e362db253d1280c84",
     "assets/figures/routing-rule-mobile.svg": "fd5314fea26e2615046bbe6c803a13fa9251e470e7cea04f469b4c17f3692919",
     "evidence/figures/answer-case-mobile.tex": "624b8fef7aca54e05e305621196b0f60a1120d78523f7279c51e3d9a5819f42a",
-    "assets/figures/answer-case-mobile.pdf": "cd50a37b492e0cb47258b5985fceb6325bc4f0f3e4b71a2c84fd5cc82ac11a0c",
+    "assets/figures/answer-case-mobile.pdf": "2da7c1586882edcbece63877b12bbd0476636adb1bb84c321c966db6bd57fbe1",
     "assets/figures/answer-case-mobile.svg": "80863537d18f43b6597cc1766a2aa04e2e161e85dc6eb01aaa545b62f0e5911a",
     "evidence/figures/power-interval-mobile.tex": "134bcbdab721bce35810b56786d41407ade7568ee7baad342c02dc14a6bfd178",
-    "assets/figures/power-interval-mobile.pdf": "24d442c256886a4780e6a6de0b71835067bcdf7745db8020b6bf0c7fa3d09c4d",
+    "assets/figures/power-interval-mobile.pdf": "0143486e561f64c020637baf23e84e7d7a9b30dd115d78af1e396213c2c74903",
     "assets/figures/power-interval-mobile.svg": "2ab2dcb1e8e63f07c3466945d92d47be450da126fd6bf1b2c516e0c1a9cc345f",
     "evidence/figures/power-interval.csv": "3184cd91b16f44e5bfab42e212db03fffcd396c7e079c9a292c1f5d082766f7e"
   }

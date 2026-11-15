@@ -14,7 +14,8 @@ import sys
 import pymupdf as fitz
 import numpy as np
 from analyse_study import load_run, ROOT, STYLE
-from system_figures import comparison_data, plates
+from system_figures import comparison_data, comparison_plate
+from architecture_plate import architecture
 
 SOURCES = ROOT/'evidence/figures'
 OUT = ROOT/'assets/figures'
@@ -140,7 +141,8 @@ def main():
     assert 'keyword in lowered' in original and 'r"(?<!\\w)" + re.escape(phrase) + r"(?!\\w)"' in restored
     generated=[]
     comparison_inputs=comparison_data(ROOT)
-    system,comparison=plates(node,doc)
+    comparison=comparison_plate(node,doc)
+    system=lambda mobile: architecture(node,doc,ROOT,mobile)
     for mobile in [False,True]:
         ptex,phase=power(run,mobile)
         for name,source in [('system-architecture',system(mobile)),('energy-comparison',comparison(comparison_inputs,mobile)),('routing-rule',routing(mobile)),('answer-case',answer(example,mobile)),('power-interval',ptex)]:
@@ -165,6 +167,8 @@ def main():
         'power_interval':phase,'route_case':pair,'energy_comparison':comparison_inputs,'source_sha256':{str(p.relative_to(ROOT)).replace('\\','/'):sha(p) for p in [Path(__file__),ROOT/'evidence/system_figures.py',ROOT/'data/energy-comparison.json',ROOT/'evidence/demo/report.json',ROOT/'evidence/demo/source-snapshot.zip',ROOT/'evidence/analyse_study.py',ROOT/'data/answers.json',ROOT/'data/paired-routes.json',ROOT/'evidence/results/2026-11-12/battery.csv',ROOT/'evidence/results/2026-11-12/run.json',ROOT/'evidence/results/router-2026-11-14/original-heuristics.py',ROOT/'evidence/results/router-2026-11-14/restored-heuristics.py']},
         'files_sha256':{str(p.relative_to(ROOT)).replace('\\','/'):sha(p) for p in files}}
     for p in [ROOT/'evidence/figure-style.json',*(ROOT/'evidence/fonts').glob('Poppins-*.ttf')]:
+        manifest['source_sha256'][p.relative_to(ROOT).as_posix()]=sha(p)
+    for p in [ROOT/'evidence/architecture_plate.py',ROOT/'data/system-trace.json',ROOT/'evidence/model/genai_config.json',ROOT/'evidence/model/source.json']:
         manifest['source_sha256'][p.relative_to(ROOT).as_posix()]=sha(p)
     (ROOT/'evidence/publication-figures.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'figures':generated,'power_wh':phase['whole_laptop_wh'],'sources_validated':True},indent=2))

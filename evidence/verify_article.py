@@ -75,6 +75,11 @@ def main():
     assert first['estimator_tokens']==62
     assert abs(first['local_mwh']-14.6388888888889)<1e-9
     assert abs(first['cloud_proxy_mwh']-53.3888888888889)<1e-9
+    system_trace=read('data/system-trace.json')
+    assert system_trace['predicates']==[False]*4 and system_trace['decision']['route']=='LOCAL'
+    assert system_trace['reply']=='The capital of France is Paris.'
+    model=read('evidence/model/genai_config.json')
+    assert model['model']['decoder']['num_hidden_layers']==16
     vector_checks=[]
     for f in publication['figures']:
         with pymupdf.open(ROOT/'assets/figures'/(f['name']+'.pdf')) as pdf:
@@ -185,7 +190,7 @@ def main():
     tracked = ['index.html','supplement.html','article.css','article-tokens.css','article.js','data/answers.json','data/study-summary.json',
         'data/route-comparison.json','data/paired-routes.json','evidence/analyse_study.py',
         'evidence/verify_article.py','evidence/PROVENANCE.md','evidence/figure-style.json','evidence/figure-manifest.json',
-        'evidence/build_publication_figures.py','evidence/system_figures.py','data/energy-comparison.json','evidence/publication-figures.json']
+        'evidence/build_publication_figures.py','evidence/system_figures.py','evidence/architecture_plate.py','data/system-trace.json','data/energy-comparison.json','evidence/publication-figures.json']
     result = {'passed':True, 'checked_utc':datetime.now(timezone.utc).isoformat(),
         'scope':'Local file/data integrity and complete video decode; browser checks recorded separately.',
         'relative_targets':len(linked), 'publication_figures':10, 'questions':60, 'responses':180, 'routing_decisions':len(rows),

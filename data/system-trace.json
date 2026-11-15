@@ -1,0 +1,29 @@
+{
+  "prompt": "What is the capital of France?",
+  "predicates": [
+    false,
+    false,
+    false,
+    false
+  ],
+  "word_count": 6,
+  "decision": {
+    "route": "LOCAL",
+    "reason": "default_energy_saving"
+  },
+  "uncertainty_triggered": false,
+  "reply": "The capital of France is Paris.",
+  "metadata": {
+    "route": "local",
+    "model": "llama-model",
+    "latency_s": 1.4678303000109736,
+    "source_label": "SEVEN \u00b7 Local \u00b7 Est. 14.6 mWh \u00b7 38.8 mWh vs profile",
+    "energy_basis": "Configured profile estimate, not measured electricity.",
+    "energy_wh": 0.014638888888888887,
+    "energy_saved_wh": 0.03875000000000001,
+    "energy_profile": "Ryzen AI / XDNA 2 NPU (1\u20133B SLM)",
+    "energy_baseline_profile": "GPT-4o short prompt (Jegham 2025)"
+  },
+  "classifier_sha256": "4f470cd24918b19ae66faf36f1fce24496c3058bd77663fd413ecd9e4af2f016",
+  "execution": "Captured classifier; only annotation import replaced by object. No function body changed; no provider called."
+}

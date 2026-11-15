@@ -1,0 +1,62 @@
+{
+    "model": {
+        "bos_token_id": 128000,
+        "context_length": 131072,
+        "decoder": {
+            "session_options": {
+				"log_id": "onnxruntime-genai",
+				"provider_options": [
+				{
+					"RyzenAI": {
+						"external_data_file": "model_jit.pb.bin",
+						"hybrid_opt_free_after_prefill": "1",
+						"hybrid_opt_max_seq_length": "4096"
+					}
+				}
+				]
+			},
+            "filename": "model_jit.onnx",
+            "head_size": 64,
+            "hidden_size": 2048,
+            "inputs": {
+                "input_ids": "input_ids",
+                "attention_mask": "attention_mask",
+                "position_ids": "position_ids",
+                "past_key_names": "past_key_values.%d.key",
+                "past_value_names": "past_key_values.%d.value"
+            },
+            "outputs": {
+                "logits": "logits",
+                "present_key_names": "present.%d.key",
+                "present_value_names": "present.%d.value"
+            },
+            "num_attention_heads": 32,
+            "num_hidden_layers": 16,
+            "num_key_value_heads": 8
+        },
+        "eos_token_id": [
+            128001,
+            128008,
+            128009
+        ],
+        "pad_token_id": 128001,
+        "type": "llama",
+        "vocab_size": 128256
+    },
+    "search": {
+        "diversity_penalty": 0.0,
+        "do_sample": true,
+        "early_stopping": true,
+        "length_penalty": 1.0,
+        "max_length": 2048,
+        "min_length": 0,
+        "no_repeat_ngram_size": 0,
+        "num_beams": 1,
+        "num_return_sequences": 1,
+        "past_present_share_buffer": true,
+        "repetition_penalty": 1.0,
+        "temperature": 0.6,
+        "top_k": 50,
+        "top_p": 0.9
+    }
+}
