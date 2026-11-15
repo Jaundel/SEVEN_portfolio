@@ -2,7 +2,7 @@
   "method": "Matplotlib vector paths from validated records; SVG outlines the shared Poppins glyphs, PDF embeds TrueType fonts. No generated bitmap content.",
   "matplotlib": "3.11.2",
   "numpy": "2.5.4",
-  "style_sha256": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
+  "style_sha256": "a52c52f5b51f18bab5509bee1db315b8edc608bd10fc3a3fb4bf71a135df3886",
   "font_sha256": {
     "Poppins-Regular.ttf": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba",
     "Poppins-Medium.ttf": "90373e7d838d32468438fc3e152dca0bdb12edcab99ea639f158790b1ba1fd05",
@@ -17,8 +17,6 @@
     "assets/figures/routing-comparison.svg": "932e9eb6be96c21b0b54aee1f0d895f058a4eca6d4e008c49dc6e0186ffb00d1",
     "assets/figures/routing-comparison.pdf": "30d1d1f1a84f2e3100b6d7b8ffa98aa900d3bbdf41d03a92563b85dbd7474d14",
     "assets/figures/local-results.svg": "d82a6c31f2dfe65be6494defeb181b32316d8b4b944a73971a1405f5fc81c368",
-    "assets/figures/local-results.pdf": "fcd077ec189ab532e10529d2eecdbc6dc81bd0dae83457ec6c92d536fc32dd5b",
-    "assets/figures/battery-test.svg": "41bce710e23c545bb72dc9181cc25f7864d30ae06090391f6c866ef6d00a3558",
-    "assets/figures/battery-test.pdf": "3434035b6698958b2be4265469e4544e941c22df2164779b77d895e746e04760"
+    "assets/figures/local-results.pdf": "fcd077ec189ab532e10529d2eecdbc6dc81bd0dae83457ec6c92d536fc32dd5b"
   }
 }

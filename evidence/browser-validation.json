@@ -1,9 +1,9 @@
 {
   "passed": true,
-  "checked_utc": "2026-11-15T18:11:36.592049+00:00",
+  "checked_utc": "2026-11-15T19:17:41.362707+00:00",
   "browser": {
     "passed": true,
-    "scope": "Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.",
+    "scope": "Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, eight keyboard gallery selections and local HTTP links.",
     "figureEnlargement": true,
     "layouts": [
       {
@@ -19,33 +19,33 @@
             "height": 183
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg?v=bff3e09291ae",
             "loaded": true,
             "width": 324,
-            "height": 417
+            "height": 625
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/answer-case-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case-mobile.svg?v=aef2ed6c2591",
             "loaded": true,
             "width": 324,
-            "height": 486
+            "height": 823
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison-mobile.svg?v=f0616d3b5ae5",
             "loaded": true,
             "width": 324,
-            "height": 338
+            "height": 639
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/power-interval-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval-mobile.svg?v=fe4b1e4f22af",
             "loaded": true,
             "width": 324,
-            "height": 347
+            "height": 616
           }
         ],
         "captions": [
           {
-            "words": 24,
+            "words": 22,
             "links": 0
           },
           {
@@ -61,7 +61,7 @@
             "links": 0
           },
           {
-            "words": 23,
+            "words": 24,
             "links": 0
           },
           {
@@ -86,33 +86,33 @@
             "height": 200
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule-mobile.svg?v=bff3e09291ae",
             "loaded": true,
             "width": 354,
-            "height": 455
+            "height": 683
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/answer-case-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case-mobile.svg?v=aef2ed6c2591",
             "loaded": true,
             "width": 354,
-            "height": 531
+            "height": 899
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison-mobile.svg?v=f0616d3b5ae5",
             "loaded": true,
             "width": 354,
-            "height": 369
+            "height": 698
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/power-interval-mobile.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval-mobile.svg?v=fe4b1e4f22af",
             "loaded": true,
             "width": 354,
-            "height": 379
+            "height": 673
           }
         ],
         "captions": [
           {
-            "words": 24,
+            "words": 22,
             "links": 0
           },
           {
@@ -128,7 +128,7 @@
             "links": 0
           },
           {
-            "words": 23,
+            "words": 24,
             "links": 0
           },
           {
@@ -153,33 +153,33 @@
             "height": 386
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg?v=abd2644c33ef",
             "loaded": true,
             "width": 684,
-            "height": 216
+            "height": 262
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/answer-case.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case.svg?v=55b3541dc6b2",
             "loaded": true,
             "width": 684,
-            "height": 293
+            "height": 268
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison.svg?v=7e23437d2711",
             "loaded": true,
             "width": 684,
-            "height": 279
+            "height": 262
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/power-interval.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval.svg?v=63a42b449529",
             "loaded": true,
             "width": 684,
-            "height": 315
+            "height": 262
           }
         ],
         "captions": [
           {
-            "words": 24,
+            "words": 22,
             "links": 0
           },
           {
@@ -195,7 +195,7 @@
             "links": 0
           },
           {
-            "words": 23,
+            "words": 24,
             "links": 0
           },
           {
@@ -220,33 +220,33 @@
             "height": 533
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/routing-rule.svg?v=abd2644c33ef",
             "loaded": true,
             "width": 946,
-            "height": 299
+            "height": 362
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/answer-case.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/answer-case.svg?v=55b3541dc6b2",
             "loaded": true,
             "width": 946,
-            "height": 405
+            "height": 371
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/energy-comparison.svg?v=7e23437d2711",
             "loaded": true,
             "width": 946,
-            "height": 386
+            "height": 362
           },
           {
-            "url": "http://127.0.0.1:8765/assets/figures/power-interval.svg",
+            "url": "http://127.0.0.1:8765/assets/figures/power-interval.svg?v=63a42b449529",
             "loaded": true,
             "width": 946,
-            "height": 436
+            "height": 362
           }
         ],
         "captions": [
           {
-            "words": 24,
+            "words": 22,
             "links": 0
           },
           {
@@ -262,7 +262,7 @@
             "links": 0
           },
           {
-            "words": 23,
+            "words": 24,
             "links": 0
           },
           {
@@ -277,21 +277,51 @@
     ],
     "chapters": [
       {
+        "name": "home",
+        "target": 2.8570000000065194,
+        "time": 2.8981,
+        "keyboard": true
+      },
+      {
+        "name": "profile-selection",
+        "target": 6.903999999997905,
+        "time": 6.9337,
+        "keyboard": true
+      },
+      {
         "name": "local-answer",
         "target": 14.746999999991385,
-        "time": 14.7784,
+        "time": 14.7686,
         "keyboard": true
       },
       {
         "name": "live-weather",
         "target": 33.48200000000652,
-        "time": 33.5085,
+        "time": 33.5133,
+        "keyboard": true
+      },
+      {
+        "name": "live-crypto",
+        "target": 38.52899999999791,
+        "time": 38.5563,
+        "keyboard": true
+      },
+      {
+        "name": "live-news",
+        "target": 44.90399999999791,
+        "time": 44.933,
         "keyboard": true
       },
       {
         "name": "cloud-answer",
         "target": 53.7,
-        "time": 53.7303,
+        "time": 53.7289,
+        "keyboard": true
+      },
+      {
+        "name": "reopened-history",
+        "target": 61.76299999999465,
+        "time": 61.7874,
         "keyboard": true
       }
     ],
@@ -307,24 +337,34 @@
     ],
     "questions": 60,
     "responses": 180,
-    "checkedLinks": 33,
+    "checkedLinks": 40,
     "errors": []
   },
   "delayed_video": {
     "passed": true,
-    "scope": "Cloud selected before metadata, with each genuine MP4 range response delayed by two seconds.",
+    "scope": "Cloud selected before metadata, with each genuine MP4 range response delayed by two seconds. Pausing during loading also holds after the selected view becomes ready.",
     "before": {
       "ready": 0,
       "time": 0,
       "network": 2
     },
     "after": {
-      "time": 53.7148,
+      "time": 53.7153,
       "ready": 4,
       "network": 1,
       "error": null,
       "status": "",
       "events": [
+        {
+          "name": "play",
+          "time": 0,
+          "ready": 0
+        },
+        {
+          "name": "suspend",
+          "time": 0,
+          "ready": 0
+        },
         {
           "name": "suspend",
           "time": 0,
@@ -333,25 +373,25 @@
         {
           "name": "loadedmetadata",
           "time": 0,
-          "ready": 4
-        },
-        {
-          "name": "loadeddata",
-          "time": 53.7,
           "ready": 1
         },
         {
+          "name": "loadeddata",
+          "time": 0.0133,
+          "ready": 4
+        },
+        {
           "name": "canplay",
+          "time": 0.0134,
+          "ready": 4
+        },
+        {
+          "name": "playing",
           "time": 53.7,
           "ready": 1
         },
         {
           "name": "seeking",
-          "time": 53.7,
-          "ready": 1
-        },
-        {
-          "name": "suspend",
           "time": 53.7,
           "ready": 1
         },
@@ -362,77 +402,98 @@
         },
         {
           "name": "canplay",
-          "time": 53.7,
+          "time": 53.7001,
           "ready": 4
         },
         {
           "name": "play",
-          "time": 53.701,
+          "time": 53.7002,
           "ready": 4
         },
         {
           "name": "playing",
-          "time": 53.7012,
+          "time": 53.7003,
           "ready": 4
         }
       ]
     },
     "requests": [
       "bytes=0-",
+      "bytes=0-",
       "bytes=1671168-"
-    ]
+    ],
+    "pendingPauseHolds": true
   },
   "video_resilience": {
     "passed": true,
     "rapidSelection": {
       "beforeReady": 0,
       "selected": "cloud-answer",
-      "time": 53.7337,
+      "time": 53.7215,
       "error": null
     },
     "unavailableMedia": "The recording could not load. Reload the page to try again."
   },
+  "gallery": {
+    "passed": true,
+    "autoplay": {
+      "playing": true,
+      "muted": true,
+      "loop": true
+    },
+    "looped": true,
+    "pauseHolds": true,
+    "pausedScrollHolds": true,
+    "automaticChapterTracking": true,
+    "arrowHomeEndSelection": true,
+    "reducedMotionPaused": true,
+    "reducedMotionManualSelection": true
+  },
   "source_sha256": {
-    "index.html": "7acd4dcad6236ceaba021c773ae3fd5b22b2969e2786ba7a1986f7831eb99bd1",
-    "supplement.html": "ece1fcfb01045da51c76fac8967c5c817a29c285c2a71e72ea93f117c43bb407",
-    "article.css": "001217dd1a30d4f6f20dd082dd8ba9f4480101425a14bfb3b6a634a334fd9b09",
-    "article-tokens.css": "688874f302b3d7a0bc6c5210a68f57f93e1f8cb8cb870865a56fe7c2e6ac052c",
-    "article.js": "36f32a8c4c8af2900182901400c679769018faf9d1c07d44f81766d47241cfa1",
+    "index.html": "82ff67ca49f92b22196b3919b2f0ed44763fc05926a6dfcfef89dc74721ea2f2",
+    "supplement.html": "0ad56e56d1f81461e9bc58c679ca5b339a92ca6fe0ea5225738d84000fb3a246",
+    "article.css": "9606a0d8c2e030580112b302895a084b63e4a2efa62d8ccff2ede16b951ea211",
+    "article-tokens.css": "932d807ca691bf6c5501e8f3e8b8611e4e56cdeb16039a452337ddf2a2d9115b",
+    "article.js": "3b95a5967d0a6a5b9746f5f2539c2a326e7054c08892a45aad2648cab92d5bc3",
     "data/answers.json": "a7ea5c786503382a68bde08b74d009dd3423470a083f06079469e0e80f49dfbe",
     "data/study-summary.json": "604a08bd79ae2249f506229857331f28a671e7fa61a4f659ce2912d6c2852ea8",
     "data/route-comparison.json": "54c8797ee979cd2944e6cc4aaed0af267cacf9aa31ca08e57e84d1fa46819f62",
     "data/paired-routes.json": "c8ddb293e8f035d1805183de94d3130de19da318e18ec081d2c3e7df65e456b6",
-    "evidence/analyse_study.py": "a10b5ec12c81043af965de12382a4bdab762f7bc8d1c076c3d912581b135a51b",
-    "evidence/verify_article.py": "bcbc46d50060db34d36b49df1f3b08833fb8181f8c6240e3e02d32d346052720",
-    "evidence/PROVENANCE.md": "070939b28ba3304a2bc429e45be9b26ca01c03d7c06e983a1d41b0cb9265d06e",
-    "evidence/figure-style.json": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
-    "evidence/figure-manifest.json": "0096d97ce6db02ae58313d8a1f03ab9ec10d76a25481918e4d71c2df0e428c06",
-    "evidence/build_publication_figures.py": "771b5f815c8e5d6de5da4e8388e4d40618e01843000dd682d5e30b5d30025f55",
-    "evidence/system_figures.py": "a5328e0a010b70ba73a64adf5b91dcf24eecb3177ed27559cda83f6b431c19b5",
+    "evidence/analyse_study.py": "cc37142e5cf698ffd6b7f9fadac5033f996e69429622e365c44e72b575dd1358",
+    "evidence/verify_article.py": "c1aaef37d1f68ab358bac036c023a81725b95afa938a0b83ddbe2da326674339",
+    "evidence/PROVENANCE.md": "7a806f2e142dd722bd59c29a4ffcc280b34d504550e07af031646d99f6cdb061",
+    "evidence/figure-style.json": "a52c52f5b51f18bab5509bee1db315b8edc608bd10fc3a3fb4bf71a135df3886",
+    "evidence/figure-manifest.json": "9ad2a9e3db0cc7d8283b332b9838871ac8ba3c7c2e4ea0cef1c04519412a81c8",
+    "evidence/build_publication_figures.py": "189e2a3b9b3bd03d655ecb0972dbc071dfef8d6e5b461a529622f82db61f6f77",
+    "evidence/system_figures.py": "570fa16f10e119c6c423f5a4ba98d48f6011b0c1b3e34bb008483d27b5124994",
     "evidence/architecture_plate.py": "040c726fa676aaea7a1fa9cfd728ced3bcedf69d79e9ec36adde683f44b60f22",
+    "evidence/observation_plates.py": "7bca69b72d35eb5002a39de4697d63e386763bc536f40f5eec74d7d56122cb08",
     "data/system-trace.json": "a1673d7c285d30d9cca4e18ebbbf25dd681789dcb446bc4f1f0d2588a872a5ae",
     "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
-    "evidence/publication-figures.json": "4c54e2405b9958ed4f5c4d519c0cdfc647813b6e67b4efb4adbdda7758ca1db2",
-    "evidence/check_article_browser.js": "91432d9e1ed1119beb293d8e432be08dbb135de596ab5304de630c678f0e3daa",
-    "evidence/check_video_loading.js": "bce6f7215f91b9af40b1caaca70133718ee3ab78f42bd3ef69ce052658b476d5",
+    "evidence/publication-figures.json": "1b72537b05aed1cc716cb89ebc1281e9db04d92c0b9440b67c0e69b375307edd",
+    "evidence/check_gallery.js": "1cd796d2ea4c796e8cc731742a0159780fbcc90d85025f2dfa31e44d92d4e0bd",
+    "evidence/check_article_browser.js": "7a81468f2b84717f1612849d47d6a038b1bfbf063fabf8859952b504e177190c",
+    "evidence/check_video_loading.js": "7a48e69a3251ca433ae268022d71dfb83f9ab5c94038f08ea5669e85ae037a02",
     "evidence/check_video_resilience.js": "ab6de35d494e55d73bbb85a19e6c665c21c132adbe0f8fe1554a277031c0ac38",
     "evidence/serve_preview.py": "d6f1138b92491e8e7768e4c7be7ccae56f9f0028a1817955bf8e4ae7e979608f",
     "evidence/check_preview_ranges.py": "c6dcd94d7236562290343c5b30bc1870ee9c2cc672866f3925cf4898984d8970"
   },
   "screenshots_sha256": {
-    "output/playwright/seven-finished-1440.png": "79d5ba884f13c4164304fb7703e47698b5763285771d11d6f17bc76a440e2836",
-    "output/playwright/seven-finished-390.png": "12bbd9c7cd58570eecb39a3a320c13ac950bcb256b430cb1b967a1412fde9c40",
-    "output/playwright/seven-finished-answers-1440.png": "3879e0554e6baae33bbee5128e2a35b69634353fda2f839f451f78b6bae46584",
-    "output/playwright/seven-finished-answers-390.png": "2c8b36efa57e425034510f45850fe12562e614f7452c7d438757a1c0884983c9",
-    "output/playwright/seven-finished-energy-1440.png": "28c5b96ed67e5ed92c1ba1997172159166d41c2fcf943c919a7b4adc2d8a2a83",
-    "output/playwright/seven-finished-energy-390.png": "2f0d1dc27dd0e5d02373ad49edd62ac45fb3fa6a6253ca2f3bd9b9b93235941c",
-    "output/playwright/seven-finished-measurement-1440.png": "4654ea62fd86a4fafdc1b1b1ada6d97876b4b24decf86a6c2d35aef56aad4b5e",
-    "output/playwright/seven-finished-measurement-390.png": "cf2c6c302aea2cc1eb47468b217aff7a5e606a0a4b383861bc985452b4200f17",
-    "output/playwright/seven-finished-routing-1440.png": "d798c2d9739fe95d133b74375d310671503b89b2fb994e9ff6db1af7c1cc31ee",
-    "output/playwright/seven-finished-routing-390.png": "f340ac07d25d58d238f95d3b711ffcf1cb219e1e7ee896ad4c6f8b75428631fb",
-    "output/playwright/seven-finished-system-1440.png": "f9097a32f42775b153aec93abbe1ae31c93937588fa2713b3ccb0fafc1be12f6",
-    "output/playwright/seven-finished-system-390.png": "94b16eb536859437766662d771c3641d96bca0112472d745c8aab0f1a0560c97",
+    "output/playwright/seven-finished-1440.png": "3ec36878c84e89befd64251c7f223579d9b25cdfc2a62ba5b14eb4378dcb25c8",
+    "output/playwright/seven-finished-390.png": "9917c2e7b5eed3c13246e036fdaa14576c10c2331e70935073bb1452268f4708",
+    "output/playwright/seven-finished-answers-1440.png": "d37a8262fae31148981a4de8cc45f93b1ccd4bbe1319319e03d5d4163755969e",
+    "output/playwright/seven-finished-answers-390.png": "8c460c9ab097c83bb7d1f877a5429f4d34c1ffefc28d6eda7cbeb42b83720ee3",
+    "output/playwright/seven-finished-demo-1440.png": "aee41438db3033d9f1c55c452f369cc59a961b44690346308427fbb99a36d9d0",
+    "output/playwright/seven-finished-demo-390.png": "cc6e3a60a52bf5b33bf79b3cbf206c9984c2cce8e6fbb17067a1747f562f9d40",
+    "output/playwright/seven-finished-energy-1440.png": "907250328472f64f68b5fed1d2f5e1bc221718e65d8286467b1397a6ed9564ef",
+    "output/playwright/seven-finished-energy-390.png": "20382e39317635f327f7f49ece732de6eacf731a79d936de98acf2413e4ef8ec",
+    "output/playwright/seven-finished-measurement-1440.png": "8a20fb7fc662544821fadd50e9776b833216dc21cfb02de803ca3f485fde93f3",
+    "output/playwright/seven-finished-measurement-390.png": "003a667f19918f7a892c192d56a0fe5b7642d825a91fbbb0285876711714ac65",
+    "output/playwright/seven-finished-routing-1440.png": "7651304239703e2829d60879d0c5ccbaa016c3a4e7140189541a58ae6626319f",
+    "output/playwright/seven-finished-routing-390.png": "66656b71fe752202de986f18f548fa9615dd1a0ab979248ca1a9d2a637a1dac0",
+    "output/playwright/seven-finished-system-1440.png": "cb914688005afcd8c21e63b1f21544ddda335f1b234a43e820079cc7bff5736c",
+    "output/playwright/seven-finished-system-390.png": "b020a4ad7e56202c6edbf28281128903a679356686d353b7cbcd7de081a8ed82",
     "output/playwright/seven-finished-top-1440.png": "cb9c3b8047859412e8abcaed51ad9ecefb4bd820c8849af4992e593d500d1836",
-    "output/playwright/seven-finished-top-390.png": "d034f03345800f5478cf8ef4e8e63d045d136b695ad9c899d2c40f5b20c63293"
+    "output/playwright/seven-finished-top-390.png": "988ece3c9161e9af2ad76e131bc6cb163d0b2ee40b8c8a3310c5464e12b5846b"
   }
 }

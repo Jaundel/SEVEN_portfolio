@@ -4,7 +4,7 @@
   "figures": [
     {
       "file": "assets/figures/system-architecture.pdf",
-      "sha256": "9ce245cc6e7e1cd8f0a981c61e9868451c2444b8c01aef29c77eb3af7cdb991f",
+      "sha256": "c8408f521d17f7248e740db5480634188718d676d52fa83b32d69aaaf849c7b4",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-SemiBold",
@@ -20,11 +20,15 @@
     },
     {
       "file": "assets/figures/energy-comparison.pdf",
-      "sha256": "fdf2b9269f6a767ae17c67573f663068b3a48d9ceba157b8a35c5c82ce966d8c",
+      "sha256": "0f516fd700ebba593c7a2ead4111c71054ae76dcda87570269e6c99da1387c69",
       "embedded_fonts": [
         {
-          "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 9564
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 7918
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 10176
         }
       ],
       "selectable_text": true,
@@ -32,19 +36,15 @@
     },
     {
       "file": "assets/figures/routing-rule.pdf",
-      "sha256": "d8b08bc879ef7dfa877a4e5d5be84889a57807ead88eeab88b35a1ea6d7e3b06",
+      "sha256": "e1d95bd3a889ef01a07b5b21424614700705686357678c0f3d6bcd7263054c41",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 8792
+          "embedded_bytes": 9056
         },
         {
           "name": "BZIVMZ+Poppins-SemiBold",
-          "embedded_bytes": 6578
-        },
-        {
-          "name": "IXFAWU+LMMono10-Regular-Identity-H",
-          "embedded_bytes": 2093
+          "embedded_bytes": 8226
         }
       ],
       "selectable_text": true,
@@ -52,11 +52,15 @@
     },
     {
       "file": "assets/figures/answer-case.pdf",
-      "sha256": "1fec36e719183fda39a50f64b22898bfecff900914494ad578652330c44bc806",
+      "sha256": "2a47bca11706eec7272bf7d772373219d7366e9fbc60e92409da7b97b1e26d98",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 11264
+          "embedded_bytes": 11472
+        },
+        {
+          "name": "BZIVMZ+Poppins-SemiBold",
+          "embedded_bytes": 8018
         }
       ],
       "selectable_text": true,
@@ -64,11 +68,31 @@
     },
     {
       "file": "assets/figures/power-interval.pdf",
-      "sha256": "9a740609419370827aaf819e9b23955adc06cdf80de0a371eccaa13196902578",
+      "sha256": "f7fa7aee1389785fe439e01f3396bb716242cc7bc26d6e9b31cbd03fe87509ae",
       "embedded_fonts": [
         {
-          "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 9384
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 7974
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 9632
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/battery-test.pdf",
+      "sha256": "afe5d625fd194ddbd920f211b699740da12327bbc78abb5f14e83c2c1890144f",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 8190
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 10460
         }
       ],
       "selectable_text": true,
@@ -76,7 +100,7 @@
     },
     {
       "file": "assets/figures/system-architecture-mobile.pdf",
-      "sha256": "e54cd2d5e0e471d7e307cacf15bfeb1dce89a5fde0bd168d520236b08a8a0edb",
+      "sha256": "db0a65d3482af9eca276bd7fdad4cddfc2e3e1a441ec1f867b36b93066570471",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-SemiBold",
@@ -92,11 +116,15 @@
     },
     {
       "file": "assets/figures/energy-comparison-mobile.pdf",
-      "sha256": "fed0b82ab8182f707ee3e9abdb051625d02833e08b50e17e658d5d5118e63599",
+      "sha256": "c7063f0701422faa09b0ec492b165f5230d9c05bf7fd526a7e5d62baa821f508",
       "embedded_fonts": [
         {
-          "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 9564
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 7918
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 10176
         }
       ],
       "selectable_text": true,
@@ -104,19 +132,15 @@
     },
     {
       "file": "assets/figures/routing-rule-mobile.pdf",
-      "sha256": "43049fd28bcf7ef9c7a490f6f342f3cd406b272535a0ec4e362db253d1280c84",
+      "sha256": "935216664a5d24a75e3f333a80f544c27c44af3ab2a752d3ffa3ffcc1d4d586d",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 8792
+          "embedded_bytes": 9056
         },
         {
           "name": "BZIVMZ+Poppins-SemiBold",
-          "embedded_bytes": 6578
-        },
-        {
-          "name": "IXFAWU+LMMono10-Regular-Identity-H",
-          "embedded_bytes": 2093
+          "embedded_bytes": 8226
         }
       ],
       "selectable_text": true,
@@ -124,11 +148,15 @@
     },
     {
       "file": "assets/figures/answer-case-mobile.pdf",
-      "sha256": "2da7c1586882edcbece63877b12bbd0476636adb1bb84c321c966db6bd57fbe1",
+      "sha256": "c6bd2ff94f2d4d9ad5422579b32683d3b8abe14f4d4bbd3d9a5de8e8ac57c079",
       "embedded_fonts": [
         {
           "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 11264
+          "embedded_bytes": 11472
+        },
+        {
+          "name": "BZIVMZ+Poppins-SemiBold",
+          "embedded_bytes": 8018
         }
       ],
       "selectable_text": true,
@@ -136,11 +164,31 @@
     },
     {
       "file": "assets/figures/power-interval-mobile.pdf",
-      "sha256": "0143486e561f64c020637baf23e84e7d7a9b30dd115d78af1e396213c2c74903",
+      "sha256": "98b57805961b4296a6b14fe8c78d6661b4c52a91324e3d6734d9cbb667d7fd16",
       "embedded_fonts": [
         {
-          "name": "IHAIZV+Poppins-Regular",
-          "embedded_bytes": 9340
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 7974
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 9632
+        }
+      ],
+      "selectable_text": true,
+      "text_bounds_checked": true
+    },
+    {
+      "file": "assets/figures/battery-test-mobile.pdf",
+      "sha256": "2763e0ac4f2bc294e6c03be72de8615543e013f05e16bd98b62f1b20edc82a86",
+      "embedded_fonts": [
+        {
+          "name": "IHAIZV+Poppins-SemiBold",
+          "embedded_bytes": 8190
+        },
+        {
+          "name": "BZIVMZ+Poppins-Regular",
+          "embedded_bytes": 10460
         }
       ],
       "selectable_text": true,

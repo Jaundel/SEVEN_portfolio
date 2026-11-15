@@ -18,17 +18,54 @@
 \definecolor{cloud}{HTML}{7b649b}
 \definecolor{match}{HTML}{7d9fc4}
 \definecolor{miss}{HTML}{e0e3e5}
+\definecolor{group}{HTML}{DCE2E5}
+\definecolor{operation}{HTML}{C5CFD5}
+\definecolor{mint}{HTML}{C9EEDF}
+\definecolor{blueplane}{HTML}{AEC8E0}
+\definecolor{pinkplane}{HTML}{F6D5DE}
+\definecolor{peachplane}{HTML}{FFDBB8}
+\definecolor{purpleplane}{HTML}{DCC7E7}
 \begin{document}
 \begin{tikzpicture}[x=1pt,y=-1pt]
-\path[use as bounding box] (0,0) rectangle (760,325);
-\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12.4}{18.6}\selectfont,text width=724pt] at (18,16) {James delivers 600 newspapers in a day. He delivers 198 newspapers to District A, some to District B and 209 newspapers to District C. How many newspapers does he deliver to District B?};
-\draw[line,line width=.6pt] (18,89) -- (742,89);
-\node[anchor=north west,inner sep=0pt,text=api,align=left,font=\fontsize{12}{18.0}\selectfont] at (18,104) {(a) Recorded local reply};
-\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12.2}{18.299999999999997}\selectfont,text width=330pt] at (18,138) {You need to subtract the number of newspapers delivered to District A from the total, then add back the number delivered to District C.\par\vspace{9pt}600 - 198 = 412\\412 + 209 = 621\par\vspace{9pt}James delivers 621 newspapers to District B.};
-\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{12}{18.0}\selectfont] at (415,104) {(b) Reference calculation};
-\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{18}{27.0}\selectfont] at (415,144) {600 − 198 − 209 = 193};
-\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont,text width=310pt] at (415,191) {Subtract both delivered quantities\\from the total.};
-\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont] at (415,259) {Uncertainty rule: not triggered};
+\path[use as bounding box] (0,0) rectangle (1020,400);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{12.7}{19.049999999999997}\selectfont,text width=980pt] at (20.0,12) {James delivers 600 newspapers in a day. He delivers 198 newspapers to District A, some to District B and 209 newspapers to District C. How many newspapers does he deliver to District B?};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{13}{19.5}\selectfont,anchor=north] at (209.5,97) {\textbf{(a) Recorded local reply}};
+\path[fill=white,draw=line,line width=.6pt] (26,129) -- (383,129) -- (393,139) -- (393,291) -- (26,291) -- cycle;
+\draw[draw=line,line width=.7pt] (383,129) -- (383,139) -- (393,139);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12.3}{18.450000000000003}\selectfont,text width=337pt] at (41,146) {You need to subtract the number of newspapers delivered to District A from the total, then add back the number delivered to District C.\par\vspace{9pt}600 - 198 = 412\\412 + 209 = 621\par\vspace{9pt}James delivers 621 newspapers to District B.};
+\node[anchor=north west,inner sep=0pt,text=api,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (209.5,321) {Last number: 621 · reference: 193};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{13}{19.5}\selectfont,anchor=north] at (565.0,97) {\textbf{(b) Reference quantities}};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{12}{18.0}\selectfont,anchor=north] at (565.0,136) {600 newspapers in total};
+\path[fill=blueplane,rounded corners=0pt] (431,186) rectangle (519.44,237);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (475.22,194) {A};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{13}{19.5}\selectfont,anchor=north] at (475.22,212) {198};
+\path[fill=mint,rounded corners=0pt] (519.44,186) rectangle (605.6466666666668,237);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (562.5433333333334,194) {B};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{13}{19.5}\selectfont,anchor=north] at (562.5433333333334,212) {193};
+\path[fill=operation,rounded corners=0pt] (605.6466666666668,186) rectangle (699.0000000000001,237);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (652.3233333333334,194) {C};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{13}{19.5}\selectfont,anchor=north] at (652.3233333333334,212) {209};
+\node[anchor=north west,inner sep=0pt,text=local,align=center,font=\fontsize{15}{22.5}\selectfont,anchor=north] at (565.0,255) {600 − 198 − 209 = 193};
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{10.3}{15.450000000000001}\selectfont,text width=278pt] at (426.0,297) {Reference arithmetic; not model reasoning};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{13}{19.5}\selectfont,anchor=north] at (869.0,97) {\textbf{(c) Escalation predicate}};
+\path[fill=group,rounded corners=8pt] (744,131) rectangle (994,263);
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{11.4}{17.1}\selectfont] at (757,141) {i don't know};
+\path[fill=operation,rounded corners=3pt] (941,139) rectangle (980,161);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{9.5}{14.25}\selectfont,text width=31pt] at (945.0,142.875) {false};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{11.4}{17.1}\selectfont] at (757,169) {i'm not sure};
+\path[fill=operation,rounded corners=3pt] (941,167) rectangle (980,189);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{9.5}{14.25}\selectfont,text width=31pt] at (945.0,170.875) {false};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{11.4}{17.1}\selectfont] at (757,197) {i not sure};
+\path[fill=operation,rounded corners=3pt] (941,195) rectangle (980,217);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{9.5}{14.25}\selectfont,text width=31pt] at (945.0,198.875) {false};
+\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{11.4}{17.1}\selectfont] at (757,225) {i cannot answer};
+\path[fill=operation,rounded corners=3pt] (941,223) rectangle (980,245);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{9.5}{14.25}\selectfont,text width=31pt] at (945.0,226.875) {false};
+\draw[-{Stealth[length=4pt,width=3pt]},draw=ink,line width=.7pt] (869.0,263) -- (869.0,284);
+\path[fill=blueplane,rounded corners=3pt] (762,286) rectangle (976,317);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{11}{16.5}\selectfont,text width=206pt] at (766.0,293.25) {No phrase: no escalation};
+\draw[draw=line,line width=.7pt] (411,103) -- (411,355);
+\draw[draw=line,line width=.7pt] (724,103) -- (724,355);
 
 \end{tikzpicture}
 \end{document}

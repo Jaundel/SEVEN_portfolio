@@ -13,23 +13,34 @@
     },
     {
       "name": "energy-comparison",
-      "width_pt": 757.1599731445312,
-      "height_pt": 308.8399963378906
+      "width_pt": 1016.1900024414062,
+      "height_pt": 388.5400085449219
     },
     {
       "name": "routing-rule",
-      "width_pt": 757.1599731445312,
-      "height_pt": 239.10000610351562
+      "width_pt": 1016.1900024414062,
+      "height_pt": 388.5400085449219
     },
     {
       "name": "answer-case",
-      "width_pt": 757.1599731445312,
-      "height_pt": 323.7900085449219
+      "width_pt": 1016.1900024414062,
+      "height_pt": 398.510009765625,
+      "verbatim_response_clip": [
+        25.902864259028643,
+        130.51058530510585,
+        391.5317559153176,
+        287.920298879203
+      ]
     },
     {
       "name": "power-interval",
-      "width_pt": 757.1599731445312,
-      "height_pt": 348.69000244140625
+      "width_pt": 1016.1900024414062,
+      "height_pt": 388.5400085449219
+    },
+    {
+      "name": "battery-test",
+      "width_pt": 1016.1900024414062,
+      "height_pt": 712.3300170898438
     },
     {
       "name": "system-architecture-mobile",
@@ -39,22 +50,33 @@
     {
       "name": "energy-comparison-mobile",
       "width_pt": 348.69000244140625,
-      "height_pt": 363.6400146484375
+      "height_pt": 687.4199829101562
     },
     {
       "name": "routing-rule-mobile",
       "width_pt": 348.69000244140625,
-      "height_pt": 448.32000732421875
+      "height_pt": 672.47998046875
     },
     {
       "name": "answer-case-mobile",
       "width_pt": 348.69000244140625,
-      "height_pt": 523.0399780273438
+      "height_pt": 885.6799926757812,
+      "verbatim_response_clip": [
+        15.940224159402243,
+        152.42839352428393,
+        332.7521793275218,
+        334.7447073474471
+      ]
     },
     {
       "name": "power-interval-mobile",
       "width_pt": 348.69000244140625,
-      "height_pt": 373.6000061035156
+      "height_pt": 662.52001953125
+    },
+    {
+      "name": "battery-test-mobile",
+      "width_pt": 348.69000244140625,
+      "height_pt": 806.969970703125
     }
   ],
   "answer_case": {
@@ -173,59 +195,74 @@
     "report_sha256": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07"
   },
   "source_sha256": {
-    "evidence/build_publication_figures.py": "771b5f815c8e5d6de5da4e8388e4d40618e01843000dd682d5e30b5d30025f55",
-    "evidence/system_figures.py": "a5328e0a010b70ba73a64adf5b91dcf24eecb3177ed27559cda83f6b431c19b5",
+    "evidence/build_publication_figures.py": "189e2a3b9b3bd03d655ecb0972dbc071dfef8d6e5b461a529622f82db61f6f77",
+    "evidence/system_figures.py": "570fa16f10e119c6c423f5a4ba98d48f6011b0c1b3e34bb008483d27b5124994",
     "data/energy-comparison.json": "9af8a2cac1a505ee7aad4c9a773e7576c9c6f024fce6b87c412bfc93b118828b",
     "evidence/demo/report.json": "0e6e60cc2886803bfd51d3f6e062016debb798651941aee6095ff75135825f07",
     "evidence/demo/source-snapshot.zip": "4a8e69c32ad015c1081400e1681a0f8b99bda18673b36cf11a9edad1e7a9a394",
-    "evidence/analyse_study.py": "a10b5ec12c81043af965de12382a4bdab762f7bc8d1c076c3d912581b135a51b",
+    "evidence/analyse_study.py": "cc37142e5cf698ffd6b7f9fadac5033f996e69429622e365c44e72b575dd1358",
     "data/answers.json": "a7ea5c786503382a68bde08b74d009dd3423470a083f06079469e0e80f49dfbe",
     "data/paired-routes.json": "c8ddb293e8f035d1805183de94d3130de19da318e18ec081d2c3e7df65e456b6",
     "evidence/results/2026-11-12/battery.csv": "81d2bca6d13fd3d2326b3d2b83467bc32f3072829948fabd687a9521369404f8",
     "evidence/results/2026-11-12/run.json": "433b8bfb7133024470c4a1b7797986ea9ce154ada14c6efbdccb8b8b1523240f",
     "evidence/results/router-2026-11-14/original-heuristics.py": "1c88d4b103dcf37acc5e1947eb71d724e8755c100ad8a02d342374204020f896",
     "evidence/results/router-2026-11-14/restored-heuristics.py": "4f470cd24918b19ae66faf36f1fce24496c3058bd77663fd413ecd9e4af2f016",
-    "evidence/figure-style.json": "7778b1996f8cca0c5adc119798f2c55d4b85d47c73a4f3eca4695d4698f21713",
+    "evidence/figure-style.json": "a52c52f5b51f18bab5509bee1db315b8edc608bd10fc3a3fb4bf71a135df3886",
     "evidence/fonts/Poppins-Italic.ttf": "4fa76ae75b40f926420514044722cb97f32186cafd3b38263cc34dad7174d46d",
     "evidence/fonts/Poppins-Medium.ttf": "90373e7d838d32468438fc3e152dca0bdb12edcab99ea639f158790b1ba1fd05",
     "evidence/fonts/Poppins-Regular.ttf": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba",
     "evidence/fonts/Poppins-SemiBold.ttf": "d3bf1bdaf0550e83da9ac0b1d1d9fe6db086835a83aa28578e609a394b9a0286",
     "evidence/architecture_plate.py": "040c726fa676aaea7a1fa9cfd728ced3bcedf69d79e9ec36adde683f44b60f22",
+    "evidence/observation_plates.py": "7bca69b72d35eb5002a39de4697d63e386763bc536f40f5eec74d7d56122cb08",
     "data/system-trace.json": "a1673d7c285d30d9cca4e18ebbbf25dd681789dcb446bc4f1f0d2588a872a5ae",
     "evidence/model/genai_config.json": "8e1ca7f099424bb9e98223837673594b4b7e2565979938f33f0af5d0a22aa031",
-    "evidence/model/source.json": "60f70b7695f9b05307fd7daf498d52c4d2046f80927f6e857946864701938e7c"
+    "evidence/model/source.json": "60f70b7695f9b05307fd7daf498d52c4d2046f80927f6e857946864701938e7c",
+    "evidence/results/2026-11-12-templated/battery.csv": "d693c07966ff629a3db591f08e2ddb2d7375401947ca131cf71df98122fd7bee",
+    "evidence/results/2026-11-12-templated/run.json": "64318b31015b2692b65626cc348b1e804476d3d292d7dadff2af6239b3bbe34f",
+    "evidence/results/2026-11-12-restored/battery.csv": "d6797eb4fc7bbf5779b1d7692246e23a5cf56444789e1f0cf46c5a20f12c5b01",
+    "evidence/results/2026-11-12-restored/run.json": "0128357583f0a56911d75f8363c4d66e87b92b2467071c72362fc95c55de748c",
+    "evidence/results/2026-11-12/source/heuristics.py": "1c88d4b103dcf37acc5e1947eb71d724e8755c100ad8a02d342374204020f896"
   },
   "files_sha256": {
-    "evidence/figures/system-architecture.tex": "34470730d958df05243710d0bf0adf470aacde04c9c4eda6da94a554d58b6e5d",
-    "assets/figures/system-architecture.pdf": "9ce245cc6e7e1cd8f0a981c61e9868451c2444b8c01aef29c77eb3af7cdb991f",
+    "evidence/figures/system-architecture.tex": "55cef7e472856feeafa52f9c3d50a698f35a018410c85ed78008943b1fdbeb64",
+    "assets/figures/system-architecture.pdf": "c8408f521d17f7248e740db5480634188718d676d52fa83b32d69aaaf849c7b4",
     "assets/figures/system-architecture.svg": "fabe87002efc08aba67db7de81fa483b2360ea6b89211ff2a1080310953c0409",
-    "evidence/figures/energy-comparison.tex": "9a783a9af7e9b33889122fc9c2ece7f1412c749c0c1752843d26ea57be59c65e",
-    "assets/figures/energy-comparison.pdf": "fdf2b9269f6a767ae17c67573f663068b3a48d9ceba157b8a35c5c82ce966d8c",
-    "assets/figures/energy-comparison.svg": "e718c50c2ecdd87e1332ba5da4959a0e8f90c7c1fa4e6fe2db875db3b9074a88",
-    "evidence/figures/routing-rule.tex": "b23173026c154c519382dda8e03fb217fb958b4063ba93e21a3e0c32c1f3f574",
-    "assets/figures/routing-rule.pdf": "d8b08bc879ef7dfa877a4e5d5be84889a57807ead88eeab88b35a1ea6d7e3b06",
-    "assets/figures/routing-rule.svg": "ce9a83f48225acab0c440fbd9c15524dcf980ef25954de10d72b91b2c6013fde",
-    "evidence/figures/answer-case.tex": "5369549c397f07debcc86f3a3a868db2116f222f31227da2a05cd0d2ccacad06",
-    "assets/figures/answer-case.pdf": "1fec36e719183fda39a50f64b22898bfecff900914494ad578652330c44bc806",
-    "assets/figures/answer-case.svg": "1bf6bffc0b282e714af01ea538783723db6afda81ef3574448318d15266d6c55",
-    "evidence/figures/power-interval.tex": "db4da6b066c5a7506fed34b779ccb6f9a4a0030ab04e70b6c8fcbe75e86c68eb",
-    "assets/figures/power-interval.pdf": "9a740609419370827aaf819e9b23955adc06cdf80de0a371eccaa13196902578",
-    "assets/figures/power-interval.svg": "a3fb8f4340dbfed11da27bfbdbe3fe534319b9bd61789c914653cb92376fdbed",
-    "evidence/figures/system-architecture-mobile.tex": "34470730d958df05243710d0bf0adf470aacde04c9c4eda6da94a554d58b6e5d",
-    "assets/figures/system-architecture-mobile.pdf": "e54cd2d5e0e471d7e307cacf15bfeb1dce89a5fde0bd168d520236b08a8a0edb",
+    "evidence/figures/energy-comparison.tex": "ee660d18bf0fb423dd61708219f5c5292f90b7505f04abda3719474adf82dad6",
+    "assets/figures/energy-comparison.pdf": "0f516fd700ebba593c7a2ead4111c71054ae76dcda87570269e6c99da1387c69",
+    "assets/figures/energy-comparison.svg": "7e23437d27115b751a2a1ab80ef3eba5c3095b2b85cfc27d4b12d975ddfa1c39",
+    "evidence/figures/routing-rule.tex": "7926f595a698c7158b0554cf254ebbc15ee5f2e1eaa91a616e8459c4635e6ca7",
+    "assets/figures/routing-rule.pdf": "e1d95bd3a889ef01a07b5b21424614700705686357678c0f3d6bcd7263054c41",
+    "assets/figures/routing-rule.svg": "abd2644c33efc76d962fbff086c5e7040cc99762f78ae184a5ce1473e33fa84b",
+    "evidence/figures/answer-case.tex": "ab9f41b2f6beb13d9f1f3211c730ff92754f9f58770738501a02ceb479709434",
+    "assets/figures/answer-case.pdf": "2a47bca11706eec7272bf7d772373219d7366e9fbc60e92409da7b97b1e26d98",
+    "assets/figures/answer-case.svg": "55b3541dc6b20dadef8b6b525ca4ddd64470cc23a9862a71c0f55c4107afc657",
+    "evidence/figures/power-interval.tex": "e9fba044f323cdc92cb53015fe51bb9e6f62e301eb1686fd81571ef19d12102e",
+    "assets/figures/power-interval.pdf": "f7fa7aee1389785fe439e01f3396bb716242cc7bc26d6e9b31cbd03fe87509ae",
+    "assets/figures/power-interval.svg": "63a42b449529c6e175cfcf3b203bed32f548e70fc343261b8e8ec93a55a12f6f",
+    "evidence/figures/battery-test.tex": "3596a982dddd3912615343130733ee0da10a9aee29f30a9ed3051b20e6fdd4ed",
+    "assets/figures/battery-test.pdf": "afe5d625fd194ddbd920f211b699740da12327bbc78abb5f14e83c2c1890144f",
+    "assets/figures/battery-test.svg": "599536ce867b921cde0a33dab182a449912872d540bf53d9471a813ed2c8ace5",
+    "evidence/figures/system-architecture-mobile.tex": "55cef7e472856feeafa52f9c3d50a698f35a018410c85ed78008943b1fdbeb64",
+    "assets/figures/system-architecture-mobile.pdf": "db0a65d3482af9eca276bd7fdad4cddfc2e3e1a441ec1f867b36b93066570471",
     "assets/figures/system-architecture-mobile.svg": "fabe87002efc08aba67db7de81fa483b2360ea6b89211ff2a1080310953c0409",
-    "evidence/figures/energy-comparison-mobile.tex": "295f345aa4be452a8996af6a4e01ad98f62d3e6d51410bf2ce0fa5c67b9efe91",
-    "assets/figures/energy-comparison-mobile.pdf": "fed0b82ab8182f707ee3e9abdb051625d02833e08b50e17e658d5d5118e63599",
-    "assets/figures/energy-comparison-mobile.svg": "36c978e9d1e861391cc79bd27faedc0523f74f36d51322783272a9086d05735d",
-    "evidence/figures/routing-rule-mobile.tex": "abbde6ede6bda4c5f2d11ecf568f85461030305f2391cb50aa2371e0bc26d799",
-    "assets/figures/routing-rule-mobile.pdf": "43049fd28bcf7ef9c7a490f6f342f3cd406b272535a0ec4e362db253d1280c84",
-    "assets/figures/routing-rule-mobile.svg": "fd5314fea26e2615046bbe6c803a13fa9251e470e7cea04f469b4c17f3692919",
-    "evidence/figures/answer-case-mobile.tex": "624b8fef7aca54e05e305621196b0f60a1120d78523f7279c51e3d9a5819f42a",
-    "assets/figures/answer-case-mobile.pdf": "2da7c1586882edcbece63877b12bbd0476636adb1bb84c321c966db6bd57fbe1",
-    "assets/figures/answer-case-mobile.svg": "80863537d18f43b6597cc1766a2aa04e2e161e85dc6eb01aaa545b62f0e5911a",
-    "evidence/figures/power-interval-mobile.tex": "134bcbdab721bce35810b56786d41407ade7568ee7baad342c02dc14a6bfd178",
-    "assets/figures/power-interval-mobile.pdf": "0143486e561f64c020637baf23e84e7d7a9b30dd115d78af1e396213c2c74903",
-    "assets/figures/power-interval-mobile.svg": "2ab2dcb1e8e63f07c3466945d92d47be450da126fd6bf1b2c516e0c1a9cc345f",
-    "evidence/figures/power-interval.csv": "3184cd91b16f44e5bfab42e212db03fffcd396c7e079c9a292c1f5d082766f7e"
+    "evidence/figures/energy-comparison-mobile.tex": "26c01a971f44f37694c5c3ca3533a39af8aeb84588e190141b9d45b6e43bd446",
+    "assets/figures/energy-comparison-mobile.pdf": "c7063f0701422faa09b0ec492b165f5230d9c05bf7fd526a7e5d62baa821f508",
+    "assets/figures/energy-comparison-mobile.svg": "f0616d3b5ae5591946d7c85aaf59f85cd8f62c0f0a9bfd13113d6366ba891ca8",
+    "evidence/figures/routing-rule-mobile.tex": "9db7c0fe600afcc9b61bcc246a519204441b8d9229e12b17ea3d3ef05799155a",
+    "assets/figures/routing-rule-mobile.pdf": "935216664a5d24a75e3f333a80f544c27c44af3ab2a752d3ffa3ffcc1d4d586d",
+    "assets/figures/routing-rule-mobile.svg": "bff3e09291ae5d549329e0462c6bb9dbc82f3987b4b3a4473780b4e36a982581",
+    "evidence/figures/answer-case-mobile.tex": "d36b429271d71e738bc03b9684a21a163981c7e6eb04b82306ae5183e22f86d7",
+    "assets/figures/answer-case-mobile.pdf": "c6bd2ff94f2d4d9ad5422579b32683d3b8abe14f4d4bbd3d9a5de8e8ac57c079",
+    "assets/figures/answer-case-mobile.svg": "aef2ed6c25919711b5bf72ac4d897839781a2977b671d3827a868b79863c94ae",
+    "evidence/figures/power-interval-mobile.tex": "ba99e5eafd073a149f6ae2254a3d93358d7c8cccd495195088fbea3a8364e3bf",
+    "assets/figures/power-interval-mobile.pdf": "98b57805961b4296a6b14fe8c78d6661b4c52a91324e3d6734d9cbb667d7fd16",
+    "assets/figures/power-interval-mobile.svg": "fe4b1e4f22afe6d43092fcfaf6d50fc051d56e59d392a767bb0d2e0f1eb04db6",
+    "evidence/figures/battery-test-mobile.tex": "24109f38d6fd87f0fe5fd70a5da1a943e5dbcc28a0caf1a09d211edfb25862b2",
+    "assets/figures/battery-test-mobile.pdf": "2763e0ac4f2bc294e6c03be72de8615543e013f05e16bd98b62f1b20edc82a86",
+    "assets/figures/battery-test-mobile.svg": "673c5d10c0cae516013e1e9e0101279237e7905e0028471c8a0386bd5b0e65ae",
+    "evidence/figures/power-interval.csv": "3184cd91b16f44e5bfab42e212db03fffcd396c7e079c9a292c1f5d082766f7e",
+    "evidence/figures/battery-2026-11-12-restored.csv": "49d50fcffb9808113594ffafa3cecc6441507d51424d1da44abe7f412a6c6674",
+    "evidence/figures/battery-2026-11-12-templated.csv": "243926fb4d39214fbd559327bb9ea848f4826c7982d7cdd3de41f910c69d6765",
+    "evidence/figures/battery-2026-11-12.csv": "8fcd3d4b7ee63096c4da6f2b777ba4a43bf90e870e5eb6dc99850cbc02582134"
   }
 }

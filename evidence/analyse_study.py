@@ -243,8 +243,8 @@ def main():
     examples=[{'row':row['row'],'question':row['question'],'reference':row['reference'],
        'answers':[dict(run[1][i],configuration=run[0]['label'],source=run[0]['source']) for run in runs]} for i,row in enumerate(runs[0][1])]
     (ROOT/'data/answers.json').write_text(json.dumps(examples,indent=2)+'\n')
-    plot_quality(runs);plot_power(runs);plot_routing()
-    outputs=[ROOT/'assets/figures'/f'{name}.{ext}' for name in ['routing-comparison','local-results','battery-test'] for ext in ['svg','pdf']]
+    plot_quality(runs);plot_routing()
+    outputs=[ROOT/'assets/figures'/f'{name}.{ext}' for name in ['routing-comparison','local-results'] for ext in ['svg','pdf']]
     manifest={'method':'Matplotlib vector paths from validated records; SVG outlines the shared Poppins glyphs, PDF embeds TrueType fonts. No generated bitmap content.',
         'matplotlib':matplotlib.__version__,'numpy':np.__version__,
         'style_sha256':hashlib.sha256((ROOT/'evidence/figure-style.json').read_bytes()).hexdigest(),

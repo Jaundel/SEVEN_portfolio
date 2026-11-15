@@ -14,7 +14,7 @@ async page=>{
  await enlarged.close();
  const manifest=await (await page.request.get(base+'evidence/demo/manifest.json')).json();
  const chapters=[];
- for(const name of ['local-answer','live-weather','cloud-answer']){
+ for(const name of manifest.checkpoints.map(c=>c.label)){
   const target=manifest.checkpoints.find(c=>c.label===name).seconds;
   const button=page.locator(`[data-chapter="${name}"]`);
   await button.focus();await button.press('Enter');
@@ -23,6 +23,7 @@ async page=>{
   chapters.push({name,target,time,keyboard:true});
  }
  const layouts=[];
+ await page.locator('#tour-toggle').evaluate(b=>{if(b.textContent==='Pause tour')b.click();});
  await page.evaluate(()=>{for(const i of document.images)i.loading='eager';});
  for(const width of [360,390,768,1440]){
   await page.setViewportSize({width,height:1000});
@@ -38,6 +39,7 @@ async page=>{
   if([390,1440].includes(width)){
    await page.screenshot({path:`output/playwright/seven-finished-${width}.png`,fullPage:true});
    await page.screenshot({path:`output/playwright/seven-finished-top-${width}.png`});
+   await page.locator('#demo').screenshot({path:`output/playwright/seven-finished-demo-${width}.png`});
    for(const id of ['system','routing','answers','energy','measurement'])await page.locator('#'+id).screenshot({path:`output/playwright/seven-finished-${id}-${width}.png`});
   }
   layouts.push(result);
@@ -59,6 +61,7 @@ async page=>{
  const supplementLayouts=[];
  for(const width of [390,1440]){
   await page.setViewportSize({width,height:1000});
+  await page.locator('#power').screenshot({path:`output/playwright/seven-supplement-power-${width}.png`});
   await page.locator('#responses').screenshot({path:`output/playwright/seven-supplement-${width}.png`});
   const l=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert(l.width===l.scroll,'Supplement overflow');supplementLayouts.push(l);
  }
@@ -67,5 +70,5 @@ async page=>{
  for(const url of [...new Set([...links,...extra])]){const r=await page.request.head(url);assert(r.ok(),'Bad link '+url);checkedLinks++;}
  assert(errors.length===0,JSON.stringify(errors));
  await page.setViewportSize({width:1440,height:1000});await page.goto(base,{waitUntil:'networkidle'});
- return {passed:true,scope:'Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, keyboard video chapters and local HTTP links.',figureEnlargement:true,layouts,chapters,supplementLayouts,questions:records.length,responses:records.length*3,checkedLinks,errors};
+ return {passed:true,scope:'Local article and supplement: rendered layouts, figure enlargement, figure loading, caption limits, exact complete responses, eight keyboard gallery selections and local HTTP links.',figureEnlargement:true,layouts,chapters,supplementLayouts,questions:records.length,responses:records.length*3,checkedLinks,errors};
 }

@@ -18,34 +18,57 @@
 \definecolor{cloud}{HTML}{7b649b}
 \definecolor{match}{HTML}{7d9fc4}
 \definecolor{miss}{HTML}{e0e3e5}
+\definecolor{group}{HTML}{DCE2E5}
+\definecolor{operation}{HTML}{C5CFD5}
+\definecolor{mint}{HTML}{C9EEDF}
+\definecolor{blueplane}{HTML}{AEC8E0}
+\definecolor{pinkplane}{HTML}{F6D5DE}
+\definecolor{peachplane}{HTML}{FFDBB8}
+\definecolor{purpleplane}{HTML}{DCC7E7}
 \begin{document}
 \begin{tikzpicture}[x=1pt,y=-1pt]
-\path[use as bounding box] (0,0) rectangle (350,365);
-\node[anchor=north west,inner sep=0pt,text=ink,align=left,font=\fontsize{12}{18.0}\selectfont,text width=314pt] at (18,13) {Configured energy at the same 62-token count};
-\node[anchor=north west,inner sep=0pt,text=muted,align=left,font=\fontsize{10.5}{15.75}\selectfont] at (18,65) {Estimate (mWh)};
-\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{11}{16.5}\selectfont] at (18,84) {Local profile};
-\path[fill=local!72!white] (68,115) rectangle (123.177,139);
-\draw[local,line width=1pt] (93.966,127) -- (152.389,127);
-\draw[local,line width=1pt] (93.966,122) -- (93.966,132);
-\draw[local,line width=1pt] (152.389,122) -- (152.389,132);
-\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{12}{18.0}\selectfont] at (128.1773504273504,93) {14.6};
-\node[anchor=north west,inner sep=0pt,text=cloud,align=left,font=\fontsize{11}{16.5}\selectfont] at (18,172) {GPT-4o proxy};
-\path[fill=cloud!72!white] (68,203) rectangle (269.235,227);
-\draw[cloud,line width=1pt] (230.286,215) -- (295.201,215);
-\draw[cloud,line width=1pt] (230.286,210) -- (230.286,220);
-\draw[cloud,line width=1pt] (295.201,210) -- (295.201,220);
-\node[anchor=north west,inner sep=0pt,text=cloud,align=left,font=\fontsize{12}{18.0}\selectfont] at (274.2350427350427,181) {53.4};
-\draw[muted,line width=.5pt] (68,245) -- (313,245);
-\draw[muted,line width=.5pt] (68.0,245) -- (68.0,249);
-\node[anchor=north west,inner sep=0pt,text=muted,align=left,font=\fontsize{10}{15.0}\selectfont] at (64.0,255) {0};
-\draw[muted,line width=.5pt] (143.3846153846154,245) -- (143.3846153846154,249);
-\node[anchor=north west,inner sep=0pt,text=muted,align=left,font=\fontsize{10}{15.0}\selectfont] at (139.3846153846154,255) {20};
-\draw[muted,line width=.5pt] (218.76923076923077,245) -- (218.76923076923077,249);
-\node[anchor=north west,inner sep=0pt,text=muted,align=left,font=\fontsize{10}{15.0}\selectfont] at (214.76923076923077,255) {40};
-\draw[muted,line width=.5pt] (294.1538461538462,245) -- (294.1538461538462,249);
-\node[anchor=north west,inner sep=0pt,text=muted,align=left,font=\fontsize{10}{15.0}\selectfont] at (290.1538461538462,255) {60};
-\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{11}{16.5}\selectfont] at (18,294) {0.85 J/token · local coefficient};
-\node[anchor=north west,inner sep=0pt,text=cloud,align=left,font=\fontsize{11}{16.5}\selectfont] at (18,323) {3.10 J/token · cloud coefficient};
+\path[use as bounding box] (0,0) rectangle (350,690);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{14}{21.0}\selectfont,anchor=north] at (175.0,14) {\textbf{(a) Same estimator input}};
+\path[fill=mint,draw=line,line width=.6pt] (52,54) -- (288,54) -- (298,64) -- (298,116) -- (52,116) -- cycle;
+\draw[draw=line,line width=.7pt] (288,54) -- (288,64) -- (298,64);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{13}{19.5}\selectfont,anchor=north] at (175.0,63) {France reply · n = 62};
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{10.5}{15.75}\selectfont,anchor=north] at (175.0,90) {Same 62-token estimator input};
+\draw[draw=ink,line width=.7pt] (175.0,116) -- (175.0,139);
+\draw[-{Stealth[length=4pt,width=3pt]},draw=local,line width=.7pt] (175.0,139) -- (95.5,139) -- (95.5,162);
+\path[fill=blueplane,rounded corners=3pt] (31.5,164) rectangle (159.5,203);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{12.5}{18.75}\selectfont,text width=120pt] at (35.5,174.125) {0.85 J/token};
+\node[anchor=north west,inner sep=0pt,text=local,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (95.5,213) {Local profile};
+\draw[-{Stealth[length=4pt,width=3pt]},draw=cloud,line width=.7pt] (175.0,139) -- (254.5,139) -- (254.5,162);
+\path[fill=purpleplane,rounded corners=3pt] (190.5,164) rectangle (318.5,203);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{12.5}{18.75}\selectfont,text width=120pt] at (194.5,174.125) {3.10 J/token};
+\node[anchor=north west,inner sep=0pt,text=cloud,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (254.5,213) {GPT-4o proxy};
+\path[fill=group,rounded corners=8pt] (33,251) rectangle (317,326);
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{14}{21.0}\selectfont,anchor=north] at (175.0,263) {E = n × c / 3,600 (Wh)};
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (175.0,292) {Configured estimate};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{14}{21.0}\selectfont,anchor=north] at (175.0,368) {\textbf{(b) Profile comparison}};
+\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{11}{16.5}\selectfont] at (75,418) {Local};
+\path[fill=blueplane,rounded corners=0pt] (75,448) rectangle (127.69999999999999,476);
+\draw[draw=local,line width=.7pt] (99.8,462) -- (155.60000000000002,462);
+\draw[draw=local,line width=.7pt] (99.8,456) -- (99.8,468);
+\draw[draw=local,line width=.7pt] (155.60000000000002,456) -- (155.60000000000002,468);
+\node[anchor=north west,inner sep=0pt,text=local,align=left,font=\fontsize{13}{19.5}\selectfont] at (133.7,444) {14.6};
+\node[anchor=north west,inner sep=0pt,text=cloud,align=left,font=\fontsize{11}{16.5}\selectfont] at (75,512) {Cloud proxy};
+\path[fill=purpleplane,rounded corners=0pt] (75,542) rectangle (267.20000000000005,570);
+\draw[draw=cloud,line width=.7pt] (230.0,556) -- (292.0,556);
+\draw[draw=cloud,line width=.7pt] (230.0,550) -- (230.0,562);
+\draw[draw=cloud,line width=.7pt] (292.0,550) -- (292.0,562);
+\node[anchor=north west,inner sep=0pt,text=cloud,align=left,font=\fontsize{13}{19.5}\selectfont] at (273.20000000000005,538) {53.4};
+\draw[draw=muted,line width=.7pt] (75,600) -- (309,600);
+\draw[draw=muted,line width=.7pt] (75.0,600) -- (75.0,605);
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{10.5}{15.75}\selectfont,anchor=north] at (75.0,612) {0};
+\draw[draw=muted,line width=.7pt] (147.0,600) -- (147.0,605);
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{10.5}{15.75}\selectfont,anchor=north] at (147.0,612) {20};
+\draw[draw=muted,line width=.7pt] (219.0,600) -- (219.0,605);
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{10.5}{15.75}\selectfont,anchor=north] at (219.0,612) {40};
+\draw[draw=muted,line width=.7pt] (291.0,600) -- (291.0,605);
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{10.5}{15.75}\selectfont,anchor=north] at (291.0,612) {60};
+\node[anchor=north west,inner sep=0pt,text=ink,align=center,font=\fontsize{11}{16.5}\selectfont,anchor=north] at (192.0,638) {Estimated energy (mWh)};
+\node[anchor=north west,inner sep=0pt,text=muted,align=center,font=\fontsize{10.5}{15.75}\selectfont,anchor=north] at (175.0,672) {Whiskers: configured coefficient bounds};
 
 \end{tikzpicture}
 \end{document}

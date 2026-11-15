@@ -1,4 +1,4 @@
-"""Manually composed system plate and an executed, archived-estimator comparison."""
+"""Execute the archived estimator and reproduce retained comparison values."""
 import hashlib
 import json
 import math
@@ -62,45 +62,3 @@ def comparison_data(root):
         'report_sha256':hashlib.sha256(report_path.read_bytes()).hexdigest()}
     (root/'data/energy-comparison.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     return result
-
-
-def comparison_plate(node, doc):
-    def label(x,y,text,col='ink',size=12,width=None):
-        return node(x,y,text,size,col,width=width)
-
-    def comparison(data,mobile):
-        case=data['cases'][0]
-        w,h=(350,365) if mobile else (760,310)
-        b=label(18,13,'Configured energy at the same 62-token count',size=12 if mobile else 14,width=w-36)
-        b+=label(18,65 if mobile else 45,'Estimate (mWh)','muted',10.5)
-        x0=68 if mobile else 76
-        y0=115 if mobile else 89
-        plotw=245 if mobile else 630
-        scale=plotw/65
-        # Length encodes estimated mWh. Whiskers are the coefficient bounds
-        # in the config, not sample standard errors or confidence intervals.
-        for j,(col,title,value,bounds) in enumerate([
-            ('local','Local profile',case['local_mwh'],case['local_range_mwh']),
-            ('cloud','GPT-4o proxy',case['cloud_proxy_mwh'],case['cloud_proxy_range_mwh'])]):
-            y=y0+j*88
-            b+=label(18,y-31,title,col,11)
-            b+=f'\\path[fill={col}!72!white] ({x0},{y}) rectangle ({x0+value*scale:.3f},{y+24});\n'
-            low,high=[x0+v*scale for v in bounds]
-            b+=f'\\draw[{col},line width=1pt] ({low:.3f},{y+12}) -- ({high:.3f},{y+12});\n'
-            for x in [low,high]: b+=f'\\draw[{col},line width=1pt] ({x:.3f},{y+7}) -- ({x:.3f},{y+17});\n'
-            b+=label(x0+value*scale+5,y-22,f'{value:.1f}',col,12)
-        axis=y0+130
-        b+=f'\\draw[muted,line width=.5pt] ({x0},{axis}) -- ({x0+plotw},{axis});\n'
-        for tick in [0,20,40,60]:
-            x=x0+tick*scale
-            b+=f'\\draw[muted,line width=.5pt] ({x},{axis}) -- ({x},{axis+4});\n'
-            b+=label(x-4,axis+10,str(tick),'muted',10)
-        by=axis+49
-        if mobile:
-            b+=label(18,by,'0.85 J/token · local coefficient','local',11)
-            b+=label(18,by+29,'3.10 J/token · cloud coefficient','cloud',11)
-        else:
-            b+=label(18,by,'0.85 J/token · local coefficient','local',11)
-            b+=label(395,by,'3.10 J/token · cloud coefficient','cloud',11)
-        return doc(b,w,h)
-    return comparison

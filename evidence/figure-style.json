@@ -13,7 +13,14 @@
     "api": "#995d46",
     "cloud": "#7b649b",
     "match": "#7d9fc4",
-    "miss": "#e0e3e5"
+    "miss": "#e0e3e5",
+    "group": "#DCE2E5",
+    "operation": "#C5CFD5",
+    "mint": "#C9EEDF",
+    "blueplane": "#AEC8E0",
+    "pinkplane": "#F6D5DE",
+    "peachplane": "#FFDBB8",
+    "purpleplane": "#DCC7E7"
   },
   "configurations": [
     {"label": "Original / plaintext", "color": "#8b7f9f"},

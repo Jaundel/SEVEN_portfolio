@@ -1,0 +1,43 @@
+async page=>{
+ const assert=(ok,message)=>{if(!ok)throw Error(message);};
+ const base='http://127.0.0.1:8765/';
+ await page.emulateMedia({reducedMotion:'no-preference'});
+ await page.goto(base,{waitUntil:'networkidle'});
+ await page.locator('#demo').scrollIntoViewIfNeeded();
+ await page.waitForFunction(()=>!document.querySelector('video').paused);
+ const autoplay=await page.locator('video').evaluate(v=>({playing:!v.paused,muted:v.muted,loop:v.loop}));
+ assert(autoplay.muted&&autoplay.loop,'Tour must be silent and continuous');
+ await page.locator('#tour-toggle').click();
+ await page.waitForFunction(()=>document.querySelector('video').paused);
+ const pausedTime=await page.locator('video').evaluate(v=>v.currentTime);
+ await page.waitForTimeout(350);
+ assert(await page.locator('video').evaluate((v,t)=>v.paused&&v.currentTime===t,pausedTime),'Pause did not hold');
+ await page.locator('#measurement').scrollIntoViewIfNeeded();await page.waitForTimeout(150);
+ await page.locator('#demo').scrollIntoViewIfNeeded();await page.waitForTimeout(200);
+ assert(await page.locator('video').evaluate(v=>v.paused),'Scrolling resumed a manually paused tour');
+ await page.locator('#tour-toggle').click();
+ await page.waitForFunction(()=>!document.querySelector('video').paused);
+ // Cross two real checkpoint boundaries, then the native end-to-start loop.
+ await page.locator('video').evaluate(v=>{v.currentTime=38.3;});
+ await page.waitForFunction(()=>document.querySelector('[data-chapter="live-crypto"]').getAttribute('aria-pressed')==='true');
+ await page.locator('video').evaluate(v=>{v.currentTime=v.duration-.25;});
+ await page.waitForFunction(()=>{const v=document.querySelector('video');return !v.paused&&v.currentTime<1&&document.querySelector('[data-chapter="home"]').getAttribute('aria-pressed')==='true';});
+ const looped=true;
+ await page.locator('[data-chapter="local-answer"]').focus();
+ await page.keyboard.press('ArrowRight');
+ await page.waitForFunction(()=>{const v=document.querySelector('video');return !v.seeking&&v.currentTime>=33.48&&v.currentTime<34.48;});
+ assert(await page.locator('[data-chapter="live-weather"]').evaluate(e=>e===document.activeElement),'Arrow key focus');
+ await page.keyboard.press('End');
+ await page.waitForFunction(()=>{const v=document.querySelector('video');return !v.seeking&&v.currentTime>=61.76&&v.currentTime<62.76;});
+ await page.keyboard.press('Home');
+ await page.waitForFunction(()=>{const v=document.querySelector('video');return !v.seeking&&v.currentTime>=2.857&&v.currentTime<3.857;});
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.goto(base,{waitUntil:'networkidle'});await page.locator('#demo').scrollIntoViewIfNeeded();await page.waitForTimeout(400);
+ assert(await page.locator('video').evaluate(v=>v.paused&&v.currentTime===0),'Reduced motion started playback');
+ assert(await page.locator('#tour-toggle').textContent()==='Play tour','Reduced motion control');
+ await page.locator('[data-chapter="cloud-answer"]').click();
+ await page.waitForFunction(()=>{const v=document.querySelector('video');return !v.paused&&v.currentTime>=53.7&&v.currentTime<54.7;});
+ await page.locator('#tour-toggle').click();
+ await page.emulateMedia({reducedMotion:'no-preference'});
+ return {passed:true,autoplay,looped,pauseHolds:true,pausedScrollHolds:true,automaticChapterTracking:true,arrowHomeEndSelection:true,reducedMotionPaused:true,reducedMotionManualSelection:true};
+}

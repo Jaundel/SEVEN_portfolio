@@ -13,6 +13,11 @@ async page=>{
   try{await page.waitForFunction(()=>{const v=document.querySelector('video');return !v.paused&&!v.seeking&&v.currentTime>=53.7&&v.currentTime<58;},null,{timeout:12000});}catch{passed=false;}
   const after=await page.evaluate(()=>{const v=document.querySelector('video');v.pause();return {time:v.currentTime,ready:v.readyState,network:v.networkState,error:v.error?{code:v.error.code,message:v.error.message}:null,status:document.querySelector('#video-status').textContent,events:window.videoEvents};});
   if(!passed)throw Error(JSON.stringify({before,after,requests}));
-  return {passed,scope:'Cloud selected before metadata, with each genuine MP4 range response delayed by two seconds.',before,after,requests};
+  await page.goto('http://127.0.0.1:8765/',{waitUntil:'domcontentloaded'});
+  await page.locator('[data-chapter="cloud-answer"][aria-pressed]').waitFor();
+  await page.locator('[data-chapter="cloud-answer"]').click();
+  await page.locator('#tour-toggle').filter({hasText:'Pause tour'}).click();
+  await page.waitForFunction(()=>{const v=document.querySelector('video');return v.paused&&!v.seeking&&v.currentTime>=53.7&&v.currentTime<53.8&&document.querySelector('#video-status').hidden;},null,{timeout:12000});
+  return {passed,scope:'Cloud selected before metadata, with each genuine MP4 range response delayed by two seconds. Pausing during loading also holds after the selected view becomes ready.',before,after,requests,pendingPauseHolds:true};
  }finally{await page.unroute(pattern);}
 }

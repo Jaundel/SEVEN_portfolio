@@ -68,7 +68,7 @@ def main():
     publication=read('evidence/publication-figures.json')
     for name,digest in (publication['source_sha256']|publication['files_sha256']).items():
         assert sha(ROOT/name)==digest, f'Publication figure changed: {name}'
-    assert len(publication['figures'])==10
+    assert len(publication['figures'])==12
     comparison=read('data/energy-comparison.json')
     assert comparison==publication['energy_comparison']
     first=comparison['cases'][0]
@@ -85,15 +85,17 @@ def main():
         with pymupdf.open(ROOT/'assets/figures'/(f['name']+'.pdf')) as pdf:
             assert len(pdf)==1
             page=pdf[0]
+            assert '\uffff' not in page.get_text() and '\ufffd' not in page.get_text(), ('Missing glyph',f['name'])
             assert abs(page.rect.width-f['width_pt'])<.1
             assert any('Poppins' in font[3] for font in page.get_fonts()), f['name']
             fonts=[]
             for font in page.get_fonts():
+                assert 'Poppins' in font[3], ('Unexpected figure font',f['name'],font[3])
                 embedded=pdf.extract_font(font[0])
                 assert len(embedded[3])>0, (f['name'],'Font not embedded',font[3])
                 fonts.append({'name':font[3],'embedded_bytes':len(embedded[3])})
             if f['name'].startswith('answer-case'):
-                clip=pymupdf.Rect(0,150,348,315) if 'mobile' in f['name'] else pymupdf.Rect(0,132,385,323)
+                clip=pymupdf.Rect(f['verbatim_response_clip'])
                 actual=' '.join(page.get_text(clip=clip).split())
                 expected=' '.join(publication['answer_case']['complete_response'].split())
                 assert actual==expected, ('Verbatim response export changed',f['name'],actual)
@@ -113,7 +115,8 @@ def main():
     assert abs(publication['power_interval']['whole_laptop_wh']-.7286752433234785)<1e-9
     main=(ROOT/'index.html').read_text(encoding='utf-8')
     assert all(name not in main for name in ['route-select','answer-select','local-results.svg','routing-comparison.svg','capture-controls','class="contents"'])
-    assert main.count('data-chapter=')==3
+    assert main.count('data-chapter=')==8
+    assert 'id="tour-toggle"' in main and 'controls muted loop playsinline' in main
     assert 'supplement.html#responses' in main
     (ROOT/'evidence/vector-validation.json').write_text(json.dumps({'passed':True,'renderer':'PyMuPDF '+pymupdf.__version__,'figures':vector_checks},indent=2)+'\n',encoding='utf-8')
 
@@ -146,6 +149,7 @@ def main():
     assert len(read('data/paired-routes.json')) == 6
 
     manifest = read('evidence/demo/manifest.json')
+    assert re.findall(r'data-chapter="([^"]+)"',main)==[c['label'] for c in manifest['checkpoints']]
     for name, digest in manifest['files_sha256'].items():
         assert sha(ROOT/name) == digest, f'Capture changed: {name}'
     assert (manifest['width'],manifest['height']) == (1920,1140)
@@ -190,10 +194,10 @@ def main():
     tracked = ['index.html','supplement.html','article.css','article-tokens.css','article.js','data/answers.json','data/study-summary.json',
         'data/route-comparison.json','data/paired-routes.json','evidence/analyse_study.py',
         'evidence/verify_article.py','evidence/PROVENANCE.md','evidence/figure-style.json','evidence/figure-manifest.json',
-        'evidence/build_publication_figures.py','evidence/system_figures.py','evidence/architecture_plate.py','data/system-trace.json','data/energy-comparison.json','evidence/publication-figures.json']
+        'evidence/build_publication_figures.py','evidence/system_figures.py','evidence/architecture_plate.py','evidence/observation_plates.py','data/system-trace.json','data/energy-comparison.json','evidence/publication-figures.json']
     result = {'passed':True, 'checked_utc':datetime.now(timezone.utc).isoformat(),
         'scope':'Local file/data integrity and complete video decode; browser checks recorded separately.',
-        'relative_targets':len(linked), 'publication_figures':10, 'questions':60, 'responses':180, 'routing_decisions':len(rows),
+        'relative_targets':len(linked), 'publication_figures':12, 'questions':60, 'responses':180, 'routing_decisions':len(rows),
         'native_capture_pngs':len(seen), 'decoded_frames':frames, 'decoded_duration_s':duration,
         'article_sha256':{n:sha(ROOT/n) for n in tracked}}
     (ROOT/'evidence/validation.json').write_text(json.dumps(result,indent=2)+'\n')
